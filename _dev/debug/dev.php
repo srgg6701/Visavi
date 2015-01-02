@@ -4,21 +4,20 @@ include_once '[path]/dev.php'; -->
 <!--
 2. Подключить jQuery, jQueryUI
 -->
-<?php /*
-<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <?php
-*/
-// директория поделючения тестового скрипта
-$path_to_debug = false;
+ob_start();
 /**
  * Настройки подложки: */
 // Идентификатор главного тестируемого блока:
-$main_block = false;//"'#page'";
+$main_block = "#page";
 // Изображения для страниц:
 $substrates = array(    // класс => имя файла изображения
     'default'=>'substrate.png'
-);?>
+);
+// Путь извлечения изображений:
+$substrate_path = '_dev/debug/pixel-perfect/';
+// Тени
+$box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1) inset';?>
 <style>
     #controls {
         background-color: white;
@@ -93,32 +92,20 @@ if(isset($wrongPaths)):
     }
 
 endif;
-//
 $section = $_GET['section'];
 if(!$section) $section='default';
 
-if(!$path_to_debug){?>
-    <div class="error_warning"><b>Ошибка!</b>
-        <p>Не указана директория подключения тестового скрипта ($path_to_debug)</p>
-    </div>
-<?
-}
 if(!$main_block){?>
     <div class="error_warning"><b>Ошибка!</b>
         <p>Не указан идентификатор контейнера для тестирования ($main_block)</p>
     </div>
 <?
 }
-
-// Путь извлечения изображений:
-$substrate_path = $path_to_debug.'/pixel-perfect/';
-// Тени
-$box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1) inset';
 ?>
 <div id="controls">
 <?php   $show_substrate=true; // не показывать подложку
 
-        if($_GET['sbstr']=='false')
+        if(isset($_GET['sbstr'])&&$_GET['sbstr']=='false')
             $show_substrate=false;
 
         elseif(!$show_substrate&&isset($_GET['sbstr']))
@@ -139,25 +126,21 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
     </label>
     &nbsp;
 <?php   endif;?>
-    <a href="?section=auto-profile">Профайл авто</a>
-    &nbsp;
-    <a href="?section=search-result">Результат поиска</a>
 </div>
 <?php if($show_substrate):?>
 <div id="substrate-wrapper">
     <div style="opacity: <?php echo $opacity;?>" id="substrate" class="<?php echo $section;?>"></div>
 </div>
-<?php endif;?>
+<?php endif; ?>
 <script>
-    jQuery(function(){
-        var $=jQuery,
-            page = $(<?php echo $main_block;?>),
+    $(function(){
+        //console.log('script location: '+location.href);
+        var page = $('<?php echo $main_block;?>'),
             checkbox =$('#sbstr'),
             substrate = $('#substrate'),
             range = $('#opacity-range'),
-            tested_content = $('#opacity-range-content');
-        // вычислить отступ слева для подложки
-        var w = window.document.getWidth(),
+            tested_content = $('#opacity-range-content'),
+            w = $('body').width(),// вычислить отступ слева для подложки
             sbOffset=((w-$(page).width())/ 2)/w * 100 + '%',
             setRange = function(){
                 if($(substrate).is(':visible'))
@@ -168,7 +151,7 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
             changeOpacity = function(input){
                 return parseInt(input.value)/100
             };
-        console.log('sbOffset: '+sbOffset);
+        //console.log('sbOffset: '+sbOffset);
         $('#substrate-wrapper').css({
             left:sbOffset,
             right:sbOffset
@@ -200,4 +183,7 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
         });
         //$('#controls').draggable();
     });
-</script>
+</script><?php
+$content=ob_get_contents();
+ob_clean();
+echo $content;
