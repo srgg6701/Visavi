@@ -48,7 +48,17 @@ $substrate_path = __DIR__.'/'.IMGS_DIR.'/';
 // Тени
 $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1) inset';?>
 <style>
-    #controls {
+    #roof,
+	#contacts
+	#slider,
+	nav,
+	main,
+	footer{
+		box-shadow: 0 0 0 1px rgba(0,0,0,0.2); 
+		-webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.2); 
+		-moz-box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+	}
+	#controls {
         background-color: white;
         -webkit-box-shadow: <?php echo $box_shadow;?>;
         -moz-box-shadow: <?php echo $box_shadow;?>;
@@ -103,7 +113,7 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
     #substrate-wrapper {
         bottom: 0;
         margin: auto;
-        max-width: 1100px;
+        /*max-width: 1100px;*/
         position: absolute;
         top: 0;
         z-index: -1;
@@ -125,6 +135,9 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
     }
     .error_warning{
         color:red;
+    }
+    #img_1280_default{
+        margin-left: -90px;
     }
 </style>
 <?php
@@ -188,7 +201,7 @@ endforeach;?>
 if($show_substrate):?>
 <div id="substrate-wrapper">
     <div style="opacity: <?php echo $opacity;?>;" id="substrate">
-    	<img src="<?php echo HTTP_BASE_PATH?>_dev/debug/<?php echo IMGS_DIR;?>/<?php echo $substrates[$section];?>">
+    	<img id="img_<?php echo $section;?>" src="<?php echo HTTP_BASE_PATH?>_dev/debug/<?php echo IMGS_DIR;?>/<?php echo $substrates[$section];?>">
     </div>
 </div>
 <?php 

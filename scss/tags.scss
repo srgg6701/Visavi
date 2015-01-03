@@ -1,0 +1,45 @@
+//@import "compass";
+a{
+  #roof menu &{
+    color: #333333;
+    font-family: MyriadProRegular;
+    font-size: 13.5px;
+    display: block;
+    height: 100%;
+    padding: 9px 9.8px;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  nav &{
+    background-color: $color-pink;
+    display: table-cell;
+    height: 100%;
+  }
+}
+body{
+  background-image: url("../images/backgrounds/body-flowers.jpg");
+}
+div{
+  #roof >&{
+    float: right;
+  }
+}
+li{
+  display: table-cell;
+}
+menu{
+  display: table;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  #roof &{
+    margin-left: 20px;
+  }
+}
+nav{
+  display: table;
+  height: 119px;
+  width: 100%;
+}
