@@ -8,14 +8,39 @@ include_once '[path]/dev.php'; -->
 ob_start();
 /**
  * Настройки подложки: */
+$site_name = 'visavi'; 
+define("HTTP_BASE_PATH",'http://'.$_SERVER['HTTP_HOST']."/projects/".$site_name.'/'); 
 // Идентификатор главного тестируемого блока:
-$main_block = "#page";
+define("MAIN_BLOCK","#page");
+// Идентификатор блока с меню тестовых разделов
+define("DEBUG_MENU","debug-menu");
+// Идентификатор ссылки для управления видимостью меню тестовых разделов
+define("DEBUG_LINKS","debug-liks");
+// Имя директори с изображениями
+define("IMGS_DIR","pixel-perfect");
 // Изображения для страниц:
 $substrates = array(    // класс => имя файла изображения
-    'default'=>'substrate.png'
+    'mobile_right'=>'mobile_right.gif',
+    'mobile_left'=>'mobile_left.gif',
+    'mobile_epilation'=>'mobile_epilation.gif',
+    'mobile_default'=>'mobile_default.gif',
+    'mobile_bikini'=>'mobile_bikini.gif',
+    'mobile_actions'=>'mobile_actions.gif',
+    '768_epilation'=>'768_epilation.gif',
+    '768_default'=>'768_default.gif',
+    '768_action'=>'768_action.gif',
+    '1280_epilation'=>'1280_epilation.gif',
+    '1280_default'=>'1280_default.gif',
+    '1280_contacts'=>'1280_contacts.gif',
+    '1280_care'=>'1280_care.gif',
+    '1280_actions'=>'1280_actions.gif',
+    '1280_action'=>'1280_action.gif',
+    '1024_epilation'=>'1024_epilation.gif',
+    '1024_default'=>'1024_default.gif',
+    '1024_action'=>'1024_action.gif'
 );
-// Путь извлечения изображений:
-$substrate_path = '_dev/debug/pixel-perfect/';
+// Путь расположения изображений относительно документа:
+$substrate_path = __DIR__.'/'.IMGS_DIR.'/';
 // Тени
 $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1) inset';?>
 <style>
@@ -41,6 +66,22 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
     #controls:hover {
         opacity: 1;
     }
+	#<?php echo DEBUG_LINKS;?>{
+		color: navy;
+		cursor:default;
+	}
+	.<?php echo DEBUG_MENU;?>{
+		display:none;
+	}
+	.<?php echo DEBUG_MENU;?> a{
+		display:table;
+		font-family:Arial, Helvetica;
+		padding:2px 4px;
+		text-decoration:none;
+	}
+	.<?php echo DEBUG_MENU;?> a:hover{
+		background-color:lightblue;
+	}	
     #opacity-range {
         margin-left: 20px;
         width: 80px;
@@ -95,27 +136,27 @@ endif;
 $section = $_GET['section'];
 if(!$section) $section='default';
 
-if(!$main_block){?>
+if(!defined("MAIN_BLOCK")){?>
     <div class="error_warning"><b>Ошибка!</b>
-        <p>Не указан идентификатор контейнера для тестирования ($main_block)</p>
+        <p>Не указан идентификатор контейнера для тестирования (MAIN_BLOCK)</p>
     </div>
 <?
 }
 ?>
 <div id="controls">
-<?php   $show_substrate=true; // не показывать подложку
+<?php   
+$show_substrate=true; // не показывать подложку
 
-        if(isset($_GET['sbstr'])&&$_GET['sbstr']=='false')
+if(isset($_GET['sbstr'])&&$_GET['sbstr']=='false')
             $show_substrate=false;
-
-        elseif(!$show_substrate&&isset($_GET['sbstr']))
+elseif(!$show_substrate&&isset($_GET['sbstr']))
             $show_substrate=true;
 
-        if($show_substrate):?>
+if($show_substrate):?>
     <label>
         <input type="checkbox" id="sbstr"<?php
-        $opacity=(isset($_GET['opa']))? $_GET['opa']:0;
-        if($opacity>0):?> checked="checked" <?php endif;?> />Подложка
+	$opacity=(isset($_GET['opa']))? $_GET['opa']:0;
+	if($opacity>0):?> checked="checked" <?php endif;?> />Подложка
     </label>
     <label title="Прозрачность подложки">
         <input type="range" id="opacity-range" min="0"  max="100" value="<?php echo $opacity*100;?>" />
@@ -125,17 +166,31 @@ if(!$main_block){?>
         <input type="range" id="opacity-range-content" min="0"  max="100" value="100" />
     </label>
     &nbsp;
-<?php   endif;?>
+    <span id="<?php echo DEBUG_LINKS;?>">Ссылки</span>
+<?php   
+endif;?>
+	<div class="<?php echo DEBUG_MENU;?>">
+    	<hr/>
+<?php
+// построить меню ссылок:
+foreach($substrates as $alias=>$image):
+?>
+	<a href="?section=<?php echo $alias?>"><?php echo $alias;?></a>	
+<?php
+endforeach;?>
+	</div>
 </div>
-<?php if($show_substrate):?>
+<?php 
+if($show_substrate):?>
 <div id="substrate-wrapper">
-    <div style="opacity: <?php echo $opacity;?>" id="substrate" class="<?php echo $section;?>"></div>
+    <div style="opacity: <?php echo $opacity;?>; background-image:url(<?php echo HTTP_BASE_PATH?>_dev/debug/<?php echo IMGS_DIR;?>/<?php echo $substrates[$section];?>)" id="substrate"></div>
 </div>
-<?php endif; ?>
+<?php 
+endif; ?>
 <script>
     $(function(){
         //console.log('script location: '+location.href);
-        var page = $('<?php echo $main_block;?>'),
+        var page = $('<?php echo MAIN_BLOCK;?>'),
             checkbox =$('#sbstr'),
             substrate = $('#substrate'),
             range = $('#opacity-range'),
@@ -181,6 +236,9 @@ if(!$main_block){?>
         $(tested_content).on('input', function(){
             $(page).css('opacity', changeOpacity(this));
         });
+		$('#<?php echo DEBUG_LINKS?>').on('click', function(){
+			$('.<?php echo DEBUG_MENU;?>').toggle();
+		});
         //$('#controls').draggable();
     });
 </script><?php
