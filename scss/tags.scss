@@ -5,12 +5,18 @@ a{
     font-family: MyriadProRegular;
     font-size: 13.5px;
     display: block;
-    height: 100%;
-    padding: 9px 9.8px;
+    padding-left: 9.8px;
+    padding-right: 9.8px;
     text-decoration: none;
+    @include centered-vertical-a;
     &:hover{
       text-decoration: underline;
     }
+  }
+  // ссылки перед формой поиска - VISA, MasterCard, WiFi
+  #roof div:nth-child(3) &{
+    display: inline-block;
+    @include centered-vertical-a;
   }
   nav &{
     background-color: $color-pink;
@@ -24,6 +30,16 @@ body{
 div{
   #roof >&{
     float: right;
+    height: 100%;
+    // Форма поиска
+    &:nth-child(2){
+      margin-right: 31px;
+    }
+  }
+}
+form{
+  #roof &{
+    @include centered-vertical;
   }
 }
 li{
@@ -35,6 +51,7 @@ menu{
   margin: 0;
   padding: 0;
   #roof &{
+    float: left;
     margin-left: 20px;
   }
 }
