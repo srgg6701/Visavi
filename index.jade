@@ -23,7 +23,10 @@ html(lang="en")
               if(( location.href.indexOf('localhost')!=-1
                    || location.href.indexOf('127.0.0.1')!=-1)
                   && location.href.indexOf('?')!=-1){
-
+                  document.title = window.outerWidth;
+                  window.onresize=function(){
+                      document.title = window.outerWidth;
+                  };
                   var tail      = location.href.lastIndexOf('/')+1,
                       urlBase   = location.href.substring(0,tail),
                       params    = location.href.substr(tail);

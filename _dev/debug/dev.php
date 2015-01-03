@@ -20,24 +20,28 @@ define("DEBUG_LINKS","debug-liks");
 define("IMGS_DIR","pixel-perfect");
 // Изображения для страниц:
 $substrates = array(    // класс => имя файла изображения
-    'mobile_right'=>'mobile_right.gif',
-    'mobile_left'=>'mobile_left.gif',
-    'mobile_epilation'=>'mobile_epilation.gif',
+    // 320
     'mobile_default'=>'mobile_default.gif',
-    'mobile_bikini'=>'mobile_bikini.gif',
+    'mobile_left'=>'mobile_left.gif',
+    'mobile_right'=>'mobile_right.gif',
     'mobile_actions'=>'mobile_actions.gif',
-    '768_epilation'=>'768_epilation.gif',
+    'mobile_epilation'=>'mobile_epilation.gif',
+    'mobile_bikini'=>'mobile_bikini.gif',
+    // 768
     '768_default'=>'768_default.gif',
     '768_action'=>'768_action.gif',
-    '1280_epilation'=>'1280_epilation.gif',
+    '768_epilation'=>'768_epilation.gif',
+    // 1024
+    '1024_default'=>'1024_default.gif',
+    '1024_action'=>'1024_action.gif',
+    '1024_epilation'=>'1024_epilation.gif',
+    // 1280
     '1280_default'=>'1280_default.gif',
+    '1280_action'=>'1280_action.gif',
+    '1280_actions'=>'1280_actions.gif',
+    '1280_epilation'=>'1280_epilation.gif',
     '1280_contacts'=>'1280_contacts.gif',
     '1280_care'=>'1280_care.gif',
-    '1280_actions'=>'1280_actions.gif',
-    '1280_action'=>'1280_action.gif',
-    '1024_epilation'=>'1024_epilation.gif',
-    '1024_default'=>'1024_default.gif',
-    '1024_action'=>'1024_action.gif'
 );
 // Путь расположения изображений относительно документа:
 $substrate_path = __DIR__.'/'.IMGS_DIR.'/';
@@ -135,7 +139,7 @@ if(isset($wrongPaths)):
 endif;
 $section = $_GET['section'];
 if(!$section) $section='default';
-
+//
 if(!defined("MAIN_BLOCK")){?>
     <div class="error_warning"><b>Ошибка!</b>
         <p>Не указан идентификатор контейнера для тестирования (MAIN_BLOCK)</p>
