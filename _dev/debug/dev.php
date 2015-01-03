@@ -183,7 +183,9 @@ endforeach;?>
 <?php 
 if($show_substrate):?>
 <div id="substrate-wrapper">
-    <div style="opacity: <?php echo $opacity;?>; background-image:url(<?php echo HTTP_BASE_PATH?>_dev/debug/<?php echo IMGS_DIR;?>/<?php echo $substrates[$section];?>)" id="substrate"></div>
+    <div style="opacity: <?php echo $opacity;?>;" id="substrate">
+    	<img src="<?php echo HTTP_BASE_PATH?>_dev/debug/<?php echo IMGS_DIR;?>/<?php echo $substrates[$section];?>">
+    </div>
 </div>
 <?php 
 endif; ?>
