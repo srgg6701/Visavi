@@ -56,7 +56,6 @@ button{
     font-family: Tahoma;
     font-size: 11px;
     height: 26px;
-    //padding-bottom: 3px;
     text-align: center;
     width: 50px;
   }
@@ -67,7 +66,25 @@ div{
     height: 100%;
     // Форма поиска
     &:nth-child(2){
-      margin-right: 31px;
+      margin-right: $margin-right-layout-top;
+    }
+  }
+  #visavi >&{
+    &:nth-child(1){
+
+      background-color: lightcyan;
+
+      float: left;
+      margin-left: 26.2%;
+      margin-top: 33px;
+    }
+    &:nth-child(2){
+
+      background-color: lightpink;
+
+      float: right;
+      margin-right: $margin-right-layout-top;
+      margin-top: 24px;
     }
   }
 }

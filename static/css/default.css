@@ -72,17 +72,31 @@ body {
   width: 50px;
 }
 
-/* line 65, ../../scss/tags.scss */
+/* line 64, ../../scss/tags.scss */
 #roof > div {
   float: right;
   height: 100%;
 }
-/* line 69, ../../scss/tags.scss */
+/* line 68, ../../scss/tags.scss */
 #roof > div:nth-child(2) {
   margin-right: 31px;
 }
+/* line 73, ../../scss/tags.scss */
+#visavi > div:nth-child(1) {
+  background-color: lightcyan;
+  float: left;
+  margin-left: 26.2%;
+  margin-top: 33px;
+}
+/* line 81, ../../scss/tags.scss */
+#visavi > div:nth-child(2) {
+  background-color: lightpink;
+  float: right;
+  margin-right: 31px;
+  margin-top: 24px;
+}
 
-/* line 75, ../../scss/tags.scss */
+/* line 92, ../../scss/tags.scss */
 #roof form {
   position: relative;
   top: 50%;
@@ -93,7 +107,7 @@ body {
   transform: translateY(-50%);
 }
 
-/* line 80, ../../scss/tags.scss */
+/* line 97, ../../scss/tags.scss */
 #roof input {
   height: 26px;
   margin-right: -4px;
@@ -101,25 +115,25 @@ body {
   width: 150px;
 }
 
-/* line 87, ../../scss/tags.scss */
+/* line 104, ../../scss/tags.scss */
 li {
   display: table-cell;
 }
 
-/* line 90, ../../scss/tags.scss */
+/* line 107, ../../scss/tags.scss */
 menu {
   display: table;
   height: 100%;
   margin: 0;
   padding: 0;
 }
-/* line 95, ../../scss/tags.scss */
+/* line 112, ../../scss/tags.scss */
 #roof menu {
   float: left;
   margin-left: 20px;
 }
 
-/* line 100, ../../scss/tags.scss */
+/* line 117, ../../scss/tags.scss */
 nav {
   display: table;
   height: 119px;
@@ -194,23 +208,24 @@ body {
 }
 
 /* line 89, ../../scss/default.scss */
-#contacts {
-  height: 107px;
-}
-
-/* line 92, ../../scss/default.scss */
 #page {
   background-color: white;
   margin: auto;
   max-width: 1100px;
 }
 
-/* line 97, ../../scss/default.scss */
+/* line 94, ../../scss/default.scss */
 #roof {
   height: 34px;
 }
 
-/* line 100, ../../scss/default.scss */
+/* line 97, ../../scss/default.scss */
 #slider {
   height: 201px;
+}
+
+/* line 100, ../../scss/default.scss */
+#visavi {
+  background: url("../images/sources/logotype.png") no-repeat 3.2% 17px;
+  height: 107px;
 }

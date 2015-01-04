@@ -36,16 +36,23 @@ html(lang="ru")
                         a#master-card(href="#",title="Master Card")="Master Card"
                         a#wifi(href="#",title="WiFi")="WiFi"
                 //- логотип, скидки, контакты
-                section#contacts
+                section#visavi
                     //- скидки
-                    div
+                    div#discount
+                        div="Скидка 20%"
+                        div
+                            span="Скидка 20%" //- Сиреневый
+                            span="при первом посещении на все услуги" //- чёрный
+                            div
+                                span
+                                a="подробнее" //- { подробнее }
+                                span
                     //- контакты
                     div#contacts
-                        div
                         div#phones
                             div="+7 (812) 927-22-27"
                             div="+7 (812) 401-03-94"
-                        div="г. Санкт-Петербург, ул. Латышских стрелков, д.1, лит.А"
+                            div="г. Санкт-Петербург, ул. Латышских стрелков, д.1, лит.А"
                 //- слайдер
                 section#slider
                     div
