@@ -41,10 +41,20 @@
   url('../fonts/MyriadProRegular.ttf') format('truetype'),
   url('../fonts/MyriadProRegular.svg#MyriadProRegular') format('svg');
 }
+
+// Visa, MasterCard, Wifi
+#cards{
+  font-size: 0;
+  margin-right: 7%;
+  //width: 141px;
+}
+// ---------------------
+
 #contacts{
   height: 107px;
 }
 #page{
+  background-color: white;
   margin: auto;
   max-width: 1100px;
 }
