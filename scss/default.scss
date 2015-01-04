@@ -85,7 +85,33 @@
   //width: 141px;
 }
 // ---------------------
-
+#discount{
+  font-family: BookAntiqueItalic;
+}
+#discount1{
+  font-family: BookAntiqueItalic;
+  font-size: 18px;
+  margin-top: -4px;
+  @include opacity(0.21);
+  padding-right: 77px;
+  text-align: right;
+  @include transform(scale(1.25,1.1));
+}
+#discount2{
+  margin-top: -14px;
+}
+#discount-more{
+  display: table;
+  margin: auto;
+}
+#email::before{
+  content:"info@visavi-salon.ru";
+}
+#first-visit{
+  color: #333;
+  font-size: 14px;
+  margin-left: 3px;
+}
 #page{
   background-color: white;
   margin: auto;

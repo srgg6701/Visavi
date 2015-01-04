@@ -5,7 +5,7 @@ html(lang="ru")
         link(href="static/css/default.css",rel="stylesheet")
         script(src="http://code.jquery.com/jquery-latest.min.js")
     body
-        div#page
+        #page
             header
                 //- меню, каротчки/wifi/поисковая форма
                 section#roof
@@ -31,25 +31,35 @@ html(lang="ru")
                             input(type="search",placeholder="Введите ваш запрос")
                             button
                                 div="Искать"
-                    div#cards
+                    #cards
                         a#visa(href="#",title="VISA")="VISA"
                         a#master-card(href="#",title="Master Card")="Master Card"
                         a#wifi(href="#",title="WiFi")="WiFi"
                 //- логотип, скидки, контакты
                 section#visavi
                     //- скидки
-                    div#discount
-                        div="Скидка 20%"
-                        div
-                            span="Скидка 20%" //- Сиреневый
-                            span="при первом посещении на все услуги" //- чёрный
-                            div
+                    -var discount="Скидка "
+                    -var percents="20%"
+                    #discount.color-pink
+                        #discount1.antique-italic-bold.font-size18=discount
+                            span.font-size24=percents
+                        #discount2
+                            //- Сиреневый
+                            span.antique-italic-bold.font-size18=discount
+                                span.font-size24=percents
+                            //- чёрный
+                            span#first-visit="при первом посещении на все услуги"
+                            #discount-more
+                                //- {
                                 span
-                                a="подробнее" //- { подробнее }
+                                //- подробнее
+                                a.antique-italic-bold.color-pink="подробнее"
+                                //- }
                                 span
                     //- контакты
-                    div#contacts
-                        div#phones
+                    #contacts
+                        #email
+                        #phones
                             div="+7 (812) 927-22-27"
                             div="+7 (812) 401-03-94"
                             div="г. Санкт-Петербург, ул. Латышских стрелков, д.1, лит.А"

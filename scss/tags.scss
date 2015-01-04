@@ -22,6 +22,12 @@ a{
       width: 36px;
     }
   }
+  #discount-more >&{
+    //color: blue;
+    float: left;
+    font-size: 12px;
+    margin-top: 3px;
+  }
   #roof menu &{
     color: #333333;
     font-family: MyriadProRegular;
@@ -70,16 +76,16 @@ div{
     }
   }
   #visavi >&{
-    &:nth-child(1){
-
-      background-color: lightcyan;
+    &:nth-child(1){ // Скидки
+      // testmode: background-color
+      // background-color: lightcyan;
 
       float: left;
       margin-left: 26.2%;
       margin-top: 33px;
     }
-    &:nth-child(2){
-
+    &:nth-child(2){ // Контакты (тел., адрес)
+      // testmode: background-color
       background-color: lightpink;
 
       float: right;
@@ -118,4 +124,27 @@ nav{
   display: table;
   height: 119px;
   width: 100%;
+}
+span{
+  #discount-more &{
+    background: url("../images/sources/curly-more.png") no-repeat;
+    &:first-child{
+      float: left;
+      height: 18px;
+      margin-left: 8px;
+      margin-right: -1px;
+      margin-top: 2px;
+      width: 11px;
+    }
+    &:last-child{
+      background-position-x: -68px;
+      float: left;
+      height: 20px;
+      margin-top: 3px;
+      width: 10px;
+    }
+  }
+  #discount2 span:first-child &{ // 20%
+    margin-left: 2px;
+  }
 }
