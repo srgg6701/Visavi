@@ -41,7 +41,43 @@
   url('../fonts/MyriadProRegular.ttf') format('truetype'),
   url('../fonts/MyriadProRegular.svg#MyriadProRegular') format('svg');
 }
-
+@font-face {
+  font-family: 'BookAntiqueRegular';
+  src: url('../fonts/BookAntiqueRegular.eot');
+  src: url('../fonts/BookAntiqueRegular.eot') format('embedded-opentype'),
+  url('../fonts/BookAntiqueRegular.woff2') format('woff2'),
+  url('../fonts/BookAntiqueRegular.woff') format('woff'),
+  url('../fonts/BookAntiqueRegular.ttf') format('truetype'),
+  url('../fotns/BookAntiqueRegular.svg#BookAntiqueRegular') format('svg');
+}
+@font-face {
+  font-family: 'BookAntiqueBold';
+  src: url('../fonts/BookAntiqueBold.eot');
+  src: url('../fonts/BookAntiqueBold.eot') format('embedded-opentype'),
+  url('../fonts/BookAntiqueBold.woff2') format('woff2'),
+  url('../fonts/BookAntiqueBold.woff') format('woff'),
+  url('../fonts/BookAntiqueBold.ttf') format('truetype'),
+  url('../fotns/BookAntiqueBold.svg#BookAntiqueBold') format('svg');
+}
+@font-face {
+  font-family: 'BookAntiqueItalic';
+  src: url('../fonts/BookAntiqueItalic.eot');
+  src: url('../fonts/BookAntiqueItalic.eot') format('embedded-opentype'),
+  url('../fonts/BookAntiqueItalic.woff2') format('woff2'),
+  url('../fonts/BookAntiqueItalic.woff') format('woff'),
+  url('../fonts/BookAntiqueItalic.ttf') format('truetype'),
+  url('../fotns/BookAntiqueItalic.svg#BookAntiqueItalic') format('svg');
+}
+@font-face {
+  font-family: 'BookAntiqueItalicBold';
+  src: url('../fonts/BookAntiqueItalicBold.eot');
+  src: url('../fonts/BookAntiqueItalicBold.eot') format('embedded-opentype'),
+  url('../fonts/BookAntiqueItalicBold.woff2') format('woff2'),
+  url('../fonts/BookAntiqueItalicBold.woff') format('woff'),
+  url('../fonts/BookAntiqueItalicBold.ttf') format('truetype'),
+  url('../fotns/BookAntiqueItalicBold.svg#BookAntiqueItalicBold') format('svg');
+}
+//-----------------------------------------------------------------------
 // Visa, MasterCard, Wifi
 #cards{
   font-size: 0;

@@ -8,6 +8,7 @@ images_dir = "static/images"
 javascripts_dir = "js"
 output_style = :compressed
 sourcemap = true
+#cache = false
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
