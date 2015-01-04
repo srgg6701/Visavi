@@ -7,3 +7,12 @@
   position: relative;
   @include transform(translateY(50%));
 }
+@mixin phones-numbers($padding-left:18px){
+  color: #333;
+  background: url("../images/sources/mobila.png") no-repeat;
+  font-family: BookAntiqueBold;
+  font-size: 19px;
+  margin-top: 5px;
+  padding-left: $padding-left;
+  background-position-y: 3px;
+}

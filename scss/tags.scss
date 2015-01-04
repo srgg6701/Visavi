@@ -52,7 +52,7 @@ a{
   }
 }
 body{
-  background-image: url("../images/backgrounds/body-flowers.jpg");
+  background-image: url("../images/backgrounds/bg.jpg");
 }
 button{
   #roof &{ // кнопка поиска в самом верхнем меню
@@ -67,6 +67,16 @@ button{
   }
 }
 div{
+  #phones &{
+    float: right;
+    &:nth-child(1){
+      @include phones-numbers;
+    }
+    &:nth-child(2){
+      @include phones-numbers;
+      margin-right: 20px;
+    }
+  }
   #roof >&{
     float: right;
     height: 100%;
@@ -86,7 +96,7 @@ div{
     }
     &:nth-child(2){ // Контакты (тел., адрес)
       // testmode: background-color
-      background-color: lightpink;
+      // background-color: lightpink;
 
       float: right;
       margin-right: $margin-right-layout-top;

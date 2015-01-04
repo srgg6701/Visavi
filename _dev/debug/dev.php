@@ -60,12 +60,8 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
 		-moz-box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
 	}
     #cards {
-        background: yellow;
+        /*background: yellow;*/
     }
-	#page{
-        background-color: palegoldenrod;
-    }
-
     /* end of test block*/
     #controls {
         background-color: white;
