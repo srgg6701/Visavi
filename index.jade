@@ -9,32 +9,19 @@ html(lang="ru")
             header
                 //- меню, каротчки/wifi/поисковая форма
                 section#roof
+                    //- Верхнее меню
                     menu
-                        li
-                            a(href="#",title="О нас")="О нас"
-                        li
-                            a(href="#",title="Цены")="Цены"
-                        li
-                            a(href="#",title="Специалисты")="Специалисты"
-                        li
-                            a(href="#",title="Фотогалерея")="Фотогалерея"
-                        li
-                            a(href="#",title="Статьи")="Статьи"
-                        li
-                            a(href="#",title="Отзывы")="Отзывы"
-                        li
-                            a(href="#",title="Акции")="Акции"
-                        li
-                            a(href="#",title="Контакты")="Контакты"
+                        each txt in ["О нас","Цены","Специалисты","Фотогалерея","Статьи","Отзывы","Акции","Контакты"]
+                            li
+                                a(href="#",title=txt)=txt
                     div
                         form
                             input(type="search",placeholder="Введите ваш запрос")
                             button
                                 div="Искать"
                     #cards
-                        a#visa(href="#",title="VISA")="VISA"
-                        a#master-card(href="#",title="Master Card")="Master Card"
-                        a#wifi(href="#",title="WiFi")="WiFi"
+                        each text,id in {'visa':'VISA','master':'Master Card','wifi':'WiFi'}
+                            a(id=id,href="#",title=text)
                 //- логотип, скидки, контакты
                 section#visavi
                     //- скидки
@@ -66,21 +53,16 @@ html(lang="ru")
                 //- слайдер
                 section#banner
                     #slider
-                    div
-                        a(href="#",title="")
-                    div
-                        a(href="#",title="")
-                    div
-                        a(href="#",title="")
+                    each text,id  in { 'make-appointment':"записаться онлайн", 'make-gift':"подари сертификат", 'ask-specialist':"задать вопрос специалисту"}
+                        div
+                            a(id=id,href="#",title=text)
+                                div=text
                 //- основное меню
                 nav
-                    a(href="#",title="Парекмахерский зал")
-                    a(href="#",title="Уход за руками и ногами")
-                    a(href="#",title="Уход за лицом")
-                    a(href="#",title="Уход за телом")
-                    a(href="#",title="Лазерная эпиляция")
-                    a(href="#",title="Инъекционная косметология")
-                    a(href="#",title="Аппаратная косметология")
+                    each val in ["Парикмахерский зал","Уход за руками и ногами", "Уход за лицом", "Уход за телом", "Лазерная эпиляция", "Инъекционная косметология", "Аппаратная косметология"]
+                        a(href="#",title=val)
+                            div
+                                div=val
             main
                 p="Main content"
             footer
@@ -90,22 +72,9 @@ html(lang="ru")
                 div
                     div
                     menu
-                        li
-                            a(href="#",title="О нас")="О нас"
-                        li
-                            a(href="#",title="Цены")="Цены"
-                        li
-                            a(href="#",title="Специалисты")="Специалисты"
-                        li
-                            a(href="#",title="Фотогалерея")="Фотогалерея"
-                        li
-                            a(href="#",title="Статьи")="Статьи"
-                        li
-                            a(href="#",title="Отзывы")="Отзывы"
-                        li
-                            a(href="#",title="Акции")="Акции"
-                        li
-                            a(href="#",title="Контакты")="Контакты"
+                        each txt in ["О нас","Цены","Специалисты","Фотогалерея","Статьи","Отзывы","Акции","Контакты"]
+                            li
+                                a(href="#",title=txt)=txt
                     div
                 div="Copyright &copy; 2014 Salon.ru All Rights Reserved. Designed by Salon.ru"
         script(type='text/javascript').

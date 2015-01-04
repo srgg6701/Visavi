@@ -10,9 +10,17 @@
   position: relative;
   @include transform(translateY(50%));
 }
+@mixin link-white{
+  color: white;
+  font-family: tahoma, arial, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 @mixin phones-numbers($padding-left:18px){
   color: #333;
   background: url("../images/sources/mobila.png") no-repeat;
+  @include box-sizing(border-box);
   font-family: BookAntiqueBold;
   font-size: 19px;
   margin-top: 5px;

@@ -1,4 +1,11 @@
 a{
+  #banner>div:not(#slider)>&{
+    background-repeat: no-repeat;
+    display: block;
+    height: 100%;
+    @include link-white;
+    width: 100%;
+  }
   #cards &{ // Visa, MasterCard, Wifi
 
     background-image: url("../images/sources/cards-wifi.png");
@@ -29,6 +36,7 @@ a{
     margin-top: 3px;
   }
   #roof menu &{
+    @include box-sizing(border-box);
     color: #333333;
     font-family: MyriadProRegular;
     font-size: 13.5px;
@@ -49,6 +57,44 @@ a{
     background-color: $color-pink;
     display: table-cell;
     height: 100%;
+    @include link-white;
+    position: relative;
+    text-align: center;
+    background-repeat: no-repeat;
+    &:not(:last-child){
+      border-right: solid 1px #eb6581;
+    }
+    &:hover{
+      background-color: $hover-menu-color-pink;
+    }
+    &:nth-child(1){
+      background-image: url('../images/sources/menu-hairs-care.png');
+      background-position: 49% 21px;
+    }
+    &:nth-child(2){
+      background-image: url('../images/sources/menu-limbs-care.png');
+      background-position: 44% 17px;
+    }
+    &:nth-child(3){
+      background-image: url('../images/sources/menu-face-care.png');
+      background-position: 48% 23px;
+    }
+    &:nth-child(4){
+      background-image: url('../images/sources/menu-body-care.png');
+      background-position: 51% 23px;
+    }
+    &:nth-child(5){
+      background-image: url('../images/sources/menu-laser-epilation.png');
+      background-position: 50% 24px;
+    }
+    &:nth-child(6){
+      background-image: url('../images/sources/menu-injection-cosmetic.png');
+      background-position: 48% 24px;
+    }
+    &:nth-child(7) {
+      background-image: url('../images/sources/menu-apparatus-cosmetic.png');
+      background-position: 47% 15px;
+    }
   }
 }
 body{
@@ -91,6 +137,39 @@ div{
       margin-right: $margin-right-layout-top;
     }
   }
+  #banner >&:not(#slider){
+    background-size: cover;
+    height: 46px;
+    position: absolute;
+    right: $margin-right-layout-top;
+    width: 201px;
+    &:nth-child(2){ // записаться онлайн
+      background-color: #ff7a95;
+      top:15px;
+      &:hover{
+        background-image: url("../images/sources/hover-make-appointment.jpg");
+      }
+    }
+    &:nth-child(3){ // подари сертификат
+      background-color: #ee4c90;
+      top:77px;
+      &:hover{
+        background-image: url("../images/sources/hover-make-gift.jpg");
+      }
+    }
+    &:nth-child(4){ // задать вопрос специалисту
+      background-color: #8d0e29;
+      top:139px;
+      &:hover{
+        background-image: url("../images/sources/hover-ask-specialist.jpg");
+      }
+    }
+  }
+  #banner >&:not(#slider)>a>&{ // внутри ссылок в правой части баннера
+    @include box-sizing(border-box);
+    padding-left: 52px;
+    @include centered-vertical;
+  }
   #visavi >&{
     &:nth-child(1){ // Скидки
       // testmode: background-color
@@ -109,6 +188,17 @@ div{
       margin-top: 24px;
     }
   }
+  nav>a>&{
+    bottom: 0;
+    height: 53px;
+    position: absolute;
+    width: 100%;
+  }
+  nav>a>div>&{
+    @include centered-vertical;
+    margin: auto;
+    max-width: 126px;
+  }
 }
 form{
   #roof &{
@@ -117,6 +207,7 @@ form{
 }
 input{
   #roof &{
+    @include box-sizing(border-box);
     height: 26px;
     margin-right: -4px;
     padding-left: 5px;
@@ -127,6 +218,7 @@ li{
   display: table-cell;
 }
 menu{
+  @include box-sizing(border-box);
   display: table;
   height: 100%;
   margin: 0;
@@ -139,6 +231,7 @@ menu{
 nav{
   display: table;
   height: 119px;
+  position: relative;
   width: 100%;
 }
 span{

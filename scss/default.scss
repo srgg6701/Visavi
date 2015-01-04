@@ -131,6 +131,10 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans);
 //-----------------------------------------------------------------------
+#ask-specialist{
+  background: url("../images/sources/ask-specialist.png");
+  background-position: 15px 13px;
+}
 #banner {
   height: 201px;
   position: relative;
@@ -146,6 +150,7 @@
   font-family: BookAntiqueItalic;
 }
 #discount1{
+  @include box-sizing(border-box);
   font-family: BookAntiqueItalic;
   font-size: 18px;
   margin-top: -4px;
@@ -179,6 +184,14 @@
   color: #333;
   font-size: 14px;
   margin-left: 3px;
+}
+#make-appointment{
+  background: url("../images/sources/make-appointment.png");
+  background-position: 13px 11px;
+}
+#make-gift{
+  background: url("../images/sources/make-gift.png");
+  background-position: 13px 10px;
 }
 #page{
   background-color: white;
