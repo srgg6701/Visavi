@@ -48,20 +48,6 @@ $substrate_path = __DIR__.'/'.IMGS_DIR.'/';
 // Тени
 $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1) inset';?>
 <style>
-    /* test block*/
-    #roof,
-	#contacts
-	#slider,
-	nav,
-	main,
-	footer{
-		box-shadow: 0 0 0 1px rgba(0,0,0,0.2); 
-		-webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.2); 
-		-moz-box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
-	}
-    #cards {
-        /*background: yellow;*/
-    }
     /* end of test block*/
     #controls {
         background-color: white;

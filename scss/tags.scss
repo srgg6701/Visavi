@@ -76,6 +76,11 @@ div{
       @include phones-numbers;
       margin-right: 20px;
     }
+    &:nth-child(3){
+      font-family: 'PT Sans';
+      font-size: 13px;
+      margin-top: 4px;
+    }
   }
   #roof >&{
     float: right;
