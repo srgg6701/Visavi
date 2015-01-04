@@ -53,6 +53,7 @@ a{
 }
 body{
   background-image: url("../images/backgrounds/bg.jpg");
+  @include box-sizing(border-box);
 }
 button{
   #roof &{ // кнопка поиска в самом верхнем меню

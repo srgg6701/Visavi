@@ -1,3 +1,6 @@
+@mixin border-common($border:border-bottom){
+  #{$border}:solid 1px #e1e1e1;
+}
 @mixin centered-vertical {
   position: relative;
   top: 50%;

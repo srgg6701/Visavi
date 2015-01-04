@@ -131,6 +131,10 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans);
 //-----------------------------------------------------------------------
+#banner {
+  height: 201px;
+  position: relative;
+}
 // Visa, MasterCard, Wifi
 #cards{
   font-size: 0;
@@ -187,11 +191,14 @@
 }
 #roof{
   height: 34px;
+  @include border-common;
 }
 #slider{
-  height: 201px;
+  background: url("../images/sources/banner.jpg");
+  height: 100%;
 }
 #visavi{
   background: url("../images/sources/logotype.png") no-repeat 3.2% 17px;
   height: 107px;
+  @include border-common;
 }
