@@ -48,6 +48,10 @@ $substrate_path = __DIR__.'/'.IMGS_DIR.'/';
 // Тени
 $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1) inset';?>
 <style>
+    main{
+        background-color: coral;
+        height: 1137px;
+    }
     /* end of test block*/
     #controls {
         background-color: white;

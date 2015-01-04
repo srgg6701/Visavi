@@ -53,6 +53,11 @@ a{
     display: inline-block;
     //@include centered-vertical-a;
   }
+  footer menu &{
+    color: #ccc;
+    font-family: MyriadProRegular;
+    text-decoration: none;
+  }
   nav &{
     background-color: $color-pink;
     display: table-cell;
@@ -186,6 +191,29 @@ div{
       float: right;
       margin-right: $margin-right-layout-top;
       margin-top: 24px;
+    }
+  }
+  footer>&{
+    &:nth-child(1){
+      height: 34px;
+    }
+    &:nth-child(2){
+      background-color: #000000;
+      height: 78px;
+    }
+    &:nth-child(3){
+      height: 34px;
+    }
+  }
+  footer>div>&{
+    float: left;
+    &:nth-child(1) {
+      background: url("../images/sources/logotype-bottom.png") no-repeat;
+      height: 100%;
+      width: 26%;
+    }
+    &:nth-child(3) {
+      float: right;
     }
   }
   nav>a>&{
