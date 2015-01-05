@@ -168,7 +168,7 @@
 }
 #email{
   clear: both;
-  color: #333;
+  color: $color-dark;
   float: right;
   font-family: tahoma;
   font-size: 13.4px;
@@ -181,7 +181,7 @@
   }
 }
 #first-visit{
-  color: #333;
+  color: $color-dark;
   font-size: 14px;
   margin-left: 3px;
 }
@@ -195,6 +195,7 @@
 }
 #page{
   background-color: white;
+  @include box-shadow(0 0 6px 0 rgba(0,0,0,0.2));
   margin: auto;
   max-width: 1100px;
 }
@@ -209,6 +210,12 @@
 #slider{
   background: url("../images/sources/banner.jpg");
   height: 100%;
+  position: relative;
+}
+#slider-controls{
+  bottom: 15px;
+  left: 28.1%;
+  position: absolute;
 }
 #visavi{
   background: url("../images/sources/logotype.png") no-repeat 3.2% 17px;
