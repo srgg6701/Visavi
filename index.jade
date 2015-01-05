@@ -1,6 +1,7 @@
 doctype html
 html(lang="ru")
     head
+        meta(charset="utf-8")
         title= "Визави салон"
         link(href="static/css/default.css",rel="stylesheet")
         script(src="http://code.jquery.com/jquery-latest.min.js")
@@ -75,8 +76,11 @@ html(lang="ru")
                         each txt in ["О нас","Цены","Специалисты","Фотогалерея","Статьи","Отзывы","Акции","Контакты"]
                             li
                                 a(href="#",title=txt)=txt
+                    //- Счётчики
                     div
-                div="Copyright &copy; 2014 Salon.ru All Rights Reserved. Designed by Salon.ru"
+                        img(src="static/images/sources/counter-rambler.gif")
+                        img(src="static/images/sources/counter-2.gif")
+                div="Copyright © 2014 Salon.ru All Rights Reserved. Designed by Salon.ru"
         script(type='text/javascript').
             $(function(){
               //console.log('location.href = '+location.href);

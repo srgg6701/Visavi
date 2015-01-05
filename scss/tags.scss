@@ -56,6 +56,7 @@ a{
   footer menu &{
     color: #ccc;
     font-family: MyriadProRegular;
+    font-size: 13px;
     text-decoration: none;
   }
   nav &{
@@ -207,13 +208,18 @@ div{
   }
   footer>div>&{
     float: left;
+    // Блок с нижним логотипом
     &:nth-child(1) {
-      background: url("../images/sources/logotype-bottom.png") no-repeat;
+      background: url("../images/sources/logotype-bottom.png") no-repeat center red;
       height: 100%;
+      margin-right: 2.8%;
       width: 25%;
     }
+    // Блок со счётчиками
     &:nth-child(3) {
       float: right;
+      margin-right: 2.9%;
+      white-space: nowrap;
     }
   }
   nav>a>&{
@@ -233,6 +239,15 @@ form{
     @include centered-vertical;
   }
 }
+img{
+  footer >div:nth-child(2) // Чёрный блок, собственно footer
+          >div:nth-child(3)>&{ // Картинки (счётчики) в последней (3-й) секции
+    &:first-child{ // Первая картинка
+      margin-left: -8.5%;
+      margin-right: 8.5%;
+    }
+  }
+}
 input{
   #roof &{
     @include box-sizing(border-box);
@@ -244,6 +259,9 @@ input{
 }
 li{
   display: table-cell;
+  footer &{
+    padding: 4px 10.5px;
+  }
 }
 menu{
   @include box-sizing(border-box);
@@ -251,6 +269,10 @@ menu{
   height: 100%;
   margin: 0;
   padding: 0;
+  footer &{
+    height: auto;
+    @include centered-vertical;
+  }
   #roof &{
     float: left;
     margin-left: 20px;

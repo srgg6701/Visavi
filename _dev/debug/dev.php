@@ -294,27 +294,26 @@ if($test_rulers) {
     }
 </style>
 <script>
-jQuery(function () {
+$(function () {
     var rh = '<?=$rh?>',
         rv = '<?=$rv?>',
         diff = 0,
         attrDr = 'data-dragged',
         horizontal = $('#' + rh),
-        vertical = $('#' + rv);
-
-    var moveRulers = function (event) {
-        var diff, obj = event.currentTarget;
-        //console.log(event.currentTarget);
-        $(obj).attr(attrDr, 1);
-        if (obj.id == rh) {
-            diff = event.clientY - parseInt($(obj).css('top'));
-            //console.log('Down, diff H:'+diff);
-        }
-        if (obj.id == rv) {
-            diff = event.clientX - parseInt($(obj).css('left'));
-            //console.log('Down, diff: V'+diff);
-        }
-    };
+        vertical = $('#' + rv),
+        moveRulers = function (event) {
+            var diff, obj = event.currentTarget;
+            //console.log(event.currentTarget);
+            $(obj).attr(attrDr, 1);
+            if (obj.id == rh) {
+                diff = event.clientY - parseInt($(obj).css('top'));
+                //console.log('Down, diff H:'+diff);
+            }
+            if (obj.id == rv) {
+                diff = event.clientX - parseInt($(obj).css('left'));
+                //console.log('Down, diff: V'+diff);
+            }
+        };
     $('body *').on('selectstart', function () {
         //console.log(event.currentTarget);
         if ($(horizontal).attr(attrDr) || $(vertical).attr(attrDr))
@@ -347,7 +346,7 @@ jQuery(function () {
     $(vertical).on('mousedown', function (event) {
         moveRulers(event);
     });
-})(jQuery);
+});
 </script>
 <div id="<?= $rh ?>"></div>
 <div id="<?= $rv ?>"></div>
@@ -360,7 +359,8 @@ jQuery(function () {
 <script>
 <?php
     // Протестировать подключённые таблицы стилей
-    if($_SESSION[$test_rulers]):?>
+    if(isset($_SESSION[$test_rulers])):
+    ?>
     var sheet,
         sheets = document.querySelectorAll('link[href][rel="stylesheet"]');
     for (var i in sheets) {
@@ -370,7 +370,8 @@ jQuery(function () {
     }
     console.log('%cTo turn these messages off, add the "<?=$test_rulers?>=-1" param to the URL.', 'color: blue;');
     <?php
-    else:?>
+    else:
+    ?>
     console.log('%cCan not get the member of the session. Add the "<?=$test_rulers?>" param to the URL.', 'color: violet;');
 <?php
     endif;?>
