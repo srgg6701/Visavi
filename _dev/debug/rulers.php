@@ -33,7 +33,7 @@
             attrDr='data-dragged',
             horizontal=$('#'+rh),
             vertical=$('#'+rv);
-        // вычислить разницу между позициями линейки и мыши
+
         var moveRulers = function (event){
             var diff, obj = event.currentTarget;
             //console.log(event.currentTarget);
@@ -47,13 +47,11 @@
                 //console.log('Down, diff: V'+diff);
             }
         };
-        // блокировать выделение элементов страницы
         $('body *').on('selectstart', function(){
             //console.log(event.currentTarget);
             if($(horizontal).attr(attrDr)||$(vertical).attr(attrDr))
                 return false;
         });
-        // переместить/деактивировать линейки
         $('body').on('mousemove mouseup', function(event){
             //console.log('event.type = ' + event.type);
             switch (event.type){
