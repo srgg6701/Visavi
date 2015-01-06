@@ -53,7 +53,7 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
     main{
         /*background-color: coral;*/
     <?php
-if($_GET['height']):
+if(isset($_GET['height'])):
             ?>
         height: <?php echo $_GET['height'];?>px;
 <?php
@@ -62,9 +62,9 @@ else:?>
 <?php
 endif;?>
     }
-    #img_1024_default{
+    /*#img_1024_default{
         margin-left:-30px;
-    }
+    }*/
     /* end of test block*/
     #controls {
         /*
@@ -83,7 +83,7 @@ endif;?>
         background-color: white;
         box-sizing: border-box;
         display: table;
-        height: 35px;
+        height: <?php $controls_height="36px"; echo $controls_height;?>;
         margin: auto;
         padding: 10px;
         padding-top: 0;
@@ -129,7 +129,8 @@ endif;?>
         margin: auto;
         /*max-width: 1100px;*/
         position: absolute;
-        top: 0;
+        /*top: 0;*/
+        top:<?php echo $controls_height;?>;
         z-index: -1;
     }
     <?php   // установить ширину блока с подложкой
@@ -157,10 +158,10 @@ endif;?>
     #img_1280_default{
         margin-left: -90px;
     }
-    #sbstr,#substrate-ranges,#<?php echo DEBUG_LINKS;?>{
+    #lbl-sbstr,#substrate-ranges,#<?php echo DEBUG_LINKS;?>{
         float: left;
     }
-    #sbstr,#<?php echo DEBUG_LINKS;?>{
+    #lbl-sbstr,#<?php echo DEBUG_LINKS;?>{
         margin-top: 5px;
     }
     #substrate-ranges{
@@ -198,7 +199,7 @@ elseif(!$show_substrate&&isset($_GET['sbstr']))
             $show_substrate=true;
 
 if($show_substrate):?>
-    <label id="sbstr">
+    <label id="lbl-sbstr">
         <input type="checkbox" id="sbstr"<?php
 	$opacity=(isset($_GET['opa']))? $_GET['opa']:0;
 	if($opacity>0):?> checked="checked" <?php endif;?> />Подложка
@@ -245,29 +246,31 @@ endif; ?>
             tested_content = $('#opacity-range-content'),
             w = $('body').width(),// вычислить отступ слева для подложки
             sbOffset=((w-$(page).width())/ 2)/w * 100 + '%',
-            setRange = function(){
-                if($(substrate).is(':visible'))
-                    $(range).val(parseInt($(substrate).css('opacity'))*100);
-                else
-                    $(range).val('0');
-            },
             changeOpacity = function(input){
                 return parseInt(input.value)/100
-            };
-        //console.log('sbOffset: '+sbOffset);
+            }; //console.log('sbOffset: '+sbOffset);
         $('#substrate-wrapper').css({
             left:sbOffset,
             right:sbOffset
         });
-
+        // переключатель видимости подложки
         $(checkbox).on('click', function(){
+            //console.log('substrate:\nvisible: '+$(substrate).is(':visible')+'\nopacity: '+$(substrate).css('opacity'));
             // если подложка скрыта
-            if($(substrate).css('opacity')==0){
-                $(substrate).css('opacity',1);
-                $(tested_content).val('50').trigger('input');
-                setRange();
-            }else{
-                $(substrate).fadeToggle(200,setRange);
+            if(!$(substrate).is(':visible')||$(substrate).css('opacity')==0){
+                $(tested_content).val('50') // установить ползунок прозрачности макета
+                                 .trigger('input'); // установить полупрозрачность макета
+                // синхронизировать ползунок подложки
+                $(range).val(100) // установить ползунок прозрачности подложки
+                        .trigger('input');// установить полную непрозрачность подложки
+                //console.log('1.tested_content.val: '+$(tested_content).val());
+            }else{ // подложка отображена
+                // синхронизировать ползунок контента (установить в максимум)
+                $(tested_content).val(100)
+                                 .trigger('input'); // установить непрозрачность макета
+                $(range).val(0) // сбросить в ноль ползунок подложки
+                        .trigger('input');// скрыть подложку
+                //console.log('2.tested_content.val: '+$(tested_content).val());
             }
         });
         $(range).on('input', function(){
