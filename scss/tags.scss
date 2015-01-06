@@ -124,6 +124,15 @@ a{
     }*/
   }
 }
+aside{
+  #roof-mobile &{
+    float: right;
+    height: 15px;
+    margin-right: 15px;
+    margin-top: 16px;
+    width: 20px;
+  }
+}
 body{
   background-image: url("../images/backgrounds/bg.jpg");
   @include box-sizing(border-box);
@@ -133,7 +142,7 @@ button{
     background-color: #000;
     border: none;
     color: white;
-    font-family: Tahoma;
+    font-family: $font-tahoma-family;
     font-size: 11px;
     height: 26px;
     text-align: center;
@@ -141,6 +150,29 @@ button{
   }
 }
 div{
+  #all-services >&{
+    @include box-sizing(border-box);
+    color: white;
+    float:left;
+    height: 100%;
+    text-align: center;
+    &:first-child{
+      background-color: $background-menu-pink-hover;
+      @include border-common(border-right);
+      cursor: pointer;
+      font-family: $font-tahoma-family;
+      font-size: 12px;
+      text-transform: uppercase;
+      width: 23%;
+      &:hover{
+        background-color: $background-menu-pink-light-hover;
+      }
+    }
+    &:last-child{
+      width: 77%;
+    }
+
+  }
   #banner >&:not(#slider){
     background-size: cover;
     height: 46px;
@@ -266,7 +298,7 @@ div{
     // Третий, под чёрным
     &:nth-child(3){
       @include box-sizing(border-box);
-      font-family: tahoma, arial, sans-serif;
+      font-family: $font-tahoma-family;
       font-size: 11px;
       height: $height-by-default;
       line-height: $height-by-default;
@@ -330,6 +362,29 @@ form{
     @include centered-vertical;
   }
 }
+h1{
+  #roof-mobile &{
+    color: $color-pink;
+    float: left;
+    font-family: $font-tahoma-family;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 18px auto auto 43.3%;
+    text-transform: uppercase;
+  }
+}
+hr{
+  #roof-mobile aside &{
+    background-color: $color-pink-sandwich;
+    border: none;
+    height: 3px;
+    margin: 0;
+    margin-bottom: 3px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
 img{
   #social &{
     margin-left: 1px;
@@ -380,7 +435,27 @@ nav{
   position: relative;
   width: 100%;
 }
+section{
+  #all-services &{
+    display: inline-block;
+  }
+}
 span{
+  #all-services div &{
+    display: table;
+  }
+  // Второй блок - Звоните! +7 (812) 927-22-27
+  #all-services div:last-child &{
+    &:first-child{
+      font-family: BookAntiqueItalicBold;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    &:last-child{
+      font-family: BookAntiqueBold;
+      font-size: 17px;
+    }
+  }
   #discount-more &{
     background: url("../images/sources/curly-more.png") no-repeat;
     &:first-child{

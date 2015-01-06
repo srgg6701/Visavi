@@ -12,7 +12,7 @@
 }
 @mixin link-white{
   color: white;
-  font-family: tahoma, arial, sans-serif;
+  font-family: $font-tahoma-family;
   font-size: 12px;
   text-decoration: none;
   text-transform: uppercase;

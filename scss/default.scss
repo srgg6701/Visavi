@@ -158,7 +158,11 @@
 }
 // ---------------------
 #discount{
+  display: none;
   font-family: BookAntiqueItalic;
+  @media (min-width:1024px){
+    display: block;
+  }
 }
 #discount1{
   @include box-sizing(border-box);
@@ -181,7 +185,7 @@
   clear: both;
   color: $color-dark;
   float: right;
-  font-family: tahoma;
+  font-family: $font-tahoma-family;
   font-size: 13.4px;
   font-weight: bold;
   margin-right: -9px;
@@ -218,6 +222,7 @@
   clear: both;
 }
 #roof{
+  background-color: $background-whitesmoke;
   height: 34px;
   @include border-common;
 }
@@ -247,12 +252,20 @@
 #all-services,#join-us,#roof-mobile{
   display: none;
 }
+#all-services{
+  background-color: $background-menu-pink;
+  height: 44px;
+}
+#roof-mobile{
+  background: url("../images/sources/logotype-mobile.png") no-repeat 15px 5px;
+  height: 44px;
+}
 @media (max-width:320px){
   #banner, #roof, #visavi{
-    display: none;
+      display: none;
   }
 }
-@media (max-width:1024px){
+@media (max-width:320px){
   #all-services,#join-us,#roof-mobile{
     display: block;
   }

@@ -18,7 +18,7 @@ define("MAIN_BLOCK","#page");
 // Идентификатор блока с меню тестовых разделов
 define("DEBUG_MENU","debug-menu");
 // Идентификатор ссылки для управления видимостью меню тестовых разделов
-define("DEBUG_LINKS","debug-liks");
+define("DEBUG_LINKS","debug-links");
 // Имя директори с изображениями
 define("IMGS_DIR","pixel-perfect");
 // Изображения для страниц:
@@ -52,6 +52,12 @@ $substrate_path = HTTP_BASE_PATH .'_dev/debug/'.IMGS_DIR.'/';
 $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1) inset';?>
 <style>
     /* test block */
+
+    @media (max-width:768px){
+        body {
+            overflow-y:hidden;
+        }
+    }
     main{
         /*background-color: coral;*/
     <?php
@@ -69,7 +75,8 @@ endif;?>
     }*/
     /* end of test block*/
     #controls {
-        /*
+    <?php
+        /**
         -webkit-box-shadow: <?php echo $box_shadow;?>;
         -moz-box-shadow: <?php echo $box_shadow;?>;
         box-shadow: <?php echo $box_shadow;?>;
@@ -82,7 +89,10 @@ endif;?>
         opacity: 0;
         transform: translateX(50%);
         z-index: 2;*/
-        background-color: white;
+    $box_shadow_controls="0 -10px 0 10px rgba(0,0,0,0.5)";?>
+        background-color: #A1A1A1;
+        box-shadow: <?php echo $box_shadow_controls;?>;
+        -moz-box-shadow: <?php echo $box_shadow_controls;?>;
         box-sizing: border-box;
         display: table;
         height: <?php $controls_height="36px"; echo $controls_height;?>;
@@ -97,6 +107,8 @@ endif;?>
 	#<?php echo DEBUG_LINKS;?>{
 		color: navy;
 		cursor:default;
+		font-family: verdana;
+        font-size: 14px;
 		margin-left: 16px;
 	}
 	.<?php echo DEBUG_MENU;?>{
