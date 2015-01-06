@@ -52,30 +52,42 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
     /* test block */
     main{
         /*background-color: coral;*/
+    <?php
+if($_GET['height']):
+            ?>
+        height: <?php echo $_GET['height'];?>px;
+<?php
+else:?>
         height: 1137px;
+<?php
+endif;?>
     }
     #img_1024_default{
         margin-left:-30px;
     }
     /* end of test block*/
     #controls {
-        background-color: white;
+        /*
         -webkit-box-shadow: <?php echo $box_shadow;?>;
         -moz-box-shadow: <?php echo $box_shadow;?>;
         box-shadow: <?php echo $box_shadow;?>;
-        padding: 2px 4px;
-        position: fixed;
         right: 50%;
-        padding: 10px;
-        padding-top: 0;
+        position: fixed;
         -webkit-transform: translateX(50%);
         -moz-transform: translateX(50%);
         -ms-transform: translateX(50%);
         -o-transform: translateX(50%);
         opacity: 0;
         transform: translateX(50%);
+        z-index: 2;*/
+        background-color: white;
+        box-sizing: border-box;
+        display: table;
+        height: 35px;
+        margin: auto;
+        padding: 10px;
+        padding-top: 0;
         white-space: nowrap;
-        z-index: 2;
     }
     #controls:hover {
         opacity: 1;
@@ -83,9 +95,11 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
 	#<?php echo DEBUG_LINKS;?>{
 		color: navy;
 		cursor:default;
+		margin-left: 16px;
 	}
 	.<?php echo DEBUG_MENU;?>{
 		display:none;
+        padding-top: 26px;
 	}
 	.<?php echo DEBUG_MENU;?> a{
 		display:table;
@@ -134,11 +148,24 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
         max-width: 1366px;
         overflow: hidden;
     }
+    #substrate-ranges{
+        display: inline-block;
+    }
     .error_warning{
         color:red;
     }
     #img_1280_default{
         margin-left: -90px;
+    }
+    #sbstr,#substrate-ranges,#<?php echo DEBUG_LINKS;?>{
+        float: left;
+    }
+    #sbstr,#<?php echo DEBUG_LINKS;?>{
+        margin-top: 5px;
+    }
+    #substrate-ranges{
+        margin-top: 4px;
+        margin-bottom: -22px;
     }
 </style>
 <?php
@@ -171,19 +198,20 @@ elseif(!$show_substrate&&isset($_GET['sbstr']))
             $show_substrate=true;
 
 if($show_substrate):?>
-    <label>
+    <label id="sbstr">
         <input type="checkbox" id="sbstr"<?php
 	$opacity=(isset($_GET['opa']))? $_GET['opa']:0;
 	if($opacity>0):?> checked="checked" <?php endif;?> />Подложка
     </label>
-    <label title="Прозрачность подложки">
-        <input type="range" id="opacity-range" min="0"  max="100" value="<?php echo $opacity*100;?>" />
-    </label>
-    &nbsp;
-    <label title="Прозрачность контента">
-        <input type="range" id="opacity-range-content" min="0"  max="100" value="100" />
-    </label>
-    &nbsp;
+    <div id="substrate-ranges">
+        <label title="Прозрачность подложки">
+            <input type="range" id="opacity-range" min="0"  max="100" value="<?php echo $opacity*100;?>" />
+        </label>
+        &nbsp;
+        <label title="Прозрачность контента">
+            <input type="range" id="opacity-range-content" min="0"  max="100" value="100" />
+        </label>
+    </div>
     <span id="<?php echo DEBUG_LINKS;?>">Ссылки</span>
 <?php   
 endif;?>

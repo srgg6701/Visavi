@@ -8,6 +8,7 @@ html(lang="ru")
     body
         #page
             header
+                //- Блоки (768+):
                 //- меню, каротчки/wifi/поисковая форма
                 section#roof
                     //- Верхнее меню
@@ -69,7 +70,25 @@ html(lang="ru")
                         div
                             a(id=id,href="#",title=text)
                                 div=text
-                //- основное меню
+                //- -------------------------------------
+                //- Мобильные блоки:
+                //- Логотип, сэндвич
+                section#roof-mobile
+                    h1="Салон красоты"
+                    aside
+                        hr
+                        hr
+                        hr
+                //- Кнопка "Все услуги", телефон
+                section#all-services
+                section#join-us="Присоединяйтесь:"
+                    -var social_images=["social-twitter","social-vk","social-fb","social-g+"]
+                    each img in social_images
+                        a(href="#")
+                            img(src="static/images/sources/" + img + ".png")
+
+
+            //- основное меню
                 nav
                     each val in ["Парикмахерский зал","Уход за руками и ногами", "Уход за лицом", "Уход за телом", "Лазерная эпиляция", "Инъекционная косметология", "Аппаратная косметология"]
                         a(href="#",title=val)
@@ -95,7 +114,7 @@ html(lang="ru")
                 div#copyright
                     div.float-left="Copyright © 2014 Salon.ru All Rights Reserved. Designed by Salon.ru"
                     div#social.float-right
-                        each img in ["social-twitter","social-vk","social-fb","social-g+"]
+                        each img in social_images
                             a(href="#")
                                 img(src="static/images/sources/" + img+".png")
         script(type='text/javascript').

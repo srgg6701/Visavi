@@ -738,3 +738,8 @@ body, html {
   background: url("../images/sources/logotype.png") no-repeat 3.2% 17px;
   height: 107px;
   border-bottom: solid 1px #e1e1e1; }
+
+@media (max-width: 320px) {
+  /* line 248, ../../scss/default.scss */
+  #banner, #roof, #visavi {
+    display: none; } }
