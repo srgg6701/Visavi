@@ -238,7 +238,6 @@ if($show_substrate):?>
 endif; ?>
 <script>
     $(function(){
-        //console.log('script location: '+location.href);
         var page = $('<?php echo MAIN_BLOCK;?>'),
             checkbox =$('#sbstr'),
             substrate = $('#substrate'),
@@ -255,30 +254,34 @@ endif; ?>
         });
         // переключатель видимости подложки
         $(checkbox).on('click', function(){
-            //console.log('substrate:\nvisible: '+$(substrate).is(':visible')+'\nopacity: '+$(substrate).css('opacity'));
             // если подложка скрыта
             if(!$(substrate).is(':visible')||$(substrate).css('opacity')==0){
-                $(tested_content).val('50') // установить ползунок прозрачности макета
-                                 .trigger('input'); // установить полупрозрачность макета
-                // синхронизировать ползунок подложки
-                $(range).val(100) // установить ползунок прозрачности подложки
-                        .trigger('input');// установить полную непрозрачность подложки
-                //console.log('1.tested_content.val: '+$(tested_content).val());
+                /**
+                 * установить ползунок прозрачности макета
+                 * установить полупрозрачность макета */
+                triggerRanges(tested_content,50);
+                /**
+                 * синхронизировать ползунок подложки
+                 * установить полную непрозрачность подложки */
+                triggerRanges(range,100);
             }else{ // подложка отображена
-                // синхронизировать ползунок контента (установить в максимум)
-                $(tested_content).val(100)
-                                 .trigger('input'); // установить непрозрачность макета
-                $(range).val(0) // сбросить в ноль ползунок подложки
-                        .trigger('input');// скрыть подложку
-                //console.log('2.tested_content.val: '+$(tested_content).val());
+                /**
+                 * сбросить в ноль ползунок подложки
+                 * скрыть подложку */
+                triggerRanges(range,0);
             }
         });
         $(range).on('input', function(){
             var cbox=$(checkbox)[0], opa = changeOpacity(this);
             if(opa>0) {
                 if(!cbox.checked) cbox.checked=true;
-            }else
+            }else{
                 cbox.checked=false;
+                /**
+                 * синхронизировать ползунок контента (установить в максимум)
+                 * установить непрозрачность макета */
+                triggerRanges(tested_content,100);
+            }
             $(substrate).css({
                 display:'block',
                 opacity:opa
@@ -292,6 +295,11 @@ endif; ?>
 		});
         //$('#controls').draggable();
     });
+    // установить значение ползунка и прозрачность блока (макет или подложка)
+    function triggerRanges(rang,value){
+        $(rang).val(value) // синхронизировать ползунок
+            .trigger('input'); // установить прозрачность блока
+    }
 </script>
 <?php
 //------------------------------------------------
