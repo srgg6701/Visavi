@@ -14,7 +14,10 @@ html(lang="ru")
                     menu
                         each txt in ["О нас","Цены","Специалисты","Фотогалерея","Статьи","Отзывы","Акции","Контакты"]
                             li
-                                a(href="#",title=txt)=txt
+                                if txt=="Акции"
+                                    a(href="#",class="active",title=txt)=txt
+                                else
+                                    a(href="#",title=txt)=txt
                     div
                         form
                             input(type="search",placeholder="Введите ваш запрос")
@@ -89,7 +92,12 @@ html(lang="ru")
                     div
                         img(src="static/images/sources/counter-rambler.gif")
                         img(src="static/images/sources/counter-2.gif")
-                div="Copyright © 2014 Salon.ru All Rights Reserved. Designed by Salon.ru"
+                div#copyright
+                    div.float-left="Copyright © 2014 Salon.ru All Rights Reserved. Designed by Salon.ru"
+                    div#social.float-right
+                        each img in ["social-twitter","social-vk","social-fb","social-g+"]
+                            a(href="#")
+                                img(src="static/images/sources/" + img+".png")
         script(type='text/javascript').
             $(function(){
               //console.log('location.href = '+location.href);
