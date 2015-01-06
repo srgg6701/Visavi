@@ -430,15 +430,12 @@ nav {
   display: table;
   height: 119px;
   position: relative;
-  width: 100%;
-  /*@media (min-width:768px) and (max-width:1024px){
-    padding: 0 $offset-common1024;
-  }*/ }
+  width: 100%; }
 
-/* line 387, ../../scss/tags.scss */
+/* line 384, ../../scss/tags.scss */
 #discount-more span {
   background: url("../images/sources/curly-more.png") no-repeat; }
-  /* line 389, ../../scss/tags.scss */
+  /* line 386, ../../scss/tags.scss */
   #discount-more span:first-child {
     float: left;
     height: 18px;
@@ -446,17 +443,17 @@ nav {
     margin-right: -1px;
     margin-top: 2px;
     width: 11px; }
-  /* line 397, ../../scss/tags.scss */
+  /* line 394, ../../scss/tags.scss */
   #discount-more span:last-child {
     background-position-x: -68px;
     float: left;
     height: 20px;
     margin-top: 3px;
     width: 10px; }
-/* line 405, ../../scss/tags.scss */
+/* line 402, ../../scss/tags.scss */
 #discount2 span:first-child span {
   margin-left: 2px; }
-/* line 410, ../../scss/tags.scss */
+/* line 407, ../../scss/tags.scss */
 #slider-controls > div:first-child span, #slider-controls > div:last-child span {
   display: block;
   -webkit-transform: scaleX(0.8);
@@ -464,12 +461,12 @@ nav {
   -ms-transform: scaleX(0.8);
   -o-transform: scaleX(0.8);
   transform: scaleX(0.8); }
-/* line 415, ../../scss/tags.scss */
+/* line 412, ../../scss/tags.scss */
 footer > div:nth-child(1)
 > div > span {
   color: #333333;
   font-size: 14px; }
-  /* line 418, ../../scss/tags.scss */
+  /* line 415, ../../scss/tags.scss */
   footer > div:nth-child(1)
   > div > span:nth-child(1) {
     color: #e42c52; }
@@ -739,7 +736,15 @@ body, html {
   height: 107px;
   border-bottom: solid 1px #e1e1e1; }
 
+/* line 247, ../../scss/default.scss */
+#all-services, #join-us, #roof-mobile {
+  display: none; }
+
 @media (max-width: 320px) {
-  /* line 248, ../../scss/default.scss */
+  /* line 251, ../../scss/default.scss */
   #banner, #roof, #visavi {
     display: none; } }
+@media (max-width: 1024px) {
+  /* line 256, ../../scss/default.scss */
+  #all-services, #join-us, #roof-mobile {
+    display: block; } }

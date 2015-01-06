@@ -145,7 +145,7 @@
             };
             var tail      = location.href.lastIndexOf('/')+1,
                 urlBase   = location.href.substring(0,tail),
-                params    = location.href.substr(tail);
+                params    = location.href.substr(tail); console.log('params: '+params);
             $.get(urlBase+'_dev/debug/dev.php'+params,
             function(data){
                 //console.log('data: '+data);

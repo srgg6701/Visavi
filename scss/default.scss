@@ -244,8 +244,16 @@
   @include border-common;
 }
 //--------------------mobile--------------------
+#all-services,#join-us,#roof-mobile{
+  display: none;
+}
 @media (max-width:320px){
   #banner, #roof, #visavi{
     display: none;
+  }
+}
+@media (max-width:1024px){
+  #all-services,#join-us,#roof-mobile{
+    display: block;
   }
 }

@@ -7,6 +7,8 @@ include_once '[path]/dev.php'; -->
 -->
 <?php
 ob_start();
+$section = $_GET['section'];
+if(!$section) $section='default';
 /**
  * Настройки подложки: */
 $site_name = 'visavi'; 
@@ -45,7 +47,7 @@ $substrates = array(    // класс => имя файла изображени�
     '1280_care'=>'1280_care.gif',
 );
 // Путь расположения изображений относительно документа:
-$substrate_path = __DIR__.'/'.IMGS_DIR.'/';
+$substrate_path = HTTP_BASE_PATH .'_dev/debug/'.IMGS_DIR.'/';
 // Тени
 $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1) inset';?>
 <style>
@@ -111,8 +113,7 @@ endif;?>
 		background-color:lightblue;
 	}	
     #opacity-range {
-        margin-left: 20px;
-        width: 80px;
+        margin-left: 16px;
     }
     .sbstr {
         background-repeat: no-repeat;
@@ -135,8 +136,9 @@ endif;?>
     }
     <?php   // установить ширину блока с подложкой
             foreach($substrates as $class=>$substrate):
+                $filePath = __DIR__.'/'.IMGS_DIR.'/' . $substrate;
                 $sPath = $substrate_path . $substrate;
-                if(!file_exists($sPath)) $wrongPaths[]=$sPath;
+                if(!file_exists($filePath)) $wrongPaths[]=$sPath;
                 ?>
     #substrate.<?php echo $class;?> {
         background: url(<?php echo $sPath;?>) no-repeat;
@@ -168,6 +170,20 @@ endif;?>
         margin-top: 4px;
         margin-bottom: -22px;
     }
+<?php
+    echo "/* section: $section */";
+    if(strstr($section,'320')||strstr($section,'mobile')):
+        echo "/* section mobile: $section */";?>
+    #opacity-range,
+    #opacity-range-content{
+        width: 60px;
+    }
+    #substrate img{
+        margin-top: -20px;
+    }
+<?php
+    endif;
+?>
 </style>
 <?php
 if(isset($wrongPaths)):
@@ -179,8 +195,6 @@ if(isset($wrongPaths)):
     }
 
 endif;
-$section = $_GET['section'];
-if(!$section) $section='default';
 //
 if(!defined("MAIN_BLOCK")){?>
     <div class="error_warning"><b>Ошибка!</b>
@@ -199,10 +213,11 @@ elseif(!$show_substrate&&isset($_GET['sbstr']))
             $show_substrate=true;
 
 if($show_substrate):?>
-    <label id="lbl-sbstr">
+    <label id="lbl-sbstr" title="Подложка">
         <input type="checkbox" id="sbstr"<?php
 	$opacity=(isset($_GET['opa']))? $_GET['opa']:0;
-	if($opacity>0):?> checked="checked" <?php endif;?> />Подложка
+	if($opacity>0):?> checked="checked" <?php endif;?> />
+        <img src="_dev/debug/photoshop-substrate.png" />
     </label>
     <div id="substrate-ranges">
         <label title="Прозрачность подложки">
