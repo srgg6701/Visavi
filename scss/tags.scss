@@ -45,9 +45,11 @@ a{
     font-family: MyriadProRegular;
     font-size: 13.5px;
     display: block;
-    //padding-left: 9.8px;
-    //padding-right: 9.8px;
     padding:0 14.65%;
+    @media (max-width:768px){
+      padding-left: 8%;
+      padding-right: 8%;
+    }
     text-decoration: none;
     @include centered-vertical-a;
     white-space: nowrap;
@@ -112,14 +114,14 @@ a{
       background-image: url('../images/sources/menu-apparatus-cosmetic.png');
       background-position: 47% 15px;
     }
-    @media (min-width:768px) and (max-width:1024px){
+    /*@media (min-width:768px) and (max-width:1024px){
       &:first-child{
         border-left: $link-border;
       }
       &:last-child{
         border-right: $link-border;
       }
-    }
+    }*/
   }
 }
 body{
@@ -377,9 +379,9 @@ nav{
   height: 119px;
   position: relative;
   width: 100%;
-  @media (min-width:768px) and (max-width:1024px){
+  /*@media (min-width:768px) and (max-width:1024px){
     padding: 0 $offset-common1024;
-  }
+  }*/
 }
 span{
   #discount-more &{
