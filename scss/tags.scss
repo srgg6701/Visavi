@@ -91,7 +91,7 @@ a{
     height: 100%;
     @include link-white;
     position: relative;
-    @media (min-width:320px){
+    @media (min-width:$resolution-mobile){
       text-align: center;
     }
     width: 14.286%;
@@ -122,59 +122,15 @@ a{
     &:nth-child(7) {
       background-image: url('../images/sources/menu-apparatus-cosmetic.png');
     }
-    /*@media (min-width:320px){
-      &:nth-child(1) {
-        background-position: 49% 21px;
-      }
-      &:nth-child(2) {
-        background-position: 44% 17px;
-      }
-      &:nth-child(3) {
-        background-position: 48% 23px;
-      }
-      &:nth-child(4) {
-        background-position: 51% 23px;
-      }
-      &:nth-child(5) {
-        background-position: 50% 24px;
-      }
-      &:nth-child(6) {
-        background-position: 48% 24px;
-      }
-      &:nth-child(7) {
-        background-position: 47% 15px;
-      }
-    }*/
-    @media (max-width:320px){
+    @media (max-width:$resolution-mobile){
       background-position: 5px;
       background-size: 29px 33px;
       @include box-shadow(0 0 0 1px rgba(200, 200, 200, 0.3));
-      //@include border-common(border-bottom,#dededf);
+      @include box-sizing(border-box);
       display: block;
       height: $menu-item-height-mobile;
       text-align: left;
       width: 100%;
-      /*&:nth-child(1) {
-        background-position: 4px 21px;
-      }
-      &:nth-child(2) {
-        background-position: 4px 17px;
-      }
-      &:nth-child(3) {
-        background-position: 4px 23px;
-      }
-      &:nth-child(4) {
-        background-position: 4px 23px;
-      }
-      &:nth-child(5) {
-        background-position: 4px 24px;
-      }
-      &:nth-child(6) {
-        background-position: 4px 24px;
-      }
-      &:nth-child(7) {
-        background-position: 4px 15px;
-      }*/
     }
   }
 }
@@ -404,12 +360,12 @@ div{
   /* NAV ------------------------------------------------------ */
   nav>a>&{
     position: absolute;
-    @media (min-width:320px){
+    @media (min-width:$resolution-mobile){
       bottom: 0;
       height: 53px;
       width: 100%;
     }
-    @media (max-width:320px){
+    @media (max-width:$resolution-mobile){
       background-color: white;
       @include box-shadow(0 0 0 1px rgba(100, 100, 100, 0.1));
       color: $color-pink;
@@ -423,7 +379,7 @@ div{
   nav>a>div>&{
     @include centered-vertical;
     margin: auto;
-    @media (min-width:321px){
+    @media (min-width:$resolution-mobile + 1px){
       max-width: 126px;
     }
   }
@@ -433,18 +389,18 @@ footer{
   &.mobile{
     background-color: white;
     height: 47px;
-    @media (max-width:320px){
+    @media (max-width:$resolution-mobile){
       display: block;
     }
-    @media (min-width:321px){
+    @media (min-width:$resolution-mobile + 1px){
       display: none;
     }
   }
   &.desktop{
-    @media (min-width:320px){
+    @media (min-width:$resolution-mobile){
       display: block;
     }
-    @media (max-width:320px){
+    @media (max-width:$resolution-mobile){
       display: none;
     }
   }
@@ -509,9 +465,17 @@ li{
   }
 }
 main{
-  @media (max-width:320px){
+  @media (max-width:$resolution-mobile){
     @include box-sizing(border-box);
-    padding: $offset-common320 $offset-common320 0 $offset-common320;
+    padding: $offset-common360 $offset-common360 0 $offset-common360;
+  }
+  @media (min-width:480px){ // Apple iPhone 6 Plus
+    @include box-sizing(border-box);
+    padding: $offset-common360 $offset-common360 0 $offset-common360;
+  }
+  @media (max-width:$resolution-mobile){
+    @include box-sizing(border-box);
+    padding: $offset-common360 $offset-common360 0 $offset-common360;
   }
 }
 menu{

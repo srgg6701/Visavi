@@ -266,12 +266,12 @@
   background: url("../images/sources/logotype-mobile.png") no-repeat 15px 5px;
   height: 44px;
 }
-@media (max-width:320px){
+@media (max-width:$resolution-mobile){
   #banner, #roof, #visavi{
       display: none;
   }
 }
-@media (max-width:320px){
+@media (max-width:$resolution-mobile){
   #all-services,#join-us,#roof-mobile{
     display: block;
   }
