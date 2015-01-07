@@ -55,7 +55,7 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
 
     @media (max-width:768px){
         body {
-            overflow-y:hidden;
+            /*overflow-y:hidden;*/
         }
     }
     main{
@@ -63,10 +63,10 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
     <?php
 if(isset($_GET['height'])):
             ?>
-        height: <?php echo $_GET['height'];?>px;
+        /*height: <?php echo $_GET['height'];?>px;*/
 <?php
 else:?>
-        height: 1137px;
+        /*height: 1137px;*/
 <?php
 endif;?>
     }

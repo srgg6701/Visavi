@@ -39,6 +39,12 @@ a{
     font-size: 12px;
     margin-top: 3px;
   }
+  #join-us &{
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 3px;
+    vertical-align: middle;
+  }
   #roof menu &{
     @include box-sizing(border-box);
     color: #333333;
@@ -62,7 +68,7 @@ a{
     //@include centered-vertical-a;
   }
   // FOOTER/MENU/A
-  footer menu &{
+  footer.desktop menu &{
     color: #ccc;
     font-family: MyriadProRegular;
     font-size: 13px;
@@ -73,12 +79,14 @@ a{
   nav &{
     $link-border: solid 1px #eb6581;
     background-color: $color-pink;
+    background-repeat: no-repeat;
     display: table-cell;
     height: 100%;
     @include link-white;
     position: relative;
-    text-align: center;
-    background-repeat: no-repeat;
+    @media (min-width:320px){
+      text-align: center;
+    }
     width: 14.286%;
     &:not(:last-child){
       border-right:$link-border;
@@ -88,40 +96,76 @@ a{
     }
     &:nth-child(1){
       background-image: url('../images/sources/menu-hairs-care.png');
-      background-position: 49% 21px;
     }
     &:nth-child(2){
       background-image: url('../images/sources/menu-limbs-care.png');
-      background-position: 44% 17px;
     }
     &:nth-child(3){
       background-image: url('../images/sources/menu-face-care.png');
-      background-position: 48% 23px;
     }
     &:nth-child(4){
       background-image: url('../images/sources/menu-body-care.png');
-      background-position: 51% 23px;
     }
     &:nth-child(5){
       background-image: url('../images/sources/menu-laser-epilation.png');
-      background-position: 50% 24px;
     }
     &:nth-child(6){
       background-image: url('../images/sources/menu-injection-cosmetic.png');
-      background-position: 48% 24px;
     }
     &:nth-child(7) {
       background-image: url('../images/sources/menu-apparatus-cosmetic.png');
-      background-position: 47% 15px;
     }
-    /*@media (min-width:768px) and (max-width:1024px){
-      &:first-child{
-        border-left: $link-border;
+    @media (min-width:320px){
+      &:nth-child(1) {
+        background-position: 49% 21px;
       }
-      &:last-child{
-        border-right: $link-border;
+      &:nth-child(2) {
+        background-position: 44% 17px;
       }
-    }*/
+      &:nth-child(3) {
+        background-position: 48% 23px;
+      }
+      &:nth-child(4) {
+        background-position: 51% 23px;
+      }
+      &:nth-child(5) {
+        background-position: 50% 24px;
+      }
+      &:nth-child(6) {
+        background-position: 48% 24px;
+      }
+      &:nth-child(7) {
+        background-position: 47% 15px;
+      }
+    }
+    @media (max-width:320px){
+      @include border-common(border-bottom,#dededf);
+      display: block;
+      height: $menu-item-height-mobile;
+      text-align: left;
+      width: 100%;
+      &:nth-child(1) {
+        background-position: 4px 21px;
+      }
+      &:nth-child(2) {
+        background-position: 4px 17px;
+      }
+      &:nth-child(3) {
+        background-position: 4px 23px;
+      }
+      &:nth-child(4) {
+        background-position: 4px 23px;
+      }
+      &:nth-child(5) {
+        background-position: 4px 24px;
+      }
+      &:nth-child(6) {
+        background-position: 4px 24px;
+      }
+      &:nth-child(7) {
+        background-position: 4px 15px;
+      }
+    }
   }
 }
 aside{
@@ -158,18 +202,18 @@ div{
     text-align: center;
     &:first-child{
       background-color: $background-menu-pink-hover;
-      @include border-common(border-right);
+      @include border-common(border-right,#EF6784);
       cursor: pointer;
       font-family: $font-tahoma-family;
       font-size: 12px;
       text-transform: uppercase;
-      width: 23%;
+      width: 24%;
       &:hover{
         background-color: $background-menu-pink-light-hover;
       }
     }
     &:last-child{
-      width: 77%;
+      width: 76%;
     }
 
   }
@@ -282,7 +326,7 @@ div{
   }
   /* FOOTER --------------------------------------------------- */
   // Блоки первого уровня. Второй - собственно Footer (чёрный), содержащий мини-логотип, меню и счётчики
-  footer>&{
+  footer.desktop>&{
     $height-by-default:34px;
     // Первый, над чёрным (собственно Footer'ом)
     &:nth-child(1){
@@ -316,11 +360,11 @@ div{
     }
   }
   // 2-й уровень в первом (самом верхнем) блоке
-  footer>div:nth-child(1)>&{
+  footer.desktop>div:nth-child(1)>&{
     @include centered-vertical;
   }
   // 2-й уровень во втором (собственно Footer'е) блоке
-  footer>div:nth-child(2)>&{
+  footer.desktop>div:nth-child(2)>&{
     float: left;
     // Блок с нижним логотипом
     &:nth-child(1) {
@@ -345,17 +389,49 @@ div{
   /* Конец FOOTER'а ------------------------------------------- */
   /* NAV ------------------------------------------------------ */
   nav>a>&{
-    bottom: 0;
-    height: 53px;
     position: absolute;
-    width: 100%;
+    @media (min-width:320px){
+      bottom: 0;
+      height: 53px;
+      width: 100%;
+    }
+    @media (max-width:320px){
+      background-color: white;
+      color: $color-pink;
+      height: $menu-item-height-mobile;
+      left: 42px;
+      right: 0;
+      padding-left: 23px;
+      text-transform: uppercase;
+    }
   }
   nav>a>div>&{
     @include centered-vertical;
     margin: auto;
-    max-width: 126px;
+    @media (min-width:320px){
+      max-width: 126px;
+    }
   }
   /* Конец NAV'а ------------------------------------------- */
+}
+footer{
+  //display: none;
+  &.mobile{
+    @media (max-width:320px){
+      display: block;
+    }
+    @media (min-width:321px){
+      display: none;
+    }
+  }
+  &.desktop{
+    @media (min-width:320px){
+      display: block;
+    }
+    @media (max-width:320px){
+      display: none;
+    }
+  }
 }
 form{
   #roof &{
@@ -389,7 +465,7 @@ img{
   #social &{
     margin-left: 1px;
   }
-  footer >div:nth-child(2) // Чёрный блок, собственно footer
+  footer.desktop >div:nth-child(2) // Чёрный блок, собственно footer
           >div:nth-child(3)>&{ // Картинки (счётчики) в последней (3-й) секции
     &:first-child{ // Первая картинка
       margin-left: -8.5%;
@@ -408,7 +484,7 @@ input{
 }
 li{
   display: table-cell;
-  footer &{
+  footer.desktop &{
     padding: 4px 1.95%;
   }
 }
@@ -418,7 +494,7 @@ menu{
   height: 100%;
   margin: 0;
   padding: 0;
-  footer &{
+  footer.desktop &{
     height: auto;
     @include centered-vertical;
   }
@@ -449,6 +525,7 @@ span{
     &:first-child{
       font-family: BookAntiqueItalicBold;
       font-size: 14px;
+      line-height: 19px;
       margin-right: 10px;
     }
     &:last-child{
@@ -477,13 +554,21 @@ span{
   #discount2 span:first-child &{ // 20%
     margin-left: 2px;
   }
+  #join-us &{
+    color: $color-pink;
+    font-family: BookAntiqueItalicBold;
+    font-size: 14px;
+    height: 100%;
+    line-height: 44px;
+    margin-right: 32px;
+  }
   // Значки элементов управления слайдером (текст)
   #slider-controls>div:first-child &, // влево
   #slider-controls>div:last-child &{  //вправо
     display: block;
     @include transform(scaleX(0.8));
   }
-  footer >div:nth-child(1) // Первый блок футера
+  footer.desktop >div:nth-child(1) // Первый блок футера
     >div>&{ // Вложенный блок/span
     color:$color-dark;
     font-size: 14px;

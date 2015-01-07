@@ -1,5 +1,5 @@
-@mixin border-common($border:border-bottom){
-  #{$border}:solid 1px #e1e1e1;
+@mixin border-common($border:border-bottom,$border-color:#e1e1e1){
+  #{$border}:solid 1px $border-color;
 }
 @mixin centered-vertical {
   position: relative;

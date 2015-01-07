@@ -252,9 +252,15 @@
 #all-services,#join-us,#roof-mobile{
   display: none;
 }
+// панели
+#all-services, #join-us{
+  height: 44px;
+}
 #all-services{
   background-color: $background-menu-pink;
-  height: 44px;
+}
+#join-us{
+  text-align: center;
 }
 #roof-mobile{
   background: url("../images/sources/logotype-mobile.png") no-repeat 15px 5px;
