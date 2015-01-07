@@ -59,15 +59,25 @@ $box_shadow = '0 4px 8px rgba(0, 0, 0, 0.5), 0 -14px 20px 2px rgba(0, 0, 0, 0.1)
         }
     }
     main{
+        overflow: auto;
         /*background-color: coral;*/
     <?php
 if(isset($_GET['height'])):
             ?>
         /*height: <?php echo $_GET['height'];?>px;*/
 <?php
-else:?>
+else:
+    switch($section):
+        case 'mobile_default':?>
+        height:375px;
+        overflow: hidden;
+    <?php
+        break;
+        default:?>
         /*height: 1137px;*/
 <?php
+        break;
+    endswitch;
 endif;?>
     }
     /*#img_1024_default{

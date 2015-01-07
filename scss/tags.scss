@@ -75,6 +75,12 @@ a{
     text-decoration: none;
     white-space: nowrap;
   }
+  footer.mobile div &{
+    color: $color-dark;
+    font-family: $font-tahoma-family;
+    font-size: 12px;
+    line-height: 47px;
+  }
   // NAV/A - Розовый блок с меню-пиктограммами, под баннером
   nav &{
     $link-border: solid 1px #eb6581;
@@ -386,6 +392,10 @@ div{
       white-space: nowrap;
     }
   }
+  footer.mobile &{
+    float: left;
+    margin-left: 16px;
+  }
   /* Конец FOOTER'а ------------------------------------------- */
   /* NAV ------------------------------------------------------ */
   nav>a>&{
@@ -408,15 +418,16 @@ div{
   nav>a>div>&{
     @include centered-vertical;
     margin: auto;
-    @media (min-width:320px){
+    @media (min-width:321px){
       max-width: 126px;
     }
   }
   /* Конец NAV'а ------------------------------------------- */
 }
 footer{
-  //display: none;
   &.mobile{
+    background-color: white;
+    height: 47px;
     @media (max-width:320px){
       display: block;
     }
@@ -472,6 +483,10 @@ img{
       margin-right: 8.5%;
     }
   }
+  footer.mobile &{
+    float: right;
+    margin: 10px 16px;
+  }
 }
 input{
   #roof &{
@@ -486,6 +501,12 @@ li{
   display: table-cell;
   footer.desktop &{
     padding: 4px 1.95%;
+  }
+}
+main{
+  @media (max-width:320px){
+    @include box-sizing(border-box);
+    padding: $offset-common320 $offset-common320 0 $offset-common320;
   }
 }
 menu{
