@@ -343,7 +343,7 @@ endif; ?>
 // ЛИНЕЙКА
 $test_rulers = 'test_css';
 if($test_rulers) {
-    if ($_GET['rulers']):?>
+    if (isset($_GET['rulers'])):?>
 <?php
         $rh = 'rulers-horizontal';
         $rv = 'rulers-vertical';

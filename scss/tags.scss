@@ -465,17 +465,16 @@ li{
   }
 }
 main{
-  @media (max-width:$resolution-mobile){
+  @media (max-width:$resolution-mobile){ // для мобильных устройств
     @include box-sizing(border-box);
-    padding: $offset-common360 $offset-common360 0 $offset-common360;
+    padding: $offset-common-mobile $offset-common-mobile 0 $offset-common-mobile;
+    @include transform(translateX(-33.33%));
+    @include transition(translate, 0.3s, ease);
+    width: 300%;
   }
-  @media (min-width:480px){ // Apple iPhone 6 Plus
+  @media (min-width:$resolution-mobile){ // Apple iPhone 6 Plus
     @include box-sizing(border-box);
-    padding: $offset-common360 $offset-common360 0 $offset-common360;
-  }
-  @media (max-width:$resolution-mobile){
-    @include box-sizing(border-box);
-    padding: $offset-common360 $offset-common360 0 $offset-common360;
+    padding: $offset-common-mobile $offset-common-mobile 0 $offset-common-mobile;
   }
 }
 menu{

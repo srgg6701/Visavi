@@ -200,6 +200,21 @@
   font-size: 14px;
   margin-left: 3px;
 }
+#content,     // блок с основным контентом
+#left-side,   // левое меню
+#right-side{  // правое меню
+  @include box-sizing(border-box);
+  @media (max-width:$resolution-mobile){
+    padding: $offset-common-mobile;
+  }
+
+}
+#left-side,
+#right-side{ // см. также layout.scss
+  @media (min-width:$resolution-mobile + 1px){
+    display: none;
+  }
+}
 #make-appointment{
   background: url("../images/sources/make-appointment.png");
   background-position: 13px 11px;
@@ -207,6 +222,9 @@
 #make-gift{
   background: url("../images/sources/make-gift.png");
   background-position: 13px 10px;
+}
+#menu-right{
+  cursor: pointer;
 }
 #page{
   background-color: white;
