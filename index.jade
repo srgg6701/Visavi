@@ -154,6 +154,7 @@ html(lang="ru")
                   window.onresize=function(){
                       document.title = window.outerWidth;
                   };
+                  //
                   var tail      = location.href.lastIndexOf('/')+1,
                       urlBase   = location.href.substring(0,tail),
                       params    = location.href.substr(tail); console.log('params: '+params);
@@ -165,4 +166,11 @@ html(lang="ru")
               }else{
                   console.log('No url params...');
               }
+              var segment_pos, section='1280_default';
+              if((segment_pos = location.href.indexOf('='))!=-1){ // если найдено, возвращает позицию, с которой будем начинать извлекать section (после сдвига на 1)
+                  segment_pos+=1; // скорректировать позицию
+                  section=(location.href.indexOf('&')!=-1)?
+                    location.href.substring(segment_pos,location.href.indexOf('&')) : location.href.substring(segment_pos);
+              }
+              console.log('section: '+section);
             });
