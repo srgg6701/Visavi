@@ -468,9 +468,6 @@ main{
   @media (max-width:$resolution-mobile){ // для мобильных устройств
     @include box-sizing(border-box);
     padding: $offset-common-mobile $offset-common-mobile 0 $offset-common-mobile;
-    @include transform(translateX(-33.33%));
-    @include transition(translate, 0.3s, ease);
-    width: 300%;
   }
   @media (min-width:$resolution-mobile){ // Apple iPhone 6 Plus
     @include box-sizing(border-box);

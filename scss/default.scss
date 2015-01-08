@@ -200,7 +200,6 @@
   font-size: 14px;
   margin-left: 3px;
 }
-#content,     // блок с основным контентом
 #left-side,   // левое меню
 #right-side{  // правое меню
   @include box-sizing(border-box);

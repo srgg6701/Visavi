@@ -520,17 +520,7 @@ li {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 15px 15px 0 15px;
-    -webkit-transform: translateX(-33.33%);
-    -moz-transform: translateX(-33.33%);
-    -ms-transform: translateX(-33.33%);
-    -o-transform: translateX(-33.33%);
-    transform: translateX(-33.33%);
-    -webkit-transition: translate, 0.3s, ease;
-    -moz-transition: translate, 0.3s, ease;
-    -o-transition: translate, 0.3s, ease;
-    transition: translate, 0.3s, ease;
-    width: 300%; } }
+    padding: 15px 15px 0 15px; } }
 @media (min-width: 480px) {
   /* line 467, ../../scss/tags.scss */
   main {
@@ -539,7 +529,7 @@ li {
     box-sizing: border-box;
     padding: 15px 15px 0 15px; } }
 
-/* line 480, ../../scss/tags.scss */
+/* line 477, ../../scss/tags.scss */
 menu {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -548,7 +538,7 @@ menu {
   height: 100%;
   margin: 0;
   padding: 0; }
-  /* line 486, ../../scss/tags.scss */
+  /* line 483, ../../scss/tags.scss */
   footer.desktop menu {
     height: auto;
     position: relative;
@@ -558,12 +548,12 @@ menu {
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
     transform: translateY(-50%); }
-  /* line 490, ../../scss/tags.scss */
+  /* line 487, ../../scss/tags.scss */
   #roof menu {
     float: left;
     margin-left: 20px; }
 
-/* line 495, ../../scss/tags.scss */
+/* line 492, ../../scss/tags.scss */
 nav {
   background-color: #e42c52;
   -webkit-box-sizing: border-box;
@@ -574,27 +564,27 @@ nav {
   position: relative;
   width: 100%; }
 
-/* line 504, ../../scss/tags.scss */
+/* line 501, ../../scss/tags.scss */
 #all-services section {
   display: inline-block; }
 
-/* line 509, ../../scss/tags.scss */
+/* line 506, ../../scss/tags.scss */
 #all-services div span {
   display: table; }
-/* line 514, ../../scss/tags.scss */
+/* line 511, ../../scss/tags.scss */
 #all-services div:last-child span:first-child {
   font-family: BookAntiqueItalicBold;
   font-size: 14px;
   line-height: 19px;
   margin-right: 10px; }
-/* line 520, ../../scss/tags.scss */
+/* line 517, ../../scss/tags.scss */
 #all-services div:last-child span:last-child {
   font-family: BookAntiqueBold;
   font-size: 17px; }
-/* line 525, ../../scss/tags.scss */
+/* line 522, ../../scss/tags.scss */
 #discount-more span {
   background: url("../images/sources/curly-more.png") no-repeat; }
-  /* line 527, ../../scss/tags.scss */
+  /* line 524, ../../scss/tags.scss */
   #discount-more span:first-child {
     float: left;
     height: 18px;
@@ -602,17 +592,17 @@ nav {
     margin-right: -1px;
     margin-top: 2px;
     width: 11px; }
-  /* line 535, ../../scss/tags.scss */
+  /* line 532, ../../scss/tags.scss */
   #discount-more span:last-child {
     background-position-x: -68px;
     float: left;
     height: 20px;
     margin-top: 3px;
     width: 10px; }
-/* line 543, ../../scss/tags.scss */
+/* line 540, ../../scss/tags.scss */
 #discount2 span:first-child span {
   margin-left: 2px; }
-/* line 546, ../../scss/tags.scss */
+/* line 543, ../../scss/tags.scss */
 #join-us span {
   color: #e42c52;
   font-family: BookAntiqueItalicBold;
@@ -620,7 +610,7 @@ nav {
   height: 100%;
   line-height: 44px;
   margin-right: 32px; }
-/* line 556, ../../scss/tags.scss */
+/* line 553, ../../scss/tags.scss */
 #slider-controls > div:first-child span, #slider-controls > div:last-child span {
   display: block;
   -webkit-transform: scaleX(0.8);
@@ -628,12 +618,12 @@ nav {
   -ms-transform: scaleX(0.8);
   -o-transform: scaleX(0.8);
   transform: scaleX(0.8); }
-/* line 561, ../../scss/tags.scss */
+/* line 558, ../../scss/tags.scss */
 footer.desktop > div:nth-child(1)
 > div > span {
   color: #333333;
   font-size: 14px; }
-  /* line 564, ../../scss/tags.scss */
+  /* line 561, ../../scss/tags.scss */
   footer.desktop > div:nth-child(1)
   > div > span:nth-child(1) {
     color: #e42c52; }
@@ -698,9 +688,23 @@ body, html {
   padding: 0; }
 
 @media (max-width: 480px) {
-  /* line 7, ../../scss/layout.scss */
-  #content,
+  /* line 5, ../../scss/layout.scss */
+  body {
+    -webkit-transform: translateX(-33.33%);
+    -moz-transform: translateX(-33.33%);
+    -ms-transform: translateX(-33.33%);
+    -o-transform: translateX(-33.33%);
+    transform: translateX(-33.33%);
+    -webkit-transition: translate, 0.3s, ease;
+    -moz-transition: translate, 0.3s, ease;
+    -o-transition: translate, 0.3s, ease;
+    transition: translate, 0.3s, ease;
+    width: 300%; } }
+
+@media (max-width: 480px) {
+  /* line 14, ../../scss/layout.scss */
   #left-side,
+  #page,
   #right-side {
     float: left;
     width: 33.33%; } }
@@ -878,41 +882,39 @@ body, html {
   font-size: 14px;
   margin-left: 3px; }
 
-/* line 205, ../../scss/default.scss */
-#content,
+/* line 204, ../../scss/default.scss */
 #left-side,
 #right-side {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
   @media (max-width: 480px) {
-    /* line 205, ../../scss/default.scss */
-    #content,
+    /* line 204, ../../scss/default.scss */
     #left-side,
     #right-side {
       padding: 15px; } }
 
 @media (min-width: 481px) {
-  /* line 213, ../../scss/default.scss */
+  /* line 212, ../../scss/default.scss */
   #left-side,
   #right-side {
     display: none; } }
 
-/* line 218, ../../scss/default.scss */
+/* line 217, ../../scss/default.scss */
 #make-appointment {
   background: url("../images/sources/make-appointment.png");
   background-position: 13px 11px; }
 
-/* line 222, ../../scss/default.scss */
+/* line 221, ../../scss/default.scss */
 #make-gift {
   background: url("../images/sources/make-gift.png");
   background-position: 13px 10px; }
 
-/* line 226, ../../scss/default.scss */
+/* line 225, ../../scss/default.scss */
 #menu-right {
   cursor: pointer; }
 
-/* line 229, ../../scss/default.scss */
+/* line 228, ../../scss/default.scss */
 #page {
   background-color: white;
   -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
@@ -921,74 +923,74 @@ body, html {
   margin: auto;
   max-width: 1100px; }
   @media (max-width: 1024px) {
-    /* line 229, ../../scss/default.scss */
+    /* line 228, ../../scss/default.scss */
     #page {
       max-width: 1007px; } }
 
-/* line 238, ../../scss/default.scss */
+/* line 237, ../../scss/default.scss */
 #phones {
   float: right;
   clear: both; }
 
-/* line 242, ../../scss/default.scss */
+/* line 241, ../../scss/default.scss */
 #roof {
   background-color: #f7f7f7;
   height: 34px;
   border-bottom: solid 1px #e1e1e1; }
 
-/* line 247, ../../scss/default.scss */
+/* line 246, ../../scss/default.scss */
 #slider {
   background: url("../images/sources/banner.jpg");
   height: 100%;
   position: relative; }
 
-/* line 252, ../../scss/default.scss */
+/* line 251, ../../scss/default.scss */
 #slider-controls {
   bottom: 15px;
   left: 28.1%;
   position: absolute; }
 
-/* line 257, ../../scss/default.scss */
+/* line 256, ../../scss/default.scss */
 #social {
   height: 34px;
   margin: 2px 0; }
   @media (min-width: 1024px) {
-    /* line 257, ../../scss/default.scss */
+    /* line 256, ../../scss/default.scss */
     #social {
       display: none; } }
 
-/* line 264, ../../scss/default.scss */
+/* line 263, ../../scss/default.scss */
 #visavi {
   background: url("../images/sources/logotype.png") no-repeat 3.2% 17px;
   height: 107px;
   border-bottom: solid 1px #e1e1e1; }
 
-/* line 270, ../../scss/default.scss */
+/* line 269, ../../scss/default.scss */
 #all-services, #join-us, #roof-mobile {
   display: none; }
 
-/* line 274, ../../scss/default.scss */
+/* line 273, ../../scss/default.scss */
 #all-services, #join-us {
   height: 44px; }
 
-/* line 277, ../../scss/default.scss */
+/* line 276, ../../scss/default.scss */
 #all-services {
   background-color: #e42c52; }
 
-/* line 280, ../../scss/default.scss */
+/* line 279, ../../scss/default.scss */
 #join-us {
   text-align: center; }
 
-/* line 283, ../../scss/default.scss */
+/* line 282, ../../scss/default.scss */
 #roof-mobile {
   background: url("../images/sources/logotype-mobile.png") no-repeat 15px 5px;
   height: 44px; }
 
 @media (max-width: 480px) {
-  /* line 288, ../../scss/default.scss */
+  /* line 287, ../../scss/default.scss */
   #banner, #roof, #visavi {
     display: none; } }
 @media (max-width: 480px) {
-  /* line 293, ../../scss/default.scss */
+  /* line 292, ../../scss/default.scss */
   #all-services, #join-us, #roof-mobile {
     display: block; } }
