@@ -9,7 +9,13 @@ html(lang="ru")
         script(src="http://code.jquery.com/jquery-latest.min.js")
         script(src="static/js/menus.js")
     body
-        div#left-side="Left side"
+        #left-side
+            aside
+                a(href="#")="Задать вопрос"
+            -var all_services=["Парикмахерский зал","Уход за руками и ногами", "Уход за лицом", "Уход за телом", "Лазерная эпиляция", "Инъекционная косметология", "Аппаратная косметология"]
+            each val in all_services
+                div
+                    a(href="#",title=val)=val
         #page
             header
                 //- Блоки (768+):
@@ -66,7 +72,7 @@ html(lang="ru")
                 section#banner
                     #slider
                         //- элементы управления слайдами
-                        div#slider-controls
+                        #slider-controls
                             div
                                 span="◄"
                             div
@@ -88,7 +94,7 @@ html(lang="ru")
                         hr
                 //- Кнопка "Все услуги", телефон
                 section#all-services
-                    div#menu-left
+                    #menu-left
                         section.centered-vertical
                             div="Все"
                             div=" услуги"
@@ -107,7 +113,7 @@ html(lang="ru")
 
                 //- основное меню
                 nav
-                    each val in ["Парикмахерский зал","Уход за руками и ногами", "Уход за лицом", "Уход за телом", "Лазерная эпиляция", "Инъекционная косметология", "Аппаратная косметология"]
+                    each val in all_services
                         a(href="#",title=val)
                             div
                                 div=val
@@ -130,9 +136,9 @@ html(lang="ru")
                     div
                         img(src="static/images/sources/counter-rambler.gif")
                         img(src="static/images/sources/counter-2.gif")
-                div#copyright
-                    div.float-left="Copyright © 2014 Salon.ru All Rights Reserved. Designed by Salon.ru"
-                    div#social.float-right
+                #copyright
+                    .float-left="Copyright © 2014 Salon.ru All Rights Reserved. Designed by Salon.ru"
+                    #social.float-right
                         each img in social_images
                             a(href="#")
                                 img(src="static/images/sources/" + img+".png")
@@ -142,7 +148,9 @@ html(lang="ru")
                 div
                     a(href="#")="Перейти на полную версию"
                 img(src="static/images/sources/counter-2.gif")
-        div#right-side="Right side"
+        #right-side
+            aside
+                a(href="#")="Подари сертификат"
         script(type='text/javascript').
             $(function(){
               //console.log('location.href = '+location.href);

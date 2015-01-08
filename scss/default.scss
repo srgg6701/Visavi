@@ -202,17 +202,18 @@
 }
 #left-side,   // левое меню
 #right-side{  // правое меню
+  background-color: #F5F6F5;
   @include box-sizing(border-box);
-  @media (max-width:$resolution-mobile){
-    padding: $offset-common-mobile;
-  }
-
-}
-#left-side,
-#right-side{ // см. также layout.scss
-  background-color: yellow;
-  width: 200px;
   display: none;
+  /*@media (max-width:$resolution-mobile){
+    padding: $offset-common-mobile;
+  }*/
+}
+#left-side{
+  min-width: 232px;
+}
+#right-side{ // см. также layout.scss
+  min-width: 200px;
 }
 #make-appointment{
   background: url("../images/sources/make-appointment.png");

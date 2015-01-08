@@ -1,4 +1,7 @@
 $(function(){
+    /**
+    АХТУНГ! Синхронизировать величину разрешения (480)
+    для мобильных устройств с mediaquery */
     if(screen.availWidth<=480){
         // получить ширину меню и body
         // вычислить ширину #page
@@ -12,7 +15,7 @@ $(function(){
             duration=200,
             getBodyMarginLeft=function(right){
                 var offset=leftWidth;
-                if(right) offset*=2;
+                if(right) offset+=rightWidth;
                 //console.log('%cleftWidth = '+offset,'color: violet');
                 return   '-'+offset+'px';
             };
@@ -28,7 +31,8 @@ $(function(){
         });
         // Отобразить меню
         $(leftMenu).show();
-        $(rightMenu).show();
+        // Скопировать верхнее меню в блок правого меню
+        $(rightMenu).append($('#roof menu')).show();
         //console.log('leftWidth: '+leftWidth+'\nrightWidth: '+rightWidth+'\npageWidth: '+$(container).css('width')+'\nbody.width: '+$(body).css('width'));
         // показать/спрятать мобильное меню
         $('#menu-left, #menu-right').on('click', function(){
@@ -46,11 +50,12 @@ $(function(){
             // Если состояние меню - по умолчанию
             if($(body).css('margin-left')==getBodyMarginLeft()){
                 var mrgLeft,Left,Right;
+                // показать левое меню
                 if(this.id=='menu-left'){
                     mrgLeft=0;
                     Left=leftWidth+'px';
                     Right=0;
-                }else{
+                }else{ // показать правое меню
                     mrgLeft=getBodyMarginLeft(true);
                     Left=0;
                     Right=rightWidth+'px';

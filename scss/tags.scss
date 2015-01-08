@@ -45,6 +45,55 @@ a{
     margin-top: 3px;
     vertical-align: middle;
   }
+  #left-side &,
+  #right-side &{
+    @include border-common;
+    @include box-sizing(border-box);
+    display: block;
+    font-family: $font-tahoma-family;
+    height: 43px;
+    line-height: 43px;
+    text-decoration: none;
+    &:hover{
+      background-color: white;
+    }
+  }
+  #left-side &{
+    color: $color-pink;
+    font-size: 13px;
+    padding: 0 16px;
+    text-transform: uppercase;
+  }
+  #right-side &{
+    color: $color-dark;
+    font-size: 12px;
+    padding: 0 30px;
+  }
+  #left-side aside &,
+  #right-side aside &{
+    background-repeat: no-repeat;
+    @include box-sizing(border-box);
+    border-bottom: none;
+    color: white;
+    display: block;
+    height: 44px;
+    font-family: $font-tahoma-family;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+  #left-side aside &{
+    background-image: url("../images/sources/ask-specialist.png");
+    background-position: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 48px;
+  }
+  #right-side aside &{
+    background-image: url("../images/sources/make-gift.png");
+    background-position: 14px 10px;
+    padding-left: 50px;
+    font-size: 13px;
+  }
   #roof menu &{
     @include box-sizing(border-box);
     color: #333333;
@@ -137,6 +186,10 @@ a{
   }
 }
 aside{
+  #left-side &,
+  #right-side &{
+    background-color: $background-menu-pink-mobile;
+  }
   #roof-mobile &{
     float: right;
     height: 15px;
@@ -369,7 +422,7 @@ div{
     }
     @media (max-width:$resolution-mobile){
       background-color: white;
-      //@include box-shadow(0 0 0 1px rgba(100, 100, 100, 0.1));
+      @include box-sizing(border-box);
       $border-params:solid 1px rgba(100, 100, 100, 0.15);
       border-bottom:$border-params;
       &:first-child{
@@ -468,7 +521,11 @@ input{
 }
 li{
   display: table-cell;
+  #right-side &{
+    display: block;
+  }
   footer.desktop &{
+    @include box-sizing(border-box);
     padding: 4px 1.95%;
   }
 }
@@ -491,6 +548,9 @@ menu{
   footer.desktop &{
     height: auto;
     @include centered-vertical;
+  }
+  #right-side &{
+    display: block;
   }
   #roof &{
     float: left;
