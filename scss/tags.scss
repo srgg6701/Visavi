@@ -95,8 +95,10 @@ a{
       text-align: center;
     }
     width: 14.286%;
-    &:not(:last-child){
-      border-right:$link-border;
+    @media (max-width:$resolution-mobile + 1px){
+      &:not(:last-child){
+        border-right:$link-border;
+      }
     }
     &:hover{
       background-color: $background-menu-pink-hover;
@@ -130,7 +132,7 @@ a{
       display: block;
       height: $menu-item-height-mobile;
       text-align: left;
-      width: 100%;
+      width: 43px; //100%;
     }
   }
 }
@@ -367,13 +369,19 @@ div{
     }
     @media (max-width:$resolution-mobile){
       background-color: white;
-      @include box-shadow(0 0 0 1px rgba(100, 100, 100, 0.1));
+      //@include box-shadow(0 0 0 1px rgba(100, 100, 100, 0.1));
+      $border-params:solid 1px rgba(100, 100, 100, 0.15);
+      border-bottom:$border-params;
+      &:first-child{
+        border-top:$border-params;
+      }
       color: $color-pink;
-      height: $menu-item-height-mobile;
+      height: $menu-item-height-mobile - 1px;
       left: 42px;
       right: 0;
       padding-left: 23px;
       text-transform: uppercase;
+      width: 480px;
     }
   }
   nav>a>div>&{
@@ -490,12 +498,14 @@ menu{
   }
 }
 nav{
-  background-color: $background-menu-pink;
-  @include box-sizing(border-box);
-  display: table;
-  height: 119px;
-  position: relative;
-  width: 100%;
+  //@include box-sizing(border-box);
+  @media (min-width:$resolution-mobile + 1px){
+    background-color: $background-menu-pink;
+    display: table;
+    height: 119px;
+    position: relative;
+    width: 100%;
+  }
 }
 section{
   #all-services &{

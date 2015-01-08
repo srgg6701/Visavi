@@ -210,9 +210,9 @@
 }
 #left-side,
 #right-side{ // см. также layout.scss
-  @media (min-width:$resolution-mobile + 1px){
-    display: none;
-  }
+  background-color: yellow;
+  width: 200px;
+  display: none;
 }
 #make-appointment{
   background: url("../images/sources/make-appointment.png");
@@ -230,6 +230,7 @@
   @include box-shadow(0 0 6px 0 rgba(0,0,0,0.2));
   margin: auto;
   max-width: 1100px;
+  overflow: hidden;
   @media (max-width:1024px){
     max-width: 1007px;
   }
