@@ -25,8 +25,6 @@ define("IMGS_DIR","pixel-perfect");
 $substrates = array(    // класс => имя файла изображения
     // 320
     'mobile_default'=>'mobile_default.gif',
-    'mobile_left'=>'mobile_left.gif',
-    'mobile_right'=>'mobile_right.gif',
     'mobile_actions'=>'mobile_actions.gif',
     'mobile_epilation'=>'mobile_epilation.gif',
     'mobile_bikini'=>'mobile_bikini.gif',
