@@ -65,6 +65,7 @@ a{
     text-transform: uppercase;
   }
   #right-side &{
+    background: url(../images/sources/arrow-right-gray-small.png) no-repeat 12px 20px;
     color: $color-dark;
     font-size: 12px;
     padding: 0 30px;
@@ -413,6 +414,7 @@ div{
   }
   /* Конец FOOTER'а ------------------------------------------- */
   /* NAV ------------------------------------------------------ */
+  $border-params: solid 1px rgba(100, 100, 100, 0.15);
   nav>a>&{
     position: absolute;
     @media (min-width:$resolution-mobile){
@@ -422,12 +424,8 @@ div{
     }
     @media (max-width:$resolution-mobile){
       background-color: white;
+      border-bottom: $border-params;
       @include box-sizing(border-box);
-      $border-params:solid 1px rgba(100, 100, 100, 0.15);
-      border-bottom:$border-params;
-      &:first-child{
-        border-top:$border-params;
-      }
       color: $color-pink;
       height: $menu-item-height-mobile - 1px;
       left: 42px;
@@ -435,6 +433,11 @@ div{
       padding-left: 23px;
       text-transform: uppercase;
       width: 480px;
+    }
+  }
+  nav > a:first-child > & {
+    @media (max-width:$resolution-mobile) {
+      border-top: $border-params;
     }
   }
   nav>a>div>&{
@@ -449,6 +452,7 @@ div{
 footer{
   &.mobile{
     background-color: white;
+    @include border-common(border-top);
     height: 47px;
     @media (max-width:$resolution-mobile){
       display: block;

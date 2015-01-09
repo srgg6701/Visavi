@@ -1,4 +1,4 @@
-@mixin border-common($border:border-bottom,$border-color:#e1e1e1){
+@mixin border-common($border:border-bottom,$border-color:$border-color-gray-light){
   #{$border}:solid 1px $border-color;
 }
 @mixin centered-vertical {
