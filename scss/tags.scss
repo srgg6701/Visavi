@@ -150,7 +150,7 @@ a{
       text-align: center;
     }
     width: 14.286%;
-    @media (max-width:$resolution-mobile + 1px){
+    @media (min-width:$resolution-mobile + 1px){
       &:not(:last-child){
         border-right:$link-border;
       }
@@ -184,7 +184,7 @@ a{
       background-size: 29px 33px;
       @include box-shadow(0 0 0 1px rgba(200, 200, 200, 0.3));
       @include box-sizing(border-box);
-      display: block;
+      display: none;
       height: $menu-item-height-mobile;
       text-align: left;
       width: 43px; //100%;

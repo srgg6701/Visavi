@@ -152,6 +152,9 @@
   font-size: 14px;
   margin-left: 3px;
 }
+#join-us{
+  display: none; // присваивается значение block клиентским скриптом при загрузке шаблона mobile_default
+}
 #left-side,   // левое меню
 #right-side{  // правое меню
   background-color: #F5F6F5;
@@ -218,7 +221,8 @@
   @include border-common;
 }
 //--------------------mobile--------------------
-#all-services,#join-us,#roof-mobile{
+#all-services,
+#roof-mobile{
   display: none;
 }
 // панели
@@ -241,7 +245,8 @@
   }
 }
 @media (max-width:$resolution-mobile){
-  #all-services,#join-us,#roof-mobile{
+  #all-services,
+  #roof-mobile{
     display: block;
   }
 }

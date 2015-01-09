@@ -177,9 +177,26 @@ endif;?>
     .error_warning{
         color:red;
     }
+
     #img_1280_default{
         margin-left: -90px;
     }
+    #img_1280_care{
+        margin-left: -90px;
+    }
+    #img_1280_contacts{
+        margin-left: -90px;
+    }
+    #img_1280_epilation{
+        margin-left: -90px;
+    }
+    #img_1280_actions{
+        margin-left: -90px;
+    }
+    #img_1280_action{
+        margin-left: -90px;
+    }
+
     #lbl-sbstr,#substrate-ranges,#<?php echo DEBUG_LINKS;?>{
         float: left;
     }
@@ -283,6 +300,11 @@ endif; ?>
             changeOpacity = function(input){
                 return parseInt(input.value)/100
             }; //console.log('sbOffset: '+sbOffset);
+    <?php   if(strstr($section,'mobile')):
+    ?>
+            sbOffset=0;
+    <?php   endif;
+    ?>
         $('#substrate-wrapper').css({
             left:sbOffset,
             right:sbOffset
