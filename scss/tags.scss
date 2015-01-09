@@ -95,6 +95,9 @@ a{
     padding-left: 50px;
     font-size: 13px;
   }
+  #right-side menu &:hover{
+    background-color: white;
+  }
   #roof menu &{
     @include box-sizing(border-box);
     color: #333333;
