@@ -191,8 +191,9 @@
 }
 #roof{
   background-color: $background-whitesmoke;
-  height: 34px;
   @include border-common;
+  height: $height-by-default;
+  overflow: hidden;
 }
 #slider{
   background: url("../images/sources/banner.jpg");

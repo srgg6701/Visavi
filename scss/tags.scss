@@ -101,16 +101,18 @@ a{
   #roof menu &{
     @include box-sizing(border-box);
     color: #333333;
+    display: block;
     font-family: MyriadProRegular;
     font-size: 13.5px;
-    display: block;
-    padding:0 14.65%;
+    height:$height-by-default;
+    line-height: $height-by-default;
+    padding:0 13%;
     @media (max-width:768px){
       padding-left: 8%;
       padding-right: 8%;
     }
     text-decoration: none;
-    @include centered-vertical-a;
+    //@include centered-vertical-a;
     white-space: nowrap;
     &:hover{
       text-decoration: underline;
@@ -352,7 +354,6 @@ div{
   /* FOOTER --------------------------------------------------- */
   // Блоки первого уровня. Второй - собственно Footer (чёрный), содержащий мини-логотип, меню и счётчики
   footer.desktop>&{
-    $height-by-default:34px;
     // Первый, над чёрным (собственно Footer'ом)
     &:nth-child(1){
       font-family: BookAntiqueItalic;
@@ -547,9 +548,9 @@ main{
   }
 }
 menu{
-  @include box-sizing(border-box);
+  //@include box-sizing(border-box);
   display: table;
-  height: 100%;
+  //height: 100%;
   margin: 0;
   padding: 0;
   footer.desktop &{
