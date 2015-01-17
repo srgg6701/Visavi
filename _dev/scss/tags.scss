@@ -12,7 +12,7 @@ a{
   }
   #cards &{ // Visa, MasterCard, Wifi
 
-    background-image: url("../images/sources/cards-wifi.png");
+    background-image: url($images_dir + "cards-wifi.png");
     background-position-y: 6px;
     background-repeat: no-repeat;
 
@@ -64,11 +64,25 @@ a{
     padding: 0 16px;
     text-transform: uppercase;
   }
-  #right-side &{
+  #right-side &,
+  .left-panel &{
     background: url(../images/sources/arrow-right-gray-small.png) no-repeat 12px 20px;
     color: $color-dark;
     font-size: 12px;
     padding: 0 30px;
+  }
+  .left-panel &{
+    background-position: 15px 13px;
+    display: block;
+    font-family: $font-tahoma-family;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 34px;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover{
+      background-image: url(../images/sources/arrow-right-pink-small.png);
+    }
   }
   #left-side aside &,
   #right-side aside &{
@@ -83,14 +97,14 @@ a{
     text-decoration: underline;
   }
   #left-side aside &{
-    background-image: url("../images/sources/ask-specialist.png");
+    background-image: url($images_dir + "ask-specialist.png");
     background-position: 10px;
     font-size: 12px;
     font-weight: bold;
     padding-left: 48px;
   }
   #right-side aside &{
-    background-image: url("../images/sources/make-gift.png");
+    background-image: url($images_dir + "make-gift.png");
     background-position: 14px 10px;
     padding-left: 50px;
     font-size: 13px;
@@ -121,6 +135,22 @@ a{
   #roof div:nth-child(3) &{ // ссылки перед формой поиска - VISA, MasterCard, WiFi
     display: inline-block;
     //@include centered-vertical-a;
+  }
+  #welcome >div >aside > & {
+    background: #000;
+    border-radius: 50%;
+    bottom: 15px;
+    color: #FFF;
+    display: block;
+    font-family: $font-tahoma-family;
+    font-size: 9px;
+    font-weight: bold;
+    height: 78px;
+    position: absolute;
+    right: 19px;
+    text-align: center;
+    text-decoration: none;
+    width: 78px;
   }
   // FOOTER/MENU/A
   footer.desktop menu &{
@@ -203,6 +233,14 @@ aside{
     margin-top: 16px;
     width: 20px;
   }
+  #welcome &{
+    background: url($images_dir + "1280_default/3-d-tour.jpg");
+    float: right;
+    height: 200px;
+    margin-top: -49px;
+    position: relative;
+    width: 362px;
+  }
 }
 body{
   background-image: url("../images/backgrounds/bg.jpg");
@@ -257,21 +295,21 @@ div{
       background-color: #ff7a95;
       top:15px;
       &:hover{
-        background-image: url("../images/sources/hover-make-appointment.jpg");
+        background-image: url($images_dir + "hover-make-appointment.jpg");
       }
     }
     &:nth-child(3){ // подари сертификат
       background-color: #ee4c90;
       top:77px;
       &:hover{
-        background-image: url("../images/sources/hover-make-gift.jpg");
+        background-image: url($images_dir + "hover-make-gift.jpg");
       }
     }
     &:nth-child(4){ // задать вопрос специалисту
       background-color: #8d0e29;
       top:139px;
       &:hover{
-        background-image: url("../images/sources/hover-ask-specialist.jpg");
+        background-image: url($images_dir + "hover-ask-specialist.jpg");
       }
     }
   }
@@ -351,6 +389,17 @@ div{
       margin-top: 24px;
     }
   }
+  #welcome >&{
+    //background: #7CFC00;
+    border:solid 1px #e4e4e4;
+    margin-left: -30px;
+    margin-right: 16px;
+    margin-top: 11px;
+    padding: 27px 0 10px 29px;
+  }
+  #welcome >div >&{
+    padding-right: 393px;
+  }
   /* FOOTER --------------------------------------------------- */
   // Блоки первого уровня. Второй - собственно Footer (чёрный), содержащий мини-логотип, меню и счётчики
   footer.desktop>&{
@@ -397,7 +446,7 @@ div{
       // dev: Удалить коричневый фон
       background-color: brown;
 
-      background: url("../images/sources/logotype-bottom.png") no-repeat center;
+      background: url($images_dir + "logotype-bottom.png") no-repeat center;
       height: 100%;
       margin-right: 2.8%;
       width: 25%;
@@ -490,6 +539,27 @@ h1{
     text-transform: uppercase;
   }
 }
+h4{
+  .left-panel &{
+    font-family: $font-tahoma-family;
+    font-size: 13px;
+    text-transform: uppercase;
+    &:nth-child(1),
+    &:nth-child(4){
+      color: $color-dark;
+    }
+    &:nth-child(3){
+      color:$color-pink
+    }
+    &:nth-child(1){
+      font-family: tahoma;
+      font-size: 13px;
+      margin: 15px auto auto 14px;
+      padding: 0;
+      text-transform: uppercase;
+    }
+  }
+}
 hr{
   #roof-mobile aside &{
     background-color: $color-pink-sandwich;
@@ -518,6 +588,15 @@ img{
     margin: 10px 16px;
   }
 }
+i{
+  #welcome &{
+    color: $color-pink;
+    display: block;
+    font-family: BookAntiqueItalicBold;
+    font-size: 24px;
+    margin: 4px auto;
+  }
+}
 input{
   #roof &{
     @include box-sizing(border-box);
@@ -529,7 +608,8 @@ input{
 }
 li{
   display: table-cell;
-  #right-side &{
+  #right-side &,
+  .left-panel &{
     display: block;
   }
   footer.desktop &{
@@ -538,6 +618,7 @@ li{
   }
 }
 main{
+  padding-top: 0;
   @media (max-width:$resolution-mobile){ // для мобильных устройств
     @include box-sizing(border-box);
     padding: $offset-common-mobile $offset-common-mobile 0 $offset-common-mobile;
@@ -557,6 +638,9 @@ menu{
     height: auto;
     @include centered-vertical;
   }
+  .left-panel &{
+    margin-top: 12px;
+  }
   #right-side &{
     display: block;
   }
@@ -573,6 +657,12 @@ nav{
     height: 119px;
     position: relative;
     width: 100%;
+  }
+}
+p{
+  #welcome &{
+    line-height: 18px;
+    margin: 18px auto 14px;
   }
 }
 section{
@@ -598,7 +688,7 @@ span{
     }
   }
   #discount-more &{
-    background: url("../images/sources/curly-more.png") no-repeat;
+    background: url($images_dir + "curly-more.png") no-repeat;
     &:first-child{
       float: left;
       height: 18px;
@@ -632,6 +722,17 @@ span{
     display: block;
     @include transform(scaleX(0.8));
   }
+  #welcome aside >a &{
+    display: block;
+    &:nth-child(1){
+      font-size: 24px;
+      margin-bottom: -5px;
+      margin-top: 8px;
+    }
+    &:nth-child(2){
+      font-size: 14px;
+    }
+  }
   footer.desktop >div:nth-child(1) // Первый блок футера
     >div>&{ // Вложенный блок/span
     color:$color-dark;
@@ -639,5 +740,10 @@ span{
     &:nth-child(1){ // Розовый блок "ВНИМАНИЕ!"
       color: $color-pink;
     }
+  }
+}
+strong{
+  #welcome &{
+    line-height: 18px;
   }
 }
