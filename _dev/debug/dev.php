@@ -70,11 +70,7 @@ else:
         height:375px;
         overflow: hidden;
     <?php
-        break;
-        default:?>
-        /*height: 1137px;*/
-<?php
-        break;
+            break;
     endswitch;
 endif;?>
     }
@@ -152,6 +148,10 @@ endif;?>
         position: absolute;
         /*top: 0;*/
         top:<?php echo $controls_height;?>;
+<?php   if($section=='default'||$section=='1280_default'):
+        ?>
+        width: 1100px;
+<?php   endif;?>
         z-index: -1;
     }
     <?php   // установить ширину блока с подложкой
@@ -237,7 +237,7 @@ if(!defined("MAIN_BLOCK")){?>
     <div class="error_warning"><b>Ошибка!</b>
         <p>Не указан идентификатор контейнера для тестирования (MAIN_BLOCK)</p>
     </div>
-<?
+<?php
 }
 ?>
 <div id="controls">
