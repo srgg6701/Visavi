@@ -72,6 +72,13 @@
   margin-bottom: $margin-bottom-main;
   width: 254px;
 }
+.loading{
+  background-color: #87CEFA;
+  border-radius: 16px;
+  display: table;
+  font-family: verdana;
+  padding: 10px 20px;
+}
 .pseudoheader,
 .pseudoheader-gray{
   display: block;

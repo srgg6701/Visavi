@@ -1,0 +1,6 @@
+h4="Популярные услуги"
+menu
+    -var popular_services={'moon':'лунный маникюр','lifting':'rf-лифтинг','epilation':'лазерная эпиляция','straightening':'керативное выпрямление волос','haircut':'стрижка горячими ножницами','massage':'lpg массаж','botox':'ботокс'}
+    each text, link in popular_services
+        li
+            a(href=link)=text

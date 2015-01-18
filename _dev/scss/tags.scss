@@ -82,6 +82,14 @@ a{
     padding: 0 16px;
     text-transform: uppercase;
   }
+  .breadcrumbs &{
+    background: url($images_dir + "home.png") no-repeat;
+    color: #999;
+    display: table;
+    font-family: $font-tahoma-family;
+    font-size: 11px;
+    padding-left: 20px;
+  }
   #right-side &,
   .left-panel &{
     background: url(../images/sources/arrow-right-gray-small.png) no-repeat 12px 20px;
@@ -100,6 +108,7 @@ a{
     text-transform: uppercase;
     &:hover{
       background-image: url(../images/sources/arrow-right-pink-small.png);
+      color:$color-pink !important;
     }
   }
   #left-side aside &,
@@ -408,7 +417,6 @@ div{
   }
   #welcome >&{
     border:solid 1px #e4e4e4;
-    margin-left: -$offset-common1280;
     margin-top: 11px;
     padding: 26px 0 10px 28px;
   }
@@ -467,6 +475,9 @@ div{
         display: none;
       }
     }
+  }
+  footer.desktop>&:nth-child(1){
+    border-top: solid 1px #E4E4E4;
   }
   // 2-й уровень в первом (самом верхнем) блоке
   footer.desktop>div:nth-child(1)>&{
@@ -586,12 +597,12 @@ h4{
     &:nth-child(3){
       background: url($images_dir + "actions-and-discounts.png")no-repeat 0 43px;
       color:$color-pink;
-      height: 370px;
+      height: 372px;
       margin-top: 20px;
     }
     &:nth-child(4){
       background: url($images_dir + "our-achievements.png")no-repeat 0 43px;
-      height: 319px;
+      height: 324px;
       margin-top: 35px;
     }
     &:nth-child(1){
@@ -640,7 +651,7 @@ i{
     margin-top: 11px;
   }
   #welcome &{
-    margin: 4px auto;
+    margin: 4px auto auto $offset-common1280;
   }
 }
 input{

@@ -294,6 +294,8 @@ ul
   color: $color-dark;
   font-family: $font-tahoma-family;
   font-size: 13px;
+  //padding-left: 3px;
+  margin-left: -$offset-common1280;
 }
 @media (max-width:$resolution-mobile){
   #banner, #roof, #visavi{
