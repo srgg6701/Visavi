@@ -82,6 +82,25 @@
 // Google
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans);
+// Set box-sizing -------------------------------------------------------
+a,
+article,
+aside,
+body,
+footer,
+header,
+div,
+li,
+main,
+menu,
+nav,
+p,
+section,
+span,
+ul
+{
+  @include box-sizing(border-box);
+}
 //-----------------------------------------------------------------------
 #ask-specialist{
   background: url($images_dir + "ask-specialist.png");
@@ -103,7 +122,7 @@
   }
 }
 #content{
-  padding-left: 300px;
+  padding-left: 286px;
 }
 #copyright{
   @media (max-width:1024px){
@@ -119,8 +138,19 @@
     display: block;
   }
 }
+// Скидка 20% на услуги салона во время первого посещения
+#discount-to-all-first-time{
+  background: url($images_dir_1280 + "discount-first-figures.png") $background-menu-pink no-repeat 22px 14px;
+  color: white;
+  font: 18px/40px BookAntiqueItalicBold;
+  height: 40px;
+  margin-left: -$offset-common1280;
+  margin-top: 15px;
+  padding-left: 63px;
+  //padding-right: 160px;
+}
 #discount1{
-  @include box-sizing(border-box);
+
   font-family: BookAntiqueItalic;
   font-size: 18px;
   margin-top: -4px;
@@ -158,10 +188,21 @@
 #join-us{
   display: none; // присваивается значение block клиентским скриптом при загрузке шаблона mobile_default
 }
+#header-advantages{
+  margin: auto auto 11px 28px;
+}
+#license{
+  background: url($images_dir_1280 + "license.png") #fafafa no-repeat 99% 20px;
+  border: double #EEE;
+  display: block;
+  font: 18px/18px BookAntiqueItalic;
+  margin-top: 11px;
+  padding: 14px 122px 13px 26px;
+}
 #left-side,   // левое меню
 #right-side{  // правое меню
   background-color: #F5F6F5;
-  @include box-sizing(border-box);
+
   display: none;
 }
 #left-side{
@@ -201,6 +242,9 @@
   height: $height-by-default;
   overflow: hidden;
 }
+#services-kinds{ // ul
+  margin: 11px auto auto 9px;
+}
 #slider{
   background: url($images_dir + "banner.jpg");
   height: 100%;
@@ -220,7 +264,7 @@
 }
 #visavi{
   background: url($images_dir + "logotype.png") no-repeat 3.2% 17px;
-  height: 107px;
+  height: 109px;
   @include border-common;
 }
 //--------------------mobile--------------------
@@ -241,6 +285,10 @@
 #roof-mobile{
   background: url($images_dir + "logotype-mobile.png") no-repeat 15px 5px;
   height: 44px;
+}
+#waiting-you{
+  margin-bottom: 6px;
+  margin-top: 15px;
 }
 #welcome{
   color: $color-dark;

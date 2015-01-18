@@ -20,7 +20,7 @@
 @mixin phones-numbers($padding-left:18px){
   color: $color-dark;
   background: url($images_dir + "mobila.png") no-repeat;
-  @include box-sizing(border-box);
+
   font-family: BookAntiqueBold;
   font-size: 19px;
   margin-top: 5px;

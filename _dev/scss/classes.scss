@@ -1,8 +1,18 @@
+.accented-pink{
+  color: $color-pink;
+}
 .antique-italic{
   font-family: BookAntiqueItalic;
 }
 .antique-italic-bold{
   font-family: BookAntiqueItalicBold;
+}
+.black-substrate{
+  font-family: tahoma;
+  font-size: 14px;
+  position: relative;
+  top: 8px;
+  text-transform: uppercase;
 }
 .centered-vertical{
   @include centered-vertical;
@@ -25,9 +35,55 @@
 .font-size24{
   font-size: 24px;
 }
+.half-wide{
+  background-repeat: no-repeat !important;
+  float: left;
+  width: 50%;
+  &:nth-child(even){
+    padding-left: 13px;
+  }
+  /*&:nth-child(odd){
+    background-color: lemonchiffon;
+  }*/
+  #our-advantages &{
+    margin-top: 11px;
+  }
+  #our-advantages &:nth-child(even){
+    background-position-x: 13px !important;
+  }
+  #our-advantages &:nth-child(1){
+    background: url($images_dir_1280 + "hospitality.jpg");
+  }
+  #our-advantages &:nth-child(2){
+    background: url($images_dir_1280 + "safety.jpg");
+  }
+  #our-advantages &:nth-child(3){
+    background: url($images_dir_1280 + "good-prices.jpg");
+  }
+  #our-advantages &:nth-child(4){
+    background: url($images_dir_1280 + "money-back.jpg");
+  }
+}
+.hide-menus{
+  transform: translateX(-33.33%);
+}
 .left-panel{
   float: left;
-  width: 269px;
+  margin-bottom: $margin-bottom-main;
+  width: 254px;
+}
+.pseudoheader,
+.pseudoheader-gray{
+  display: block;
+  font-family: BookAntiqueItalicBold;
+}
+.pseudoheader{
+  color: $color-pink;
+  font-size: 24px;
+}
+.pseudoheader-gray{
+  font-size: 18px;
+  color: $color-dark;
 }
 .show-left-menu{
   transform: translate(0);
@@ -35,6 +91,6 @@
 .show-right-menu{
   transform: translateX(-66.66%);
 }
-.hide-menus{
-  transform: translateX(-33.33%);
+.uppercase{
+  text-transform: uppercase;
 }
