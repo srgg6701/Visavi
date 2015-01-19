@@ -33,8 +33,7 @@ $(function(){
 // Разобраться с загружаемым шаблоном
 function loadTemplate(){
     var segment_pos,
-        section='1280_default';/*,
-        tmpl = 'templates/'; // шаблон, загружаемый по умолчанию*/
+        section='1280_default';
     if((segment_pos = location.href.indexOf('='))!=-1){ // если найдено, возвращает позицию, с которой будем начинать извлекать section (после сдвига на 1)
         segment_pos+=1; // скорректировать позицию
         section=(location.href.indexOf('&')!=-1)?
@@ -50,7 +49,7 @@ function loadTemplate(){
     // Загрузить шаблон в #content
     getComponentArea().load(getPath(true)+section+'.html', function(){
         //console.log('section='+section);
-        // добавить левую панель в main
+        // добавить левую панель (с модулями меню) в main
         if (section.indexOf('1280_')!=-1)
             loadLeftPanel(section);
     });
@@ -75,8 +74,11 @@ function loadLeftPanel(section){
                 loadModule(leftPanel,'actions','achievement');
             });
             break;
-        case '1280_actions': // акции и скидки
+        case '1280_action': case '1280_actions': // единичная акция, акции и скидки
             loadModule(leftPanel,'discounts','achievement');
+            break;
+        case '1280_care': case '1280_contacts':  case '1280_epilation'://
+            loadModule(leftPanel,'care','actions');
             break;
     }
     // если любая страница кроме загружаемой по умолчанию, добавить breadcrumbs

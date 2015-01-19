@@ -1,3 +1,4 @@
+@charset "utf-8";
 @mixin border-common($border:border-bottom,$border-color:$border-color-gray-light){
   #{$border}:solid 1px $border-color;
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* default sass file */
 @import "compass";
 @import "variables";
@@ -110,6 +111,13 @@ ul
   height: 201px;
   position: relative;
 }
+#block-social-nets{
+  background: url($images_dir + "social-nets.png") no-repeat;
+  float: right;
+  height: 30px;
+  margin-left: 22px;
+  width: 341px;
+}
 // Visa, MasterCard, Wifi
 #cards{
   font-size: 0;
@@ -122,7 +130,10 @@ ul
   }
 }
 #content{
-  padding-left: 286px;
+  position: relative;
+  @media (min-width:$resolution_middle + 1){
+    padding-left: 286px;
+  }
 }
 #copyright{
   @media (max-width:1024px){
@@ -140,7 +151,7 @@ ul
 }
 // Скидка 20% на услуги салона во время первого посещения
 #discount-to-all-first-time{
-  background: url($images_dir_1280 + "discount-first-figures.png") $background-menu-pink no-repeat 22px 14px;
+  background: url($images_dir_1280 + "default/discount-first-figures.png") $background-menu-pink no-repeat 22px 14px;
   color: white;
   font: 18px/40px BookAntiqueItalicBold;
   height: 40px;
@@ -199,7 +210,9 @@ ul
   margin-top: 35px;
 }
 // меню
-#header-actions-and-discounts, #header-popular-services{
+#header-actions-and-discounts,
+#header-popular-services,
+#header-care{
   margin-bottom: 12px;
   margin-top: 15px;
   padding: 0;
@@ -213,7 +226,7 @@ ul
 }
 //---------------------------
 #license{
-  background: url($images_dir_1280 + "license.png") #fafafa no-repeat 99% 20px;
+  background: url($images_dir_1280 + "default/license.png") #fafafa no-repeat 99% 20px;
   border: double #EEE;
   display: block;
   font: 18px/18px BookAntiqueItalic;
@@ -228,6 +241,12 @@ ul
 }
 #left-side{
   min-width: 232px;
+}
+#like-it{
+  float: right;
+  font:13px/27px $font-tahoma-family;
+  font-weight: bold;
+  margin-top: 19px;
 }
 #right-side{ // см. также layout.scss
   min-width: 200px;
@@ -307,6 +326,14 @@ ul
   background: url($images_dir + "logotype-mobile.png") no-repeat 15px 5px;
   height: 44px;
 }
+#waiting-you-for-coming{
+  background: url($images_dir + 'curly-pink_waiting-you.png') no-repeat 10px 16px;
+  border: solid 1px $background-menu-pink;
+  font-size: 18px;
+  line-height: 44px;
+  margin: 29px auto;
+  padding-left: 51px;
+}
 #waiting-you{
   margin-bottom: 6px;
   margin-top: 15px;
@@ -315,7 +342,6 @@ ul
   color: $color-dark;
   font-family: $font-tahoma-family;
   font-size: 13px;
-  //padding-left: 3px;
   margin-left: -$offset-common1280;
 }
 @media (max-width:$resolution-mobile){

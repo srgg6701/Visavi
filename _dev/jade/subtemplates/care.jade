@@ -1,0 +1,7 @@
+//- меню
+h4#header-care="Лазерная эпиляция"
+menu
+    -var epilation_service={'spb':'лазерная эпиляция в спб','action':'<span>акция</span>лазерная эпиляция по скидке всего за 299 рублей','bikini':'лазерная эпиляция зоны бикини','armpits':'лазерная эпиляция подмышек','limbs':'лазерная эпиляция рук и ног','cut_hair':'удаление волос на лице','men_epilation':'лазерная эпиляция для мужчин', 'prices':'цены на лазерную эпиляцию в спб'}
+    each text, link in epilation_service
+        li
+            a(href=link)!=text

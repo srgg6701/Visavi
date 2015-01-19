@@ -1,3 +1,4 @@
+@charset "utf-8";
 a{
   &.active{
     color:$color-pink !important;
@@ -83,12 +84,17 @@ a{
     text-transform: uppercase;
   }
   .breadcrumbs &{
-    background: url($images_dir + "home.png") no-repeat;
+    background: url($images_dir + "home.png") no-repeat 6px 4px;
     color: #999;
     display: table;
     font-family: $font-tahoma-family;
     font-size: 11px;
-    padding-left: 20px;
+    padding-left: 26px;
+  }
+  #page-actions h4 &{
+    color: $color-pink;
+    font-family: BookAntiqueItalicBold;
+    font-size: 16px;
   }
   #right-side &,
   .left-panel &{
@@ -101,9 +107,9 @@ a{
     background-position: 0 13px;
     display: block;
     font-family: $font-tahoma-family;
-    height: 30px;
-    line-height: 30px;
+    padding-bottom: 8px;
     padding-left: 19px;
+    padding-top: 8px;
     text-decoration: none;
     text-transform: uppercase;
     &:hover{
@@ -161,6 +167,19 @@ a{
   #roof div:nth-child(3) &{ // ссылки перед формой поиска - VISA, MasterCard, WiFi
     display: inline-block;
     //@include centered-vertical-a;
+  }
+  #waiting-you-for-coming &{
+    background: url($images_dir + 'make-appointment.png') $background-menu-pink no-repeat 14px;
+    color: white;
+    display: table;
+    float: right;
+    font-family: $font-tahoma-family;
+    font-size: 12px;
+    height: 44px;
+    padding-left: 51px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 202px;
   }
   #welcome >div >aside > & {
     background: #000;
@@ -260,7 +279,7 @@ aside{
     width: 20px;
   }
   #welcome &{
-    background: url($images_dir_1280 + "3-d-tour.jpg");
+    background: url($images_dir_1280 + "default/3-d-tour.jpg");
     float: right;
     height: 200px;
     margin-top: -49px;
@@ -586,6 +605,10 @@ h1{
   }
 }
 h4{
+  #page-actions &{
+    margin-top: -4px;
+    margin-bottom: 15px;
+  }
   .left-panel &{
     color: $color-dark;
     font-family: $font-tahoma-family;
@@ -649,6 +672,9 @@ li{
   }
   footer.desktop &{
     padding: 4px 1.95%;
+  }
+  ul.block &{
+    display: list-item;
   }
   ul.curly &{
     background: url("../images/sources/curly-single-pink.png") no-repeat;
@@ -715,6 +741,35 @@ p{
   margin-bottom: 18px;
   #our-advantages .half-wide &{
     margin-top: 83px;
+  }
+  #page-action &{
+    &.banner{
+      background: url($images_dir_1280 + 'action/discount.jpg') no-repeat;
+      padding-top: 202px;
+    }
+  }
+  #page-actions &{
+    background-repeat: no-repeat;
+    background-position: 0 4px;
+    line-height: 18px;
+    margin-bottom: 20px;
+    margin-top: -5px;
+    padding-left: 247px;
+    &:nth-child(3){ // 1-й блок
+      background-image: url($images_dir_1280 + 'actions/discount50.jpg');
+    }
+    &:nth-child(5){
+       background-image: url($images_dir_1280 + 'actions/sertificates-sale.jpg');
+    }
+    &:nth-child(7){
+      background-image: url($images_dir_1280 + 'actions/contour-plastics-sale.jpg');
+    }
+    &:nth-child(9){
+      background-image: url($images_dir_1280 + 'actions/lpg-sale.jpg');
+    }
+    &:nth-child(11){
+      background-image: url($images_dir_1280 + 'actions/rf-lifting-sale.jpg');
+    }
   }
   #welcome &{
     margin: 18px auto 14px;
@@ -797,6 +852,9 @@ span{
       color: $color-pink;
     }
   }
+  ul.color-pink &{
+    color:$color-dark;
+  }
 }
 strong{
   #welcome &{
@@ -806,6 +864,12 @@ strong{
 ul{
   margin: 0;
   padding: 0;
+  #page-action &{
+    &.color-pink{
+      margin-bottom: 18px;
+      margin-left: 15px;
+    }
+  }
   #waiting-you &{
     margin-left: 10px;
   }

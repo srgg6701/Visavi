@@ -1,13 +1,11 @@
+@charset "utf-8";
 body, html{
   margin: 0;
   padding: 0;
 }
 body{
   @media (max-width:$resolution-mobile){
-    //@include transform(translateX(-33.33%));
-    //@include transition(translate, 0.3s, ease);
     overflow-x: hidden;
-    //width: 300%;
   }
 }
 #left-side,
@@ -15,6 +13,5 @@ body{
 #right-side{
   @media (max-width:$resolution-mobile){
     float: left;
-    //width: 33.33%;
   }
 }
