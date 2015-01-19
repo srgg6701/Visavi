@@ -1,0 +1,8 @@
+//- меню
+h4#header-actions-and-discounts="Акции и скидки"
+menu
+    -var discounts={'discount-first-time':'скидка 50% на первое посещение','sale':'распродажа подарочных сертификатов','contour':'скидка на контурную пластику','lpg':'скидка на lpg','rf-lifting':'скидка на rf lifting'}
+    each text, link in discounts
+        li
+            a(href=link)=text
+

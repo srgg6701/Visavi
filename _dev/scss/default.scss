@@ -191,6 +191,27 @@ ul
 #header-advantages{
   margin: auto auto 11px 28px;
 }
+//---------------------------
+// только картинка
+#header-achivement{
+  background: url($images_dir + "our-achievements.png")no-repeat 0 43px;
+  height: 324px;
+  margin-top: 35px;
+}
+// меню
+#header-actions-and-discounts, #header-popular-services{
+  margin-bottom: 12px;
+  margin-top: 15px;
+  padding: 0;
+}
+// только картинка
+#header-actions{
+  background: url($images_dir + "actions-and-discounts.png")no-repeat 0 43px;
+  color:$color-pink;
+  height: 372px;
+  margin-top: 20px;
+}
+//---------------------------
 #license{
   background: url($images_dir_1280 + "license.png") #fafafa no-repeat 99% 20px;
   border: double #EEE;
