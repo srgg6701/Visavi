@@ -116,17 +116,24 @@ endif;?>
 		margin-left: 16px;
 	}
 	.<?php echo DEBUG_MENU;?>{
+        background-color: #DBDBDB;
+        border: solid rgba(0, 0, 0, 0.3) 1px;
+        border-top: none;
 		display:none;
-        padding-top: 26px;
+        margin-top: 36px;
+        padding: 10px 14px 10px 14px;
+        position: absolute;
+        top: 0;
+        z-index: 1;
 	}
 	.<?php echo DEBUG_MENU;?> a{
-		display:table;
+		display:block;
 		font-family:Arial, Helvetica;
 		padding:2px 4px;
 		text-decoration:none;
 	}
 	.<?php echo DEBUG_MENU;?> a:hover{
-		background-color:lightblue;
+		background-color:white;
 	}	
     #opacity-range {
         margin-left: 16px;
@@ -269,7 +276,6 @@ if($show_substrate):?>
 <?php   
 endif;?>
 	<div class="<?php echo DEBUG_MENU;?>">
-    	<hr/>
 <?php
 // построить меню ссылок:
 foreach($substrates as $alias=>$image):
