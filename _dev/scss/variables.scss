@@ -10,7 +10,8 @@ $background-menu-pink-mobile:#cf1f43; // Цвет заголовков лево�
 $border-color-gray-light:#e1e1e1;
 $font-tahoma-family: Tahoma, Arial, sans-serif;
 $height-by-default:34px;
-$images_dir:'../images/sources/';
+$images_root_dir: '../images/';
+$images_dir: $images_root_dir + 'sources/';
 $images_dir_1280: $images_dir + "1280_";
 
 $margin-bottom-main:58px;

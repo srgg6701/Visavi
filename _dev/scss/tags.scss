@@ -98,7 +98,7 @@ a{
   }
   #right-side &,
   .left-panel &{
-    background: url(../images/sources/arrow-right-gray-small.png) no-repeat 12px 20px;
+    background: url($images_dir + "arrow-right-gray-small.png") no-repeat 12px 20px;
     color: $color-dark;
     font-size: 12px;
     padding: 0 30px;
@@ -113,7 +113,7 @@ a{
     text-decoration: none;
     text-transform: uppercase;
     &:hover{
-      background-image: url(../images/sources/arrow-right-pink-small.png);
+      background-image: url($images_dir + "arrow-right-pink-small.png");
       color:$color-pink !important;
     }
   }
@@ -234,25 +234,25 @@ a{
       background-color: $background-menu-pink-hover;
     }
     &:nth-child(1){
-      background-image: url('../images/sources/menu-hairs-care.png');
+      background-image: url($images_dir + "menu-hairs-care.png");
     }
     &:nth-child(2){
-      background-image: url('../images/sources/menu-limbs-care.png');
+      background-image: url($images_dir + "menu-limbs-care.png");
     }
     &:nth-child(3){
-      background-image: url('../images/sources/menu-face-care.png');
+      background-image: url($images_dir + "menu-face-care.png");
     }
     &:nth-child(4){
-      background-image: url('../images/sources/menu-body-care.png');
+      background-image: url($images_dir + "menu-body-care.png");
     }
     &:nth-child(5){
-      background-image: url('../images/sources/menu-laser-epilation.png');
+      background-image: url($images_dir + "menu-laser-epilation.png");
     }
     &:nth-child(6){
-      background-image: url('../images/sources/menu-injection-cosmetic.png');
+      background-image: url($images_dir + "menu-injection-cosmetic.png");
     }
     &:nth-child(7) {
-      background-image: url('../images/sources/menu-apparatus-cosmetic.png');
+      background-image: url($images_dir + "menu-apparatus-cosmetic.png");
     }
     @media (max-width:$resolution-mobile){
       background-position: 5px;
@@ -288,8 +288,8 @@ aside{
   }
 }
 body{
-  background-image: url("../images/backgrounds/bg.jpg");
-
+  background-image: url($images_root_dir
+  + "backgrounds/bg.jpg");
 }
 button{
   #roof &{ // кнопка поиска в самом верхнем меню
@@ -677,7 +677,7 @@ li{
     display: list-item;
   }
   ul.curly &{
-    background: url("../images/sources/curly-single-pink.png") no-repeat;
+    background: url($images_dir + "curly-single-pink.png") no-repeat;
     background-position: 0 5px;
     color: #231f20;
     display: block;
