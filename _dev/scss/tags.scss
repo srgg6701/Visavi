@@ -394,17 +394,12 @@ div{
     overflow: auto;
   }
   $images_dir_1280_care: $images_dir_1280 + 'care/';
-  #page-care >section >div:nth-child(1)>&{
-    background:url($images_dir_1280_care + 'peeling.jpg');
-  }
-  #page-care >section >div:nth-child(2)>&{
-    background:url($images_dir_1280_care + 'wrapping.jpg');
-  }
-  #page-care >section >div:nth-child(3)>&{
-    background:url($images_dir_1280_care + 'peeling2.jpg');
-  }
-  #page-care >section >div:nth-child(4)>&{
-    background:url($images_dir_1280_care + 'peeling3.jpg');
+  $i:0;
+  @each $image in ('peeling','wrapping','peeling2','peeling3') {
+    $i: $i+1;
+    #page-care >section >div:nth-child(#{$i})>&{
+      background:url($images_dir_1280_care + $image + '.jpg');
+    }
   }
   #page-care >section >div >&{
     float: left;
