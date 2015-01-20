@@ -101,7 +101,7 @@ a{
     background: url($images_dir + "arrow-right-gray-small.png") no-repeat 12px 20px;
     color: $color-dark;
     font-size: 12px;
-    padding: 0 30px;
+    padding: 0 $offset-common1280;
   }
   .left-panel &{
     background-position: 0 13px;
@@ -271,6 +271,9 @@ aside{
   #right-side &{
     background-color: $background-menu-pink-mobile;
   }
+  #page-care >section &{
+    margin-left: 253px;
+  }
   #roof-mobile &{
     float: right;
     height: 15px;
@@ -325,7 +328,6 @@ div{
     &:last-child{
       width: 76%;
     }
-
   }
   #banner >&:not(#slider){
     background-size: cover;
@@ -386,6 +388,35 @@ div{
       line-height: 20px;
       padding-top: 0;
     }
+  }
+  #page-care >section >&{
+    margin-bottom: 13px;
+    overflow: auto;
+  }
+  $images_dir_1280_care: $images_dir_1280 + 'care/';
+  #page-care >section >div:nth-child(1)>&{
+    background:url($images_dir_1280_care + 'peeling.jpg');
+  }
+  #page-care >section >div:nth-child(2)>&{
+    background:url($images_dir_1280_care + 'wrapping.jpg');
+  }
+  #page-care >section >div:nth-child(3)>&{
+    background:url($images_dir_1280_care + 'peeling2.jpg');
+  }
+  #page-care >section >div:nth-child(4)>&{
+    background:url($images_dir_1280_care + 'peeling3.jpg');
+  }
+  #page-care >section >div >&{
+    float: left;
+    height: 122px;
+    margin-top: 2px;
+    padding: 4px;
+    width: 222px;
+  }
+  #page-care >section >div> div >&{
+    @include box-shadow(0 0 0 4px rgba(255, 255, 255, 0.5));
+    height: 100%;
+    width: 100%;
   }
   #phones &{
     float: right;
@@ -594,6 +625,11 @@ form{
   }
 }
 h1{
+  #page-care &{
+    &.first{
+      margin-bottom: 15px;
+    }
+  }
   #roof-mobile &{
     color: $color-pink;
     float: left;
@@ -609,6 +645,12 @@ h4{
     margin-top: -4px;
     margin-bottom: 15px;
   }
+  #page-care >section &{
+    color: $color-pink;
+    font: 18px/18px BookAntiqueItalicBold;
+    margin-bottom: 0;
+    margin-top: 14px;
+  }
   .left-panel &{
     color: $color-dark;
     font-family: $font-tahoma-family;
@@ -617,6 +659,13 @@ h4{
   }
 }
 hr{
+  &.separator{
+    border: 0;
+    border-bottom: dotted 1px #C0C0C0;
+    display: block;
+    margin-bottom: 28px;
+    margin-top: 26px;
+  }
   #roof-mobile aside &{
     background-color: $color-pink-sandwich;
     border: none;
@@ -696,8 +745,8 @@ li{
 main{
   margin-bottom: $margin-bottom-main;
   padding-top: 0;
+  position: relative;
   @media (max-width:$resolution-mobile){ // для мобильных устройств
-
     padding: $offset-common-mobile $offset-common-mobile 0 $offset-common-mobile;
   }
   @media (min-width:$resolution-mobile){ // Apple iPhone 6 Plus
@@ -746,6 +795,13 @@ p{
     &.banner{
       background: url($images_dir_1280 + 'action/discount.jpg') no-repeat;
       padding-top: 202px;
+    }
+  }
+
+  #page-care aside &{
+    margin-bottom: 0;
+    &:nth-child(2){
+      margin-top: 6px;
     }
   }
   #page-actions &{

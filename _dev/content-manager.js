@@ -107,7 +107,7 @@ function loadLeftPanel(section){
             breadcrumbs=$('<div/>',{
                 class:bread_class
             });
-        getComponentArea().prepend(breadcrumbs);
+        $(main).prepend(breadcrumbs);
         $('.'+bread_class).load( getPath()+bread_class+'.html');
     }
 }
