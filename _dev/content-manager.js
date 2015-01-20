@@ -2,15 +2,35 @@ $(function(){
     // распарсить URL и получить сегменты
     var baseParams = getBaseUrl(),
         urlBase   = baseParams.urlBase,
-        params    = baseParams.params;
+        params    = baseParams.params,
+        prefixes  = getResolutionsSet();
     //console.log('location.href = '+location.href);
     // todo: remove on production
     // ----------------------------------------------------
+    // Добавить базовый URL
+    if( location.href.indexOf('localhost')!=-1
+        || location.href.indexOf('127.0.0.1')!=-1){
+        //$('title').before('<base href="http://127.0.0.1:8080/projects/visavi/">');
+        //console.log('params = '+params);
+        if(!params) params=getSectionByDefault();
+        for(var i= 0, pref, j=prefixes.length; i<j; i++){
+            pref = prefixes[i]+'_';
+            if(params.indexOf(pref)!=-1)
+                break;
+        }
+        var url;
+        $($('nav a').toArray().concat($('#left-side a').toArray()))
+            .each(function(index,element){
+                url=this.href.substring(this.href.lastIndexOf('/')+1);
+                console.log('%curl = '+url, 'color:brown');
+                $(element).attr('href', '?section='+pref+url);
+                console.log(this.href);
+            });
+    }
     // Загрузить тестовый компонент и контент шаблонов
-    if(( location.href.indexOf('localhost')!=-1
-        || location.href.indexOf('127.0.0.1')!=-1)
-        && location.href.indexOf('?')!=-1){
+    if( location.href.indexOf('?')!=-1){
         document.title = window.outerWidth;
+        // set base URL
         window.onresize=function(){
             document.title = window.outerWidth;
         };
@@ -24,16 +44,16 @@ $(function(){
                 // загрузить контент
                 loadTemplate();
             });
-    }else{ // загрузить контент
-        console.log('No url params...');
+    }else{ // загрузить контент БЕЗ подгрузки тестовой среды
         loadTemplate();
+        console.log('No url params...');
     }
 });
 // info: удалить (если используются серверные сценарии) или модифицировать (если используется JS-framework).
 // Разобраться с загружаемым шаблоном
 function loadTemplate(){
     var segment_pos,
-        section='1280_default';
+        section=getSectionByDefault();
     if((segment_pos = location.href.indexOf('='))!=-1){ // если найдено, возвращает позицию, с которой будем начинать извлекать section (после сдвига на 1)
         segment_pos+=1; // скорректировать позицию
         section=(location.href.indexOf('&')!=-1)?
@@ -128,4 +148,16 @@ function getPath(short){
  */
 function getComponentArea(){
     return $('#content');
+}
+/**
+ *
+ */
+function getSectionByDefault(){
+    return getResolutionsSet()[0]+'_default';
+}
+/**
+ *
+ */
+function getResolutionsSet(){
+    return ['1280','1024','768','mobile'];
 }

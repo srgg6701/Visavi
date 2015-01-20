@@ -13,10 +13,10 @@ html(lang="ru")
         #left-side
             aside
                 a(href="#")="Задать вопрос"
-            -var all_services=["Парикмахерский зал","Уход за руками и ногами", "Уход за лицом", "Уход за телом", "Лазерная эпиляция", "Инъекционная косметология", "Аппаратная косметология"]
-            each val in all_services
+            -var all_services={ 'hair-care':"Парикмахерский зал", 'limbs-care':"Уход за руками и ногами", 'face-care':"Уход за лицом", 'care': "Уход за телом", 'epilation': "Лазерная эпиляция", 'injections':"Инъекционная косметология", 'apparatus':"Аппаратная косметология" }
+            each val, link_id in all_services
                 div
-                    a(href="#",title=val)=val
+                    a(href=link_id,title=val)=val
         #page
             header
                 //- Блоки (768+):
@@ -114,8 +114,8 @@ html(lang="ru")
 
                 //- основное меню
                 nav
-                    each val in all_services
-                        a(href="#",title=val)
+                    each val, link_id in all_services
+                        a(href=link_id,title=val)
                             div
                                 div=val
             main
