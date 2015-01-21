@@ -1,0 +1,6 @@
+http://new.vizavi-salon.spb.ru/administrator/ 
+Joomla admin panel:
+administrator :: Vizavi2015 
+CPanel:
+vizavisaru :: heuvuzmaza 
+folder: 2015
