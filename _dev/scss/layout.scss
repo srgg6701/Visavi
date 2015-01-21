@@ -1,0 +1,17 @@
+@charset "utf-8";
+body, html{
+  margin: 0;
+  padding: 0;
+}
+body{
+  @media (max-width:$resolution-mobile){
+    overflow-x: hidden;
+  }
+}
+#left-side,
+#page,
+#right-side{
+  @media (max-width:$resolution-mobile){
+    float: left;
+  }
+}

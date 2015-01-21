@@ -1,0 +1,30 @@
+@charset "utf-8";
+@mixin border-common($border:border-bottom,$border-color:$border-color-gray-light){
+  #{$border}:solid 1px $border-color;
+}
+@mixin centered-vertical {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+@mixin centered-vertical-a {
+  position: relative;
+  @include transform(translateY(50%));
+}
+@mixin link-white{
+  color: white;
+  font-family: $font-tahoma-family;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@mixin phones-numbers($padding-left:18px){
+  color: $color-dark;
+  background: url($images_dir + "mobila.png") no-repeat;
+
+  font-family: BookAntiqueBold;
+  font-size: 19px;
+  margin-top: 5px;
+  padding-left: $padding-left;
+  background-position-y: 3px;
+}

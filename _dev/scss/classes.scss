@@ -1,0 +1,138 @@
+@charset "UTF-8";
+.accented-pink{
+  color: $color-pink;
+}
+.antique-italic{
+  font-family: BookAntiqueItalic;
+}
+.antique-italic-bold{
+  font-family: BookAntiqueItalicBold;
+}
+.black-substrate{
+  font-family: tahoma;
+  font-size: 14px;
+  position: relative;
+  top: 8px;
+  text-transform: uppercase;
+}
+.breadcrumbs{
+  left: 309px;
+  position: absolute;
+}
+.centered-vertical{
+  @include centered-vertical;
+}
+.clear-both{
+  clear: both;
+}
+.color-dark{
+  color:$color-dark;
+}
+.color-pink{
+  color: $color-pink;
+}
+.first{
+  margin-bottom: 22px;
+  padding-top: 22px;
+}
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
+}
+.font-size18{
+  font-size: 18px;
+}
+.font-size24{
+  font-size: 24px;
+}
+.half-wide{
+  background-repeat: no-repeat !important;
+  float: left;
+  width: 50%;
+  &:nth-child(even){
+    padding-left: 13px;
+  }
+  /*&:nth-child(odd){
+    background-color: lemonchiffon;
+  }*/
+  #our-advantages &{
+    margin-top: 11px;
+  }
+  #our-advantages &:nth-child(even){
+    background-position-x: 13px !important;
+  }
+  #our-advantages &:nth-child(1){
+    background: url($images_dir_1280 + "default/hospitality.jpg");
+  }
+  #our-advantages &:nth-child(2){
+    background: url($images_dir_1280 + "default/safety.jpg");
+  }
+  #our-advantages &:nth-child(3){
+    background: url($images_dir_1280 + "default/good-prices.jpg");
+  }
+  #our-advantages &:nth-child(4){
+    background: url($images_dir_1280 + "default/money-back.jpg");
+  }
+}
+.hide-menus{
+  transform: translateX(-33.33%);
+}
+.italic{
+  font-family: BookAntiqueItalic;
+  &.bold{
+    font-family: BookAntiqueItalicBold;
+  }
+  &.first{
+    font-size: 18px;
+  }
+}
+.left-panel{
+  float: left;
+  margin-bottom: $margin-bottom-main;
+  width: 254px;
+}
+.loading{
+  background-color: #87CEFA;
+  border-radius: 16px;
+  display: table;
+  font-family: verdana;
+  padding: 10px 20px;
+}
+.pointer-right{
+  margin-left: 10px;
+  &::before{
+    content: '►';
+  }
+}
+.pseudoheader,
+.pseudoheader-gray{
+  display: block;
+  font-family: BookAntiqueItalicBold;
+}
+.pseudoheader{
+  color: $color-pink;
+  font-size: 24px;
+}
+.pseudoheader-gray{
+  font-size: 18px;
+  color: $color-dark;
+}
+.show-left-menu{
+  transform: translate(0);
+}
+.show-right-menu{
+  transform: translateX(-66.66%);
+}
+.take-place-frame{
+  background: url($images_dir + 'curly-pink_waiting-you.png') no-repeat 10px 16px;
+  border: solid 1px $background-menu-pink;
+  font-size: 18px;
+  line-height: 44px;
+  margin: 29px auto;
+  padding-left: 51px;
+}
+.uppercase{
+  text-transform: uppercase;
+}
