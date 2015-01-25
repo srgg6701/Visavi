@@ -675,8 +675,7 @@ i{
   }
 }
 input{
-  #roof &{
-
+  #roof &[name="q"]{ // динамический текст: language\ru-RU\ru-RU.mod_finder.ini
     height: 26px;
     margin-right: -4px;
     padding-left: 5px;
