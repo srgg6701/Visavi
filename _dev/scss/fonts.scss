@@ -1,0 +1,14 @@
+@each $font-face in 'MyriadProCond','MyriadProIt','MyriadProBold','MyriadProRegular','BookAntiqueRegular','BookAntiqueBold','BookAntiqueItalic','BookAntiqueItalicBold' {
+  @font-face {
+    font-family: $font-face;
+    src: url('../fonts/' + $font-face + '.eot');
+    src: url('../fonts/' + $font-face + '.eot') format('embedded-opentype'),
+    url('../fonts/' + $font-face + '.woff2') format('woff2'),
+    url('../fonts/' + $font-face + '.woff') format('woff'),
+    url('../fonts/' + $font-face + '.ttf') format('truetype'),
+    url('../fonts/' + $font-face + '.svg#BookAntiqueItalicBold') format('svg');
+  }
+}
+// Google
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);

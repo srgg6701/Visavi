@@ -42,9 +42,7 @@ $document=JFactory::getDocument();
             <?php   endif;
                     //
                     if ($this->countModules('search')) : ?>
-                <div>
                 <jdoc:include type="modules" name="search" style="none" />
-                </div>
             <?php   endif;
                     //
                     if ($this->countModules('cards')) : ?>

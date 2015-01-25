@@ -7,4 +7,9 @@ jQuery(function($){
             clearInterval(intId);
         }
     },250);
+    //----------------------------------
+    $('.finder-search').on('click', function(){
+        console.log('submitting...');
+        $(this).parents('form').eq(0).submit();
+    });
 }(jQuery));

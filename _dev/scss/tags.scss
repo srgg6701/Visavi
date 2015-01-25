@@ -11,7 +11,7 @@ a{
     @include link-white;
     width: 100%;
   }
-  #cards &{ // Visa, MasterCard, Wifi
+  .moduletable-cards &{ // Visa, MasterCard, Wifi
 
     background-image: url($images_dir + "cards-wifi.png");
     background-position-y: 6px;
@@ -145,7 +145,7 @@ a{
   #right-side menu &:hover{
     background-color: white;
   }
-  #roof menu &{
+  .moduletable-menu_top &{
     color: #333333;
     display: block;
     font-family: MyriadProRegular;
@@ -281,18 +281,6 @@ body{
   background-image: url($images_root_dir
   + "backgrounds/bg.jpg");
 }
-button{
-  #roof &{ // кнопка поиска в самом верхнем меню
-    background-color: #000;
-    border: none;
-    color: white;
-    font-family: $font-tahoma-family;
-    font-size: 11px;
-    height: 26px;
-    text-align: center;
-    width: 50px;
-  }
-}
 div{
   #all-services >&{
 
@@ -415,7 +403,7 @@ div{
       margin-top: 4px;
     }
   }
-  #roof >&{
+  #roof >&:not(.moduletable-menu_top){
     float: right;
     height: 100%;
     // Форма поиска
@@ -736,27 +724,6 @@ main{
     padding: $offset-common-mobile $offset-common1280 0 $offset-common1280;
   }
 }
-menu{
-  //
-  display: table;
-  //height: 100%;
-  margin: 0;
-  padding: 0;
-  footer.desktop &{
-    height: auto;
-    @include centered-vertical;
-  }
-  .left-panel &{
-    margin-top: 12px;
-  }
-  #right-side &{
-    display: block;
-  }
-  #roof &{
-    float: left;
-    margin-left: 24px;
-  }
-}
 nav{
   //
   @media (min-width:$resolution-mobile + 1px){
@@ -768,8 +735,14 @@ nav{
   }
 }
 p{
-  font: 13px/18px $font-tahoma-family;
-  margin-bottom: 18px;
+  .custom-cards &{
+    margin: 0;
+    padding: 0;
+  }
+  :not(div.custom-cards) &{
+    font: 13px/18px $font-tahoma-family;
+    margin-bottom: 18px;
+  }
   #our-advantages .half-wide &{
     margin-top: 83px;
   }
@@ -926,5 +899,31 @@ ul{
   }
   #waiting-you &{
     margin-left: 10px;
+  }
+  //-menus-
+  &.nav.menu{
+    display: table;
+    margin: 0;
+    padding: 0;
+    footer.desktop &{
+      height: auto;
+      @include centered-vertical;
+    }
+    .left-panel &{
+      margin-top: 12px;
+    }
+    #right-side &{
+      display: block;
+    }
+    #roof &{
+      float: left;
+      margin-left: 24px;
+    }
+  }
+  &#menu-top{
+
+  }
+  &#menu-bottom{
+
   }
 }

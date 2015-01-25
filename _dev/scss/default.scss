@@ -4,105 +4,10 @@
 @import "variables";
 @import "mixins";
 @import "tags";
+@import "fonts";
 @import "classes";
 @import "layout";
-// Myriad Pro
-@font-face {
-  font-family: 'MyriadProCond';
-  src: url('../fonts/MyriadProCond.eot');
-  src: url('../fonts/MyriadProCond.eot') format('embedded-opentype'),
-  url('../fonts/MyriadProCond.woff2') format('woff2'),
-  url('../fonts/MyriadProCond.woff') format('woff'),
-  url('../fonts/MyriadProCond.ttf') format('truetype'),
-  url('../fonts/MyriadProCond.svg#MyriadProCond') format('svg');
-}
-@font-face {
-  font-family: 'MyriadProIt';
-  src: url('../fonts/MyriadProIt.eot');
-  src: url('../fonts/MyriadProIt.eot') format('embedded-opentype'),
-  url('../fonts/MyriadProIt.woff2') format('woff2'),
-  url('../fonts/MyriadProIt.woff') format('woff'),
-  url('../fonts/MyriadProIt.ttf') format('truetype'),
-  url('../fonts/MyriadProIt.svg#MyriadProIt') format('svg');
-}
-@font-face {
-  font-family: 'MyriadProBold';
-  src: url('../fonts/MyriadProBold.eot');
-  src: url('../fonts/MyriadProBold.eot') format('embedded-opentype'),
-  url('../fonts/MyriadProBold.woff2') format('woff2'),
-  url('../fonts/MyriadProBold.woff') format('woff'),
-  url('../fonts/MyriadProBold.ttf') format('truetype'),
-  url('../fonts/MyriadProBold.svg#MyriadProBold') format('svg');
-}
-@font-face {
-  font-family: 'MyriadProRegular';
-  src: url('../fonts/MyriadProRegular.eot');
-  src: url('../fonts/MyriadProRegular.eot') format('embedded-opentype'),
-  url('../fonts/MyriadProRegular.woff2') format('woff2'),
-  url('../fonts/MyriadProRegular.woff') format('woff'),
-  url('../fonts/MyriadProRegular.ttf') format('truetype'),
-  url('../fonts/MyriadProRegular.svg#MyriadProRegular') format('svg');
-}
-// Book Antique
-@font-face {
-  font-family: 'BookAntiqueRegular';
-  src: url('../fonts/BookAntiqueRegular.eot');
-  src: url('../fonts/BookAntiqueRegular.eot') format('embedded-opentype'),
-  url('../fonts/BookAntiqueRegular.woff2') format('woff2'),
-  url('../fonts/BookAntiqueRegular.woff') format('woff'),
-  url('../fonts/BookAntiqueRegular.ttf') format('truetype'),
-  url('../fonts/BookAntiqueRegular.svg#BookAntiqueRegular') format('svg');
-}
-@font-face {
-  font-family: 'BookAntiqueBold';
-  src: url('../fonts/BookAntiqueBold.eot');
-  src: url('../fonts/BookAntiqueBold.eot') format('embedded-opentype'),
-  url('../fonts/BookAntiqueBold.woff2') format('woff2'),
-  url('../fonts/BookAntiqueBold.woff') format('woff'),
-  url('../fonts/BookAntiqueBold.ttf') format('truetype'),
-  url('../fonts/BookAntiqueBold.svg#BookAntiqueBold') format('svg');
-}
-@font-face {
-  font-family: 'BookAntiqueItalic';
-  src: url('../fonts/BookAntiqueItalic.eot');
-  src: url('../fonts/BookAntiqueItalic.eot') format('embedded-opentype'),
-  url('../fonts/BookAntiqueItalic.woff2') format('woff2'),
-  url('../fonts/BookAntiqueItalic.woff') format('woff'),
-  url('../fonts/BookAntiqueItalic.ttf') format('truetype'),
-  url('../fonts/BookAntiqueItalic.svg#BookAntiqueItalic') format('svg');
-}
-@font-face {
-  font-family: 'BookAntiqueItalicBold';
-  src: url('../fonts/BookAntiqueItalicBold.eot');
-  src: url('../fonts/BookAntiqueItalicBold.eot') format('embedded-opentype'),
-  url('../fonts/BookAntiqueItalicBold.woff2') format('woff2'),
-  url('../fonts/BookAntiqueItalicBold.woff') format('woff'),
-  url('../fonts/BookAntiqueItalicBold.ttf') format('truetype'),
-  url('../fonts/BookAntiqueItalicBold.svg#BookAntiqueItalicBold') format('svg');
-}
-// Google
-@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans);
-// Set box-sizing -------------------------------------------------------
-a,
-article,
-aside,
-body,
-footer,
-header,
-div,
-li,
-main,
-menu,
-nav,
-p,
-section,
-span,
-ul
-{
-  @include box-sizing(border-box);
-}
-//-----------------------------------------------------------------------
+//--------------------------------------------------------
 #ask-specialist{
   background: url($images_dir + "ask-specialist.png");
   background-position: 15px 13px;
@@ -118,16 +23,39 @@ ul
   margin-left: 22px;
   width: 341px;
 }
+label{
+  &.finder-search {
+    // псевдокнопка поиска в самом верхнем меню
+    background-color: #000;
+    border: none;
+    color: white;
+    float: right;
+    font-family: $font-tahoma-family;
+    font-size: 11px;
+    height: 26px;
+    text-align: center;
+    width: 50px;
+  }
+}
 // Visa, MasterCard, Wifi
-#cards{
+.moduletable-cards{
   font-size: 0;
   margin-right: 7%;
+  *{
+    height: 100%;
+  }
   @media (max-width:1024px){
     margin-right: 3%;
   }
   @media (max-width:1024px){
     display: none;
   }
+}
+.moduletable-menu_top{
+  float: left;
+}
+.moduletable-search{
+
 }
 #content{
   //position: relative;
