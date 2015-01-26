@@ -112,7 +112,7 @@
   font-size: 14px;
   margin-left: 3px;
 }
-#join-us{
+.custom-join-us{
   display: none; // присваивается значение block клиентским скриптом при загрузке шаблона mobile_default
 }
 #header-advantages{
@@ -235,21 +235,21 @@
   position: relative;
 }
 //--------------------mobile--------------------
-#all-services,
-#roof-mobile{
+.custom-all-services,
+.moduletable-roof-mobile{
   display: none;
 }
 // панели
-#all-services, #join-us{
+.custom-all-services, .custom-join-us{
   height: 44px;
 }
-#all-services{
+.custom-all-services{
   background-color: $background-menu-pink;
 }
-#join-us{
+.custom-join-us{
   text-align: center;
 }
-#roof-mobile{
+.moduletable-roof-mobile{
   background: url($images_dir + "logotype-mobile.png") no-repeat 15px 5px;
   height: 44px;
 }
@@ -269,8 +269,8 @@
   }
 }
 @media (max-width:$resolution-mobile){
-  #all-services,
-  #roof-mobile{
+  .custom-all-services,
+  .moduletable-roof-mobile{
     display: block;
   }
 }

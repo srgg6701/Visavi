@@ -59,7 +59,7 @@ a{
     font-size: 12px;
     margin-top: 3px;
   }
-  #join-us &{
+  .custom-join-us &{
     display: inline-block;
     margin-right: 6px;
     margin-top: 3px;
@@ -265,7 +265,7 @@ aside{
   #page-care >section &{
     margin-left: 253px;
   }
-  #roof-mobile &{
+  .moduletable-roof-mobile &{
     float: right;
     height: 15px;
     margin-right: 15px;
@@ -286,7 +286,7 @@ body{
   + "backgrounds/bg.jpg");
 }
 div{
-  #all-services >&{
+  .custom-all-services >&{
 
     color: white;
     float:left;
@@ -627,7 +627,7 @@ h1{
       margin-bottom: 15px;
     }
   }
-  #roof-mobile &{
+  .moduletable-roof-mobile &{
     color: $color-pink;
     float: left;
     font-family: $font-tahoma-family;
@@ -663,7 +663,7 @@ hr{
     margin-bottom: 28px;
     margin-top: 26px;
   }
-  #roof-mobile aside &{
+  .moduletable-roof-mobile &{
     background-color: $color-pink-sandwich;
     border: none;
     height: 3px;
@@ -840,16 +840,16 @@ p{
 }
 section{
   overflow: auto;
-  #all-services &{
+  .custom-all-services &{
     display: inline-block;
   }
 }
 span{
-  #all-services div &{
+  .custom-all-services div &{
     display: table;
   }
   // Второй блок - Звоните! +7 (812) 927-22-27
-  #all-services div:last-child &{
+  .custom-all-services div:last-child &{
     &:first-child{
       font-family: BookAntiqueItalicBold;
       font-size: 14px;
@@ -864,7 +864,7 @@ span{
   #discount2 span:first-child &{ // 20%
     margin-left: 2px;
   }
-  #join-us &{
+  .custom-join-us &{
     color: $color-pink;
     font-family: BookAntiqueItalicBold;
     font-size: 14px;

@@ -74,7 +74,7 @@ a.active {
   margin-top: 3px;
 }
 /* line 62, ../../../_dev/scss/tags.scss */
-#join-us a {
+.custom-join-us a {
   display: inline-block;
   margin-right: 6px;
   margin-top: 3px;
@@ -331,7 +331,7 @@ nav a:nth-child(7) {
   margin-left: 253px;
 }
 /* line 268, ../../../_dev/scss/tags.scss */
-#roof-mobile aside {
+.moduletable-roof-mobile aside {
   float: right;
   height: 15px;
   margin-right: 15px;
@@ -361,14 +361,14 @@ div {
   /* Конец NAV'а ------------------------------------------- */
 }
 /* line 289, ../../../_dev/scss/tags.scss */
-#all-services > div {
+.custom-all-services > div {
   color: white;
   float: left;
   height: 100%;
   text-align: center;
 }
 /* line 295, ../../../_dev/scss/tags.scss */
-#all-services > div:first-child {
+.custom-all-services > div:first-child {
   background-color: #d82348;
   border-right: solid 1px #ef6784;
   cursor: pointer;
@@ -378,11 +378,11 @@ div {
   width: 24%;
 }
 /* line 303, ../../../_dev/scss/tags.scss */
-#all-services > div:first-child:hover {
+.custom-all-services > div:first-child:hover {
   background-color: #de6780;
 }
 /* line 307, ../../../_dev/scss/tags.scss */
-#all-services > div:last-child {
+.custom-all-services > div:last-child {
   width: 76%;
 }
 /* line 311, ../../../_dev/scss/tags.scss */
@@ -789,7 +789,7 @@ footer.mobile {
   margin-bottom: 15px;
 }
 /* line 630, ../../../_dev/scss/tags.scss */
-#roof-mobile h1 {
+.moduletable-roof-mobile h1 {
   color: #e42c52;
   float: left;
   font-family: Tahoma, Arial, sans-serif;
@@ -828,7 +828,7 @@ hr.separator {
   margin-top: 26px;
 }
 /* line 666, ../../../_dev/scss/tags.scss */
-#roof-mobile aside hr {
+.moduletable-roof-mobile hr {
   background-color: #cc3366;
   border: none;
   height: 3px;
@@ -836,7 +836,7 @@ hr.separator {
   margin-bottom: 3px;
 }
 /* line 672, ../../../_dev/scss/tags.scss */
-#roof-mobile aside hr:last-child {
+.moduletable-roof-mobile hr:last-child {
   margin-bottom: 0;
 }
 
@@ -1039,23 +1039,23 @@ section {
   overflow: auto;
 }
 /* line 843, ../../../_dev/scss/tags.scss */
-#all-services section {
+.custom-all-services section {
   display: inline-block;
 }
 
 /* line 848, ../../../_dev/scss/tags.scss */
-#all-services div span {
+.custom-all-services div span {
   display: table;
 }
 /* line 853, ../../../_dev/scss/tags.scss */
-#all-services div:last-child span:first-child {
+.custom-all-services div:last-child span:first-child {
   font-family: BookAntiqueItalicBold;
   font-size: 14px;
   line-height: 19px;
   margin-right: 10px;
 }
 /* line 859, ../../../_dev/scss/tags.scss */
-#all-services div:last-child span:last-child {
+.custom-all-services div:last-child span:last-child {
   font-family: BookAntiqueBold;
   font-size: 17px;
 }
@@ -1064,7 +1064,7 @@ section {
   margin-left: 2px;
 }
 /* line 867, ../../../_dev/scss/tags.scss */
-#join-us span {
+.custom-join-us span {
   color: #e42c52;
   font-family: BookAntiqueItalicBold;
   font-size: 14px;
@@ -1629,7 +1629,7 @@ div[class^="mod-preview-"]:hover {
 }
 
 /* line 115, ../../../_dev/scss/default.scss */
-#join-us {
+.custom-join-us {
   display: none;
 }
 
@@ -1796,28 +1796,28 @@ div[class^="mod-preview-"]:hover {
 }
 
 /* line 239, ../../../_dev/scss/default.scss */
-#all-services,
-#roof-mobile {
+.custom-all-services,
+.moduletable-roof-mobile {
   display: none;
 }
 
 /* line 243, ../../../_dev/scss/default.scss */
-#all-services, #join-us {
+.custom-all-services, .custom-join-us {
   height: 44px;
 }
 
 /* line 246, ../../../_dev/scss/default.scss */
-#all-services {
+.custom-all-services {
   background-color: #e42c52;
 }
 
 /* line 249, ../../../_dev/scss/default.scss */
-#join-us {
+.custom-join-us {
   text-align: center;
 }
 
 /* line 252, ../../../_dev/scss/default.scss */
-#roof-mobile {
+.moduletable-roof-mobile {
   background: url("../images/sources/logotype-mobile.png") no-repeat 15px 5px;
   height: 44px;
 }
@@ -1844,8 +1844,8 @@ div[class^="mod-preview-"]:hover {
 }
 @media (max-width: 480px) {
   /* line 273, ../../../_dev/scss/default.scss */
-  #all-services,
-  #roof-mobile {
+  .custom-all-services,
+  .moduletable-roof-mobile {
     display: block;
   }
 }
