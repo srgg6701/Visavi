@@ -7,6 +7,8 @@
 @import "fonts";
 @import "classes";
 @import "layout";
+//------------------
+@import "system-test";
 //--------------------------------------------------------
 #ask-specialist{
   background: url($images_dir + "ask-specialist.png");
@@ -98,7 +100,7 @@
   font-family: $font-tahoma-family;
   font-size: 13.4px;
   font-weight: bold;
-  margin-right: -9px;
+  margin-right: -13px;
   margin-top: -2px;
   transform: scaleX(0.9);
   &::before {

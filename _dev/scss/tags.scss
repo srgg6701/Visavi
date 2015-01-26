@@ -4,11 +4,13 @@ a{
     color:$color-pink !important;
     text-transform: uppercase;
   }
-  #banner>div:not(#slider)>&{
+  //#banner>div:not(#slider)>&{
+  #banner div.custom >div >&{
     background-repeat: no-repeat;
     display: block;
     height: 100%;
     @include link-white;
+    padding: 17px 0px 15px 51px;
     width: 100%;
   }
   .moduletable-cards &{ // Visa, MasterCard, Wifi
@@ -123,7 +125,6 @@ a{
   #left-side aside &,
   #right-side aside &{
     background-repeat: no-repeat;
-
     border-bottom: none;
     color: white;
     display: block;
@@ -307,7 +308,7 @@ div{
       width: 76%;
     }
   }
-  #banner >&:not(#slider){
+  #banner div.custom >&{
     background-size: cover;
     height: 46px;
     position: absolute;
@@ -316,21 +317,21 @@ div{
       right:$offset-common1024;
     }
     width: 201px;
-    &:nth-child(2){ // записаться онлайн
+    &:nth-child(1){ // записаться онлайн
       background-color: #ff7a95;
       top:15px;
       &:hover{
         background-image: url($images_dir + "hover-make-appointment.jpg");
       }
     }
-    &:nth-child(3){ // подари сертификат
+    &:nth-child(2){ // подари сертификат
       background-color: #ee4c90;
       top:77px;
       &:hover{
         background-image: url($images_dir + "hover-make-gift.jpg");
       }
     }
-    &:nth-child(4){ // задать вопрос специалисту
+    &:nth-child(3){ // задать вопрос специалисту
       background-color: #8d0e29;
       top:139px;
       &:hover{
@@ -338,10 +339,30 @@ div{
       }
     }
   }
-  #banner >&:not(#slider)>a>&{ // внутри ссылок в правой части баннера
+  #banner div.custom >a >&{ // внутри ссылок в правой части баннера
 
     padding-left: 52px;
     @include centered-vertical;
+  }
+  #discount-more >&{
+    background: url($images_dir + "curly-more.png") no-repeat;
+    display: inline-block;
+    font-size: 0;
+    &:first-child{
+      float: left;
+      height: 18px;
+      margin-left: 8px;
+      margin-right: 0;
+      margin-top: 4px;
+      width: 11px;
+    }
+    &:last-child{
+      background-position-x: -68px;
+      float: left;
+      height: 20px;
+      margin-top: 4px;
+      width: 10px;
+    }
   }
   // Элементы управления на "Баннере" - влево-стоп-вправо
   #slider-controls >&{
@@ -463,6 +484,9 @@ div{
       position: absolute;
       z-index: 0;
     }
+  }
+  .finder-search &{
+    margin-top: 0.5px;
   }
   /* FOOTER --------------------------------------------------- */
   // Блоки первого уровня. Второй - собственно Footer (чёрный), содержащий мини-логотип, меню и счётчики
@@ -680,7 +704,7 @@ i{
 input{
   #roof &[name="q"]{ // динамический текст: language\ru-RU\ru-RU.mod_finder.ini
     height: 26px;
-    margin-right: -4px;
+    margin-right: 1px;
     padding-left: 5px;
     width: 150px;
   }
@@ -691,10 +715,12 @@ label{
     background-color: #000;
     border: none;
     color: white;
+    display: inline-block;
     float: right;
     font-family: $font-tahoma-family;
     font-size: 11px;
     height: 26px;
+    line-height: 26px;
     text-align: center;
     width: 50px;
   }
@@ -833,24 +859,6 @@ span{
     &:last-child{
       font-family: BookAntiqueBold;
       font-size: 17px;
-    }
-  }
-  #discount-more &{
-    background: url($images_dir + "curly-more.png") no-repeat;
-    &:first-child{
-      float: left;
-      height: 18px;
-      margin-left: 8px;
-      margin-right: -1px;
-      margin-top: 2px;
-      width: 11px;
-    }
-    &:last-child{
-      background-position-x: -68px;
-      float: left;
-      height: 20px;
-      margin-top: 3px;
-      width: 10px;
     }
   }
   #discount2 span:first-child &{ // 20%

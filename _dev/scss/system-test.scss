@@ -1,0 +1,15 @@
+div.mod-preview{
+  position: absolute;
+  z-index: 10;
+}
+div[class^="mod-preview-"]{
+  background-color: #D3D3D3;
+  border: solid 2px #00008B;
+  font: 20px/24px Arial;
+  display: table;
+  @include opacity(0.2);
+  padding: 20px;
+  &:hover{
+    @include opacity(1);
+  }
+}
