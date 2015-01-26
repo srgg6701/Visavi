@@ -92,7 +92,7 @@ $document=JFactory::getDocument();
         <?php   endif;
                 //
                 if ($this->countModules('main-menu')) : ?>
-        <jdoc:include type="modules" name="main-menu" style="none" />
+        <jdoc:include type="modules" name="main-menu" style="-1" />
         <?php   endif;?>
 	    </header>
         <main id="content" role="main">
