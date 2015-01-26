@@ -95,17 +95,8 @@ require_once 'helper.php';
                 //
                 $position='main-menu';
                 if ($this->countModules($position)) :
+                    // получить модифицированный контент модуля
                     handleMainMenu($position);
-                    /*ob_start();?>
-        <jdoc:include type="modules" name="main-menu" style="none" />
-        <?php       $main_menu=ob_get_contents();
-                    ob_end_clean();
-                    //$main_menu=preg_replace('/">/i','"><div><div>', $main_menu);
-                    //$main_menu=preg_replace('/<\/a>/i','<div><div></a>', $main_menu);
-                    $menus=explode("</a>",$main_menu);
-                    var_dump("<pre>",$menus,"</pre>");
-                    //echo "<div>Main menu start</div>" . $main_menu . "<div>Main menu finish</div>";
-                    */
                 endif;?>
 	    </header>
         <main id="content" role="main">
