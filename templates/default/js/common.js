@@ -8,23 +8,28 @@ jQuery(function($){
         }
     },250);
     //----------------------------------
-    $('label.finder-search').on('click', function(){
-        console.log('submitting...');
-        $(this).parents('form').eq(0).submit();
-    });
+    // Вызов по событиям объектов после того, как они найдены
     // установить тип ячейки как search
-    setInt(setSearchType);
+    callIfExists(setSearchType);
     // обработать цвет текста
-    setInt(handleSearchCell);
+    callIfExists(handleSearchCell);
+    // отправить данные формы
+    callIfExists(submitSearchForm,'label.finder-search');
 }(jQuery));
 
 // Вызывать callback-функцию
-function setInt(callback){
-    var search_cell,
-        cell_id = 'mod-finder-searchword',
+function callIfExists(callback,element){
+    var obj, i= 0,
         doInput=setInterval(function() {
-            if (search_cell = document.getElementById(cell_id)) {
-                callback(search_cell);
+            obj=(element)? document.querySelector(element):document.getElementById('mod-finder-searchword');
+            if (obj) {
+                callback(obj);
+                clearInterval(doInput);
+            }
+            //console.log('i = '+i); console.dir(obj);
+            i++;
+            if(i>50){
+                console.log('Элемент не найден: ' + element);
                 clearInterval(doInput);
             }
         },100);
@@ -43,7 +48,15 @@ function setSearchColor(search_cell,color){
 function handleSearchCell(search_cell){
     $(search_cell).on('blur click keypress',function(event){
         var color=(event.type=='blur')? false:'333';
-        console.log('event: '+event.type);
+        //console.log('event: '+event.type);
         setSearchColor(search_cell,color);
     });
+}
+// отправить данные формы
+function submitSearchForm(label){
+    $(label).on('click', function(){
+        //console.log('submitting...');
+        $(this).parents('form').eq(0).submit();
+    });
+
 }

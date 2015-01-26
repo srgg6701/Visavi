@@ -23,20 +23,6 @@
   margin-left: 22px;
   width: 341px;
 }
-label{
-  &.finder-search {
-    // псевдокнопка поиска в самом верхнем меню
-    background-color: #000;
-    border: none;
-    color: white;
-    float: right;
-    font-family: $font-tahoma-family;
-    font-size: 11px;
-    height: 26px;
-    text-align: center;
-    width: 50px;
-  }
-}
 // Visa, MasterCard, Wifi
 .moduletable-cards{
   font-size: 0;
@@ -170,6 +156,16 @@ label{
 #left-side{
   min-width: 232px;
 }
+#logo{
+  //background: #FF0;
+  display: block;
+  height: 86px;
+  left: 25px;
+  position: absolute;
+  top: 10px;
+  width: 180px;
+  z-index: 2;
+}
 #like-it{
   float: right;
   font:13px/27px $font-tahoma-family;
@@ -232,8 +228,9 @@ label{
 }
 #visavi{
   background: url($images_dir + "logotype.png") no-repeat 3.2% 17px;
-  height: 109px;
   @include border-common;
+  height: 109px;
+  position: relative;
 }
 //--------------------mobile--------------------
 #all-services,

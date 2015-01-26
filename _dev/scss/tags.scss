@@ -12,7 +12,6 @@ a{
     width: 100%;
   }
   .moduletable-cards &{ // Visa, MasterCard, Wifi
-
     background-image: url($images_dir + "cards-wifi.png");
     background-position-y: 6px;
     background-repeat: no-repeat;
@@ -76,6 +75,10 @@ a{
     &:hover{
       background-color: white;
     }
+  }
+  #logo &{
+    @include full-fit;
+    font-size: 0;
   }
   #left-side &{
     color: $color-pink;
@@ -682,6 +685,20 @@ input{
     width: 150px;
   }
 }
+label{
+  &.finder-search {
+    // псевдокнопка поиска в самом верхнем меню
+    background-color: #000;
+    border: none;
+    color: white;
+    float: right;
+    font-family: $font-tahoma-family;
+    font-size: 11px;
+    height: 26px;
+    text-align: center;
+    width: 50px;
+  }
+}
 li{
   display: table-cell;
   #right-side &,
@@ -700,6 +717,9 @@ li{
     color: #231f20;
     display: block;
     font: 13px Tahoma, Arial, sans-serif;
+  }
+  #logo &{
+    @include full-fit;
   }
   #services-kinds &{
     line-height: 18px;
