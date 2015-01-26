@@ -1541,7 +1541,7 @@ div[class^="mod-preview-"]:hover {
 
 @media (min-width: 1025px) {
   /* line 48, ../../../_dev/scss/default.scss */
-  #content {
+  .item-page {
     padding-left: 286px;
   }
 }
