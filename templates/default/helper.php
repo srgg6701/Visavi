@@ -1,4 +1,9 @@
 <?php
+/**
+ * Получить контент модуля
+ * @param $position - позиция размещения модуля (в дальнейшем можно добавить и имя)
+ * @return mixed
+ */
 function getModuleContent($position){
     $db = JFactory::getDbo();
     $query = $db->getQuery(true);
@@ -10,6 +15,10 @@ function getModuleContent($position){
     return $db->loadResult(); // Result, loadAssoc, ArrayList, Column, Row, RowList
 }
 
+/**
+ * Модифицировать вывод HTML модуля
+ * @param $position - позиция модуля
+ */
 function handleMainMenu($position){
     $content=preg_replace('/<p/i','<nav', getModuleContent($position));
     $content=preg_replace('/<\/p>/i','</nav>', $content);
