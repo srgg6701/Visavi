@@ -7,6 +7,7 @@ $app = JFactory::getApplication();
 $leftbar = 1;
 $rightbar = 1;
 $tmpl_path = $this->baseurl . "/templates/" . $this->template . "/";
+$imgs_path = $tmpl_path . 'images/sources/';
 //var_dump("<pre>",$this,"</pre>"); die();
 if($show=JFactory::getApplication()->input->get('reveal')):
     $reveal=$show=='all' ? $this : $this->$show;
@@ -124,26 +125,40 @@ require_once 'helper.php';
             </div>
             <jdoc:include type="component" />
         </main>
-    </div>
-	<footer>
-		<?php   //
-                if ($this->countModules('footer-notice')) : ?>
-        <jdoc:include type="modules" name="footer-notice" style="none" />
-        <?php   endif;?>
-        <div>
-            <div></div>
-        <?php   //
+        <footer class="desktop">
+            <?php   //
+            if ($this->countModules('footer-notice')) : ?>
+                <jdoc:include type="modules" name="footer-notice" style="none" />
+            <?php   endif;?>
+            <div>
+                <div></div>
+                <?php   //
                 if ($this->countModules('bottom-menu')):?>
-        <jdoc:include type="modules" name="bottom-menu" style="none" />
-        <?php   endif;?>
-            <div><img src="static/images/sources/counter-rambler.gif"><img src="static/images/sources/counter-2.gif"></div>
-        </div>
-        <?php   //
-                if ($this->countModules('social-buttons')) : ?>
-        <jdoc:include type="modules" name="social-buttons" style="none" />
-        <?php   endif;?>
-	</footer>
-    <?php
+                    <jdoc:include type="modules" name="bottom-menu" style="none" />
+                <?php   endif;?>
+                <div><img src="<?php echo $imgs_path;?>counter-rambler.gif"><img src="<?php echo $imgs_path;?>counter-2.gif"></div>
+            </div>
+            <?php   //
+            if ($this->countModules('social-buttons')) : ?>
+                <jdoc:include type="modules" name="social-buttons" style="none" />
+            <?php   endif;?>
+        </footer>
+        <footer class="mobile">
+            <?php   //
+            if ($this->countModules('footer-mobile')) : ?>
+                <jdoc:include type="modules" name="footer-mobile" style="none" />
+            <?php   endif;?><img src="<?php echo $imgs_path;?>counter-2.gif">
+        </footer>
+    </div>
+    <?php   //
+    if ($this->countModules('right-side')) : ?>
+    <div id="right-side">
+        <aside>
+            <jdoc:include type="modules" name="right-side" style="none" />
+        </aside>
+    </div>
+    <?php   endif;
+
 $test_stylesheets='test_css';
 $test_js='test_js';
 /*

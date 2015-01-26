@@ -10,8 +10,11 @@ a{
     display: block;
     height: 100%;
     @include link-white;
-    padding: 17px 0px 15px 51px;
+    padding: 16px 0px 15px 52px;
     width: 100%;
+  }
+  #banner div.custom >div:nth-child(3) >&{
+    padding-top: 9px;
   }
   .moduletable-cards &{ // Visa, MasterCard, Wifi
     background-image: url($images_dir + "cards-wifi.png");
@@ -202,7 +205,7 @@ a{
     width: 78px;
   }
   // FOOTER/MENU/A
-  footer.desktop menu &{
+  footer.desktop ul.nav.menu &{
     color: #ccc;
     font-family: MyriadProRegular;
     font-size: 13px;
@@ -493,9 +496,13 @@ div{
   footer.desktop>&{
     // Первый, над чёрным (собственно Footer'ом)
     &:nth-child(1){
+      border-top: solid 1px #E4E4E4;
       font-family: BookAntiqueItalic;
       height: $height-by-default;
+      line-height: $height-by-default;
+      margin-top: -2px;
       text-align: center;
+      //@include centered-vertical;
     }
     // Второй, собственно Footer
     &:nth-child(2){
@@ -505,7 +512,6 @@ div{
     }
     // Третий, под чёрным
     &:nth-child(3){
-
       font-family: $font-tahoma-family;
       font-size: 11px;
       height: $height-by-default;
@@ -522,14 +528,6 @@ div{
         display: none;
       }
     }
-  }
-  footer.desktop>&:nth-child(1){
-    border-top: solid 1px #E4E4E4;
-  }
-  // 2-й уровень в первом (самом верхнем) блоке
-  footer.desktop>div:nth-child(1)>&{
-    @include centered-vertical;
-    margin-top: -2px;
   }
   // 2-й уровень во втором (собственно Footer'е) блоке
   footer.desktop>div:nth-child(2)>&{
@@ -551,8 +549,14 @@ div{
     &:nth-child(3) {
       float: right;
       margin-right: 2.9%;
+      margin-top: 24px;
       white-space: nowrap;
     }
+  }
+  //
+  footer.desktop &.moduletable-menu_bottom{
+    height: auto;
+    @include centered-vertical;
   }
   footer.mobile &{
     float: left;
@@ -837,6 +841,9 @@ p{
   #welcome &{
     margin: 18px auto 14px;
   }
+  footer.desktop div.custom &{
+    margin: 0;
+  }
 }
 section{
   overflow: auto;
@@ -899,7 +906,7 @@ span{
     }
   }
   footer.desktop >div:nth-child(1) // Первый блок футера
-    >div>&{ // Вложенный блок/span
+    >p >&{ // Вложенный блок/span
     color:$color-dark;
     font-size: 14px;
     &:nth-child(1){ // Розовый блок "ВНИМАНИЕ!"
@@ -932,20 +939,16 @@ ul{
     display: table;
     margin: 0;
     padding: 0;
-    footer.desktop &{
-      height: auto;
-      @include centered-vertical;
-    }
-    .left-panel &{
-      margin-top: 12px;
-    }
-    #right-side &{
-      display: block;
-    }
-    #roof &{
-      float: left;
-      margin-left: 24px;
-    }
+  }
+  .left-panel &{
+    margin-top: 12px;
+  }
+  #right-side &{
+    display: block;
+  }
+  #roof &{
+    float: left;
+    margin-left: 24px;
   }
   &#menu-top{
 

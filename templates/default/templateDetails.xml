@@ -27,6 +27,7 @@
         <position>contacts</position>
 		<position>debug</position>
         <position>discounts-on-banner</position>
+        <position>footer-mobile</position>
 		<position>footer-notice</position>
         <position>join-us</position>
         <position>laser-epilation</position>
@@ -35,7 +36,7 @@
 		<position>main-menu</position>
         <position>our-achievements</position>
         <position>popular-services</position>
-		<position>right</position>
+		<position>right-side</position>
         <position>roof-mobile</position>
         <position>search</position>
         <position>social-buttons</position>
