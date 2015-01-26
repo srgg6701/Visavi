@@ -216,7 +216,7 @@ a{
     line-height: 47px;
   }
   // NAV/A - Розовый блок с меню-пиктограммами, под баннером
-  nav.moduletable_menu &{
+  nav &{
     $link-border: solid 1px #eb6581;
     background-color: $color-pink;
     background-position: center 18px;
@@ -237,22 +237,23 @@ a{
     &:hover{
       background-color: $background-menu-pink-hover;
     }
+
+    $i:0;
+    @each $img in ('hairs-care','limbs-care','face-care','body-care','laser-epilation','injection-cosmetic','apparatus-cosmetic'){
+      $i:$i+1;
+      &:nth-child(#{$i}) {
+        background-image: url($images_dir + "menu-" + $img + ".png");
+      }
+    }
     @media (max-width:$resolution-mobile){
       background-position: 5px;
       background-size: 29px 33px;
       @include box-shadow(0 0 0 1px rgba(200, 200, 200, 0.3));
+
       display: none;
       height: $menu-item-height-mobile;
       text-align: left;
       width: 43px; //100%;
-    }
-  }
-  $i:0;
-  @each $img in ('hairs-care','limbs-care','face-care','body-care','laser-epilation','injection-cosmetic','apparatus-cosmetic'){
-    $i:$i+1;
-    nav.moduletable_menu ul.menu li:nth-child(#{$i}) &{
-    //&:nth-child(#{$i}) {
-      background-image: url($images_dir + "menu-" + $img + ".png");
     }
   }
 }
@@ -730,9 +731,6 @@ li{
   .left-panel &{
     display: block;
   }
-  .moduletable_menu ul.menu &{
-    display: table-cell;
-  }
   footer.desktop &{
     padding: 4px 1.95%;
   }
@@ -940,10 +938,6 @@ ul{
     }
     .left-panel &{
       margin-top: 12px;
-    }
-    .moduletable_menu &{
-      display: table;
-      width: 100%;
     }
     #right-side &{
       display: block;
