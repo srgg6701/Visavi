@@ -7,6 +7,7 @@ $app = JFactory::getApplication();
 $leftbar = 1;
 $rightbar = 1;
 $tmpl_path = $this->baseurl . "/templates/" . $this->template . "/";
+//var_dump("<pre>",$this,"</pre>"); die();
 if($show=JFactory::getApplication()->input->get('reveal')):
     $reveal=$show=='all' ? $this : $this->$show;
     echo "<div style='background-color: whitesmoke; padding:20px; border: solid 3px #ccc;'><pre>";
@@ -14,6 +15,7 @@ if($show=JFactory::getApplication()->input->get('reveal')):
     echo '</pre><hr>file: ' . __FILE__ . '<br>line: '.__LINE__.'<hr></div>';
 endif;
 $document=JFactory::getDocument();
+require_once 'helper.php';
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>">
   <head>
@@ -91,9 +93,20 @@ $document=JFactory::getDocument();
         <jdoc:include type="modules" name="join-us" style="none" />
         <?php   endif;
                 //
-                if ($this->countModules('main-menu')) : ?>
-        <jdoc:include type="modules" name="main-menu" style="-1" />
-        <?php   endif;?>
+                $position='main-menu';
+                if ($this->countModules($position)) :
+                    handleMainMenu($position);
+                    /*ob_start();?>
+        <jdoc:include type="modules" name="main-menu" style="none" />
+        <?php       $main_menu=ob_get_contents();
+                    ob_end_clean();
+                    //$main_menu=preg_replace('/">/i','"><div><div>', $main_menu);
+                    //$main_menu=preg_replace('/<\/a>/i','<div><div></a>', $main_menu);
+                    $menus=explode("</a>",$main_menu);
+                    var_dump("<pre>",$menus,"</pre>");
+                    //echo "<div>Main menu start</div>" . $main_menu . "<div>Main menu finish</div>";
+                    */
+                endif;?>
 	    </header>
         <main id="content" role="main">
             <?php   //
