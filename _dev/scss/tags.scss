@@ -16,6 +16,14 @@ a{
   #banner div.custom >div:nth-child(3) >&{
     padding-top: 9px;
   }
+  #breadcrumbs &{
+    background: url($images_dir + "home.png") no-repeat 6px 4px;
+    color: #999;
+    font-family: $font-tahoma-family;
+    font-size: 11px;
+    margin-left: 26px;
+    padding-left: 26px;
+  }
   #discount-to-all-first-time &{
     background-color: $background-menu-pink-hover;
     border: solid 1px #e4657f;
@@ -63,7 +71,7 @@ a{
     padding: 0 16px;
     text-transform: uppercase;
   }
-  #page-actions h4 &{
+  .item-page.actions h4 &{
     color: $color-pink;
     font-family: BookAntiqueItalicBold;
     font-size: 16px;
@@ -115,14 +123,6 @@ a{
     text-align: center;
     text-decoration: none;
     width: 78px;
-  }
-  .breadcrumbs &{
-    background: url($images_dir + "home.png") no-repeat 6px 4px;
-    color: #999;
-    display: table;
-    font-family: $font-tahoma-family;
-    font-size: 11px;
-    padding-left: 26px;
   }
   .custom-join-us &{
     display: inline-block;
@@ -274,7 +274,7 @@ aside{
   #right-side &{
     background-color: $background-menu-pink-mobile;
   }
-  #page-care >section &{
+  .item-page.care section &{
     margin-left: 253px;
   }
   .moduletable-roof-mobile &{
@@ -400,7 +400,7 @@ div{
       padding-top: 0;
     }
   }
-  #page-care >section >&{
+  .item-page.care section >&{
     margin-bottom: 13px;
     overflow: auto;
   }
@@ -408,18 +408,18 @@ div{
   $i:0;
   @each $image in ('peeling','wrapping','peeling2','peeling3') {
     $i: $i+1;
-    #page-care >section >div:nth-child(#{$i})>&{
+    .item-page.care section >div:nth-child(#{$i})>&{
       background:url($images_dir_1280 + 'care/' + $image + '.jpg');
     }
   }
-  #page-care >section >div >&{
+  .item-page.care section >div >&{
     float: left;
     height: 122px;
     margin-top: 2px;
     padding: 4px;
     width: 222px;
   }
-  #page-care >section >div> div >&{
+  .item-page.care section >div> div >&{
     @include box-shadow(0 0 0 4px rgba(255, 255, 255, 0.5));
     height: 100%;
     width: 100%;
@@ -635,7 +635,7 @@ form{
   }
 }
 h1{
-  #page-care &{
+  .item-page.care &{
     &.first{
       margin-bottom: 15px;
     }
@@ -651,11 +651,11 @@ h1{
   }
 }
 h4{
-  #page-actions &{
+  .item-page.actions &{
     margin-top: -4px;
     margin-bottom: 15px;
   }
-  #page-care >section &{
+  .item-page.care section &{
     color: $color-pink;
     font: 18px/18px BookAntiqueItalicBold;
     margin-bottom: 0;
@@ -795,30 +795,21 @@ nav{
 }
 p{
   .custom-cards &{
+    font-size: 0;
     margin: 0;
     padding: 0;
   }
-  :not(div.custom-cards) &{
+  [itemprop="articleBody"] &{
     font: 13px/18px $font-tahoma-family;
     margin-bottom: 18px;
   }
   #our-advantages .half-wide &{
     margin-top: 83px;
   }
-  #page-action &{
-    &.banner{
-      background: url($images_dir_1280 + 'action/discount.jpg') no-repeat;
-      padding-top: 202px;
-    }
+  #our-advantages +&{
+    margin: 0;
   }
-
-  #page-care aside &{
-    margin-bottom: 0;
-    &:nth-child(2){
-      margin-top: 6px;
-    }
-  }
-  #page-actions &{
+  .item-page.actions &{
     background-repeat: no-repeat;
     background-position: 0 4px;
     line-height: 18px;
@@ -829,7 +820,7 @@ p{
       background-image: url($images_dir_1280 + 'actions/discount50.jpg');
     }
     &:nth-child(5){
-       background-image: url($images_dir_1280 + 'actions/sertificates-sale.jpg');
+      background-image: url($images_dir_1280 + 'actions/sertificates-sale.jpg');
     }
     &:nth-child(7){
       background-image: url($images_dir_1280 + 'actions/contour-plastics-sale.jpg');
@@ -840,8 +831,19 @@ p{
     &:nth-child(11){
       background-image: url($images_dir_1280 + 'actions/rf-lifting-sale.jpg');
     }
+
   }
-  #page-epilation &{
+  .actions-discount-contour &.banner.injection{
+    background: url($images_dir_1280 + 'action/discount.jpg') no-repeat;
+    padding-top: 202px;
+  }
+  .item-page.care aside &{
+    margin-bottom: 0;
+    &:nth-child(2){
+      margin-top: 6px;
+    }
+  }
+  .item-page.epilation &{
     margin-bottom: 18px;
     &.first{
       margin-top: -6px;
@@ -878,9 +880,6 @@ span{
       font-size: 17px;
     }
   }
-  #discount2 span:first-child &{ // 20%
-    margin-left: 2px;
-  }
   .custom-join-us &{
     color: $color-pink;
     font-family: BookAntiqueItalicBold;
@@ -889,14 +888,24 @@ span{
     line-height: 44px;
     margin-right: 32px;
   }
-  #page-epilation p.first &{
+  .item-page.epilation p.first &{
     background: url($images_dir_1280 + 'epilation/bikini.jpg') no-repeat;
     display: block;
     float: left;
+    font-size: 0;
     height: 187px;
     margin-top: 8px;
     padding-left: 331px + $offset-common1280;
     width: 331px;
+  }
+  #breadcrumbs &{
+    display: inline-block;
+    margin-bottom: -3px;
+    overflow: hidden;
+    padding-top: 4px;
+  }
+  #discount2 span:first-child &{ // 20%
+    margin-left: 2px;
   }
   // Значки элементов управления слайдером (текст)
   #slider-controls>div:first-child &, // влево
@@ -935,7 +944,7 @@ strong{
 ul{
   margin: 0;
   padding: 0;
-  #page-action &{
+  .actions-discount-contour &{
     &.color-pink{
       margin-bottom: 18px;
       margin-left: 15px;

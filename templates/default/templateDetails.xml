@@ -20,6 +20,7 @@
 	</files>
 	<positions>
         <position>actions-and-discounts</position>
+        <position>actions-and-discounts-as-menu</position>
         <position>all-services</position>
         <position>bottom-menu</position>
 		<position>breadcrumbs</position>

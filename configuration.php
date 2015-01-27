@@ -13,8 +13,8 @@ class JConfig {
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
 	public $host = 'localhost';
-	public $user = 'root';
-	public $password = '';
+	public $user = 'root'; // vizavisaru_2015
+	public $password = ''; // Vizavi2015
 	public $db = 'vizavisaru_2015';
 	public $dbprefix = 'vis2015_';
 	public $live_site = '';
@@ -50,7 +50,7 @@ class JConfig {
 	public $MetaVersion = '0';
 	public $robots = '';
 	public $sef = '1';
-	public $sef_rewrite = '0';
+	public $sef_rewrite = '1';
 	public $sef_suffix = '0';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';

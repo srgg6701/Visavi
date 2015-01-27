@@ -25,6 +25,13 @@
   margin-left: 22px;
   width: 341px;
 }
+#breadcrumbs{
+  color: #333;
+  display: table;
+  font-size: 11px;
+  font-family: $font-tahoma-family;
+  margin-top: -6px;
+}
 // Visa, MasterCard, Wifi
 .moduletable-cards{
   font-size: 0;
@@ -115,28 +122,28 @@
 .custom-join-us{
   display: none; // присваивается значение block клиентским скриптом при загрузке шаблона mobile_default
 }
-#header-advantages{
+.header-advantages{
   margin: auto auto 11px 28px;
 }
 //---------------------------
 // только картинка
-#header-achivement{
+.header-achievements{
   background: url($images_dir + "our-achievements.png")no-repeat 0 43px;
   height: 324px;
   margin-top: 35px;
 }
 // меню
-#header-actions-and-discounts,
-#header-popular-services,
-#header-care{
+.header-actions-and-discounts,
+.header-popular-services,
+.header-laser-epilation{
   margin-bottom: 12px;
   margin-top: 15px;
   padding: 0;
 }
 // только картинка
-#header-actions{
+.header-actions{
   background: url($images_dir + "actions-and-discounts.png")no-repeat 0 43px;
-  color:$color-pink;
+  color:$color-pink !important;
   height: 372px;
   margin-top: 20px;
 }

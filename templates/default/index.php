@@ -110,6 +110,9 @@ require_once 'helper.php';
                     if ($this->countModules('laser-epilation')) : ?>
             <jdoc:include type="modules" name="laser-epilation" style="none" />
             <?php   endif;
+                    if ($this->countModules('actions-and-discounts-as-menu')) : ?>
+                <jdoc:include type="modules" name="actions-and-discounts-as-menu" style="none" />
+            <?php   endif;
                     // акции и скидки
                     if ($this->countModules('actions-and-discounts')) : ?>
             <jdoc:include type="modules" name="actions-and-discounts" style="none" />
@@ -123,7 +126,9 @@ require_once 'helper.php';
             if ($this->countModules('breadcrumbs')) : ?>
             <div id="breadcrumbs">
                 <a href="<?php echo $this->baseurl;?>">visavi-salon.spb.ru</a> →
-                <jdoc:include type="modules" name="breadcrumbs" style="none" />
+                <span>
+                    <jdoc:include type="modules" name="breadcrumbs" style="none" />
+                </span>
             </div>
             <?php   endif;?>
             <jdoc:include type="component" />
