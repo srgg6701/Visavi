@@ -16,28 +16,6 @@ a{
   #banner div.custom >div:nth-child(3) >&{
     padding-top: 9px;
   }
-  .moduletable-cards &{ // Visa, MasterCard, Wifi
-    background-image: url($images_dir + "cards-wifi.png");
-    background-position-y: 6px;
-    background-repeat: no-repeat;
-
-    display: inline-block;
-    height: 100%;
-    &:nth-child(1){
-      background-position-x:0;
-      margin-right: 5px;
-      width: 44px;
-    }
-    &:nth-child(2){
-      background-position-x:-49px;
-      margin-right: 19px;
-      width: 37px;
-    }
-    &:nth-child(3){
-      background-position-x:-105px;
-      width: 36px;
-    }
-  }
   #discount-to-all-first-time &{
     background-color: $background-menu-pink-hover;
     border: solid 1px #e4657f;
@@ -62,12 +40,6 @@ a{
     font-size: 12px;
     margin-top: 3px;
   }
-  .custom-join-us &{
-    display: inline-block;
-    margin-right: 6px;
-    margin-top: 3px;
-    vertical-align: middle;
-  }
   #left-side &,
   #right-side &{
     @include border-common;
@@ -91,40 +63,12 @@ a{
     padding: 0 16px;
     text-transform: uppercase;
   }
-  .breadcrumbs &{
-    background: url($images_dir + "home.png") no-repeat 6px 4px;
-    color: #999;
-    display: table;
-    font-family: $font-tahoma-family;
-    font-size: 11px;
-    padding-left: 26px;
-  }
   #page-actions h4 &{
     color: $color-pink;
     font-family: BookAntiqueItalicBold;
     font-size: 16px;
   }
   #right-side &,
-  .left-panel &{
-    background: url($images_dir + "arrow-right-gray-small.png") no-repeat 12px 20px;
-    color: $color-dark;
-    font-size: 12px;
-    padding: 0 $offset-common1280;
-  }
-  .left-panel &{
-    background-position: 0 13px;
-    display: block;
-    font-family: $font-tahoma-family;
-    padding-bottom: 8px;
-    padding-left: 19px;
-    padding-top: 8px;
-    text-decoration: none;
-    text-transform: uppercase;
-    &:hover{
-      background-image: url($images_dir + "arrow-right-pink-small.png");
-      color:$color-pink !important;
-    }
-  }
   #left-side aside &,
   #right-side aside &{
     background-repeat: no-repeat;
@@ -152,6 +96,91 @@ a{
   #right-side menu &:hover{
     background-color: white;
   }
+  #roof div:nth-child(3) &{ // ссылки перед формой поиска - VISA, MasterCard, WiFi
+    display: inline-block;
+    //@include centered-vertical-a;
+  }
+  #welcome >div >aside > & {
+    background: #000;
+    border-radius: 50%;
+    bottom: 15px;
+    color: #FFF;
+    display: block;
+    font-family: $font-tahoma-family;
+    font-size: 9px;
+    font-weight: bold;
+    height: 78px;
+    position: absolute;
+    right: 19px;
+    text-align: center;
+    text-decoration: none;
+    width: 78px;
+  }
+  .breadcrumbs &{
+    background: url($images_dir + "home.png") no-repeat 6px 4px;
+    color: #999;
+    display: table;
+    font-family: $font-tahoma-family;
+    font-size: 11px;
+    padding-left: 26px;
+  }
+  .custom-join-us &{
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 3px;
+    vertical-align: middle;
+  }
+  .custom-logo-bottom &{
+    //background: yellow;
+    border-radius: 10px;
+    display: table;
+    font-size: 0;
+    height: 56px;
+    margin: 12px auto auto 79px;
+    opacity: 0.5;
+    width: 118px;
+  }
+  .left-panel &{
+    background: url($images_dir + "arrow-right-gray-small.png") no-repeat 12px 20px;
+    color: $color-dark;
+    font-size: 12px;
+    padding: 0 $offset-common1280;
+  }
+  .left-panel &{
+    background-position: 0 13px;
+    display: block;
+    font-family: $font-tahoma-family;
+    padding-bottom: 8px;
+    padding-left: 19px;
+    padding-top: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover{
+      background-image: url($images_dir + "arrow-right-pink-small.png");
+      color:$color-pink !important;
+    }
+  }
+  .moduletable-cards &{ // Visa, MasterCard, Wifi
+    background-image: url($images_dir + "cards-wifi.png");
+    background-position-y: 6px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 100%;
+    &:nth-child(1){
+      background-position-x:0;
+      margin-right: 5px;
+      width: 44px;
+    }
+    &:nth-child(2){
+      background-position-x:-49px;
+      margin-right: 19px;
+      width: 37px;
+    }
+    &:nth-child(3){
+      background-position-x:-105px;
+      width: 36px;
+    }
+  }
   .moduletable-menu_top &{
     color: #333333;
     display: block;
@@ -171,10 +200,6 @@ a{
       text-decoration: underline;
     }
   }
-  #roof div:nth-child(3) &{ // ссылки перед формой поиска - VISA, MasterCard, WiFi
-    display: inline-block;
-    //@include centered-vertical-a;
-  }
   .take-place-frame &{
     background: url($images_dir + 'make-appointment.png') $background-menu-pink no-repeat 14px;
     color: white;
@@ -187,22 +212,6 @@ a{
     text-decoration: none;
     text-transform: uppercase;
     width: 202px;
-  }
-  #welcome >div >aside > & {
-    background: #000;
-    border-radius: 50%;
-    bottom: 15px;
-    color: #FFF;
-    display: block;
-    font-family: $font-tahoma-family;
-    font-size: 9px;
-    font-weight: bold;
-    height: 78px;
-    position: absolute;
-    right: 19px;
-    text-align: center;
-    text-decoration: none;
-    width: 78px;
   }
   // FOOTER/MENU/A
   footer.desktop ul.nav.menu &{
@@ -763,6 +772,7 @@ li{
 }
 main{
   margin-bottom: $margin-bottom-main;
+  overflow:hidden;
   padding-top: 0;
   position: relative;
   @media (max-width:$resolution-mobile){ // для мобильных устройств

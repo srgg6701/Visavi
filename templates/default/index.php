@@ -101,10 +101,6 @@ require_once 'helper.php';
                 endif;?>
 	    </header>
         <main id="content" role="main">
-            <?php   //
-                    if ($this->countModules('breadcrumbs')) : ?>
-            <jdoc:include type="modules" name="breadcrumbs" style="none" />
-            <?php   endif;?>
             <div class="left-panel">
             <?php   // популярные услуги
                     if ($this->countModules('popular-services')) : ?>
@@ -123,6 +119,13 @@ require_once 'helper.php';
             <jdoc:include type="modules" name="our-achievements" style="none" />
             <?php   endif;?>
             </div>
+            <?php   //
+            if ($this->countModules('breadcrumbs')) : ?>
+            <div id="breadcrumbs">
+                <a href="<?php echo $this->baseurl;?>">visavi-salon.spb.ru</a> →
+                <jdoc:include type="modules" name="breadcrumbs" style="none" />
+            </div>
+            <?php   endif;?>
             <jdoc:include type="component" />
         </main>
         <footer class="desktop">
@@ -131,11 +134,18 @@ require_once 'helper.php';
                 <jdoc:include type="modules" name="footer-notice" style="none" />
             <?php   endif;?>
             <div>
-                <div></div>
-                <?php   //
-                if ($this->countModules('bottom-menu')):?>
+            <?php
+            //
+            if ($this->countModules('logo-bottom')) :
+            ?>
+                <jdoc:include type="modules" name="logo-bottom" style="none" />
+            <?php
+            endif;
+            //
+            if ($this->countModules('bottom-menu')):?>
                     <jdoc:include type="modules" name="bottom-menu" style="none" />
-                <?php   endif;?>
+            <?php
+            endif;?>
                 <div><img src="<?php echo $imgs_path;?>counter-rambler.gif"><img src="<?php echo $imgs_path;?>counter-2.gif"></div>
             </div>
             <?php   //
